@@ -1,101 +1,215 @@
-html{
-    font-family: "Roboto";
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-body{
-    max-width: 1000px;
-    width: 100%;
-}
-.main{
-    background-color: #011827;
-    display: flex;
-}
-.head_Main{
-    font-size: 24px;
-    color: white;
-    height: 84px;
-    width: 78px;
-    margin-top: 25px;
-    margin-left: 13px;
-}
-.img_Main{
-    height: 82px;
-    width: 128px;
-    margin-top: 26px;
-    margin-left: 27px;
-}
-.nav_Main{
-    display: none;
-}
-.div_Challenges{
-   display: flex;
-   flex-direction: column;
-}
-.img_Challenges{
-    height: 274px;
-    object-fit: cover;
-    order: 0;
-}
-.div_Challenges .button_Red{
-    display: none;
-}
-.button_Blue{
-    height: 66px;
-    width: 308px;
-    /*Ändra till padding och att stroleken anspassar sig till texten*/
-    background-color: #8ACFE5;
-    border: none;
-    border-radius: 4px;
-    font-size: 24px;
-    font-weight: 700;
-    color: #011827;
-}
-.div_Challenges .button_Blue{
-   order: 1;
-   margin-top: 37px;
-   margin-left: 91px;
-}
-.a_LinkOnline{
-    color: #36769d;
-    font-size: 16px;
-    font-weight: 700;
-}
-.div_Challenges .a_LinkOnline{
-    order: 2;
-    margin-top: 37px;
-    text-align: center;
-}
-.div_Quot{
-    height: 139px;
-    width: 439px;
-}
-.p_Quot{
-    font-size: 24px;
-    font-weight: 400;
-    font-style: italic;
-    margin-left: 116.74px;
-}
-.small_Quot{
-    font-size: 18px;
-    /* adjust*/
-    display: flex;
-    justify-content: center;
-}
-.img_Face{
-    float: left;
-    margin-left: 21px;
-    width: 73.34px;
-    height: 72px;
-}
-.div_QuotOne{
-    display: none;
-}
-.div_QuotTwo{
-    
+html {
+  font-family: "Roboto";
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media screen and {
-    
+body {
+  box-sizing: content-box;
+  width: 100%;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.button_Blue {
+  /* height: 66px;
+  width: 308px;*/
+  padding: 0.5em;
+  background-color: #8ACFE5;
+  border: none;
+  border-radius: 4px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #011827;
+}
+
+.button_Red {
+  padding: 0.5rem;
+  background-color: #E3170A;
+  border: none;
+  border-radius: 4px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #011827;
+}
+
+.a_LinkOnline {
+  color: #36769d;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.main {
+  background-color: #011827;
+  display: flex;
+}
+.main .header_Main {
+  font-size: 24px;
+  color: #FFFFFF;
+  width: 78px;
+  height: 84px;
+  /*Padding?*/
+  margin-top: 25px;
+  margin-left: 13px;
+}
+.main .img_Main {
+  width: 128px;
+  height: 82px;
+  margin-top: 26px;
+  margin-left: 27px;
+}
+
+.nav_Main {
+  display: none;
+}
+
+.div_Challenges {
+  display: flex;
+  flex-direction: column;
+}
+.div_Challenges .img_Challenges {
+  width: 100%;
+  height: 274px;
+  object-fit: cover;
+  order: 0;
+}
+.div_Challenges .button_Red {
+  display: none;
+}
+.div_Challenges .button_Blue {
+  order: 1;
+  margin-top: 37px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.div_Challenges .a_LinkOnline {
+  order: 2;
+  margin-top: 37px;
+  text-align: center;
+}
+
+.div_Quot {
+  width: 100%;
+  height: 139px;
+  /*Adjust*/
+}
+.div_Quot .p_Quot {
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+  max-width: 409px;
+  margin-left: 116.74px;
+  /*Adjust*/
+}
+.div_Quot .small_Quot {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+}
+.div_Quot .img_Quot {
+  float: left;
+  margin-left: 21px;
+  width: 73.34px;
+  height: 72px;
+}
+.div_Quot .div_QuotOne {
+  display: none;
+}
+
+.div_Booking {
+  margin-top: 105px;
+}
+.div_Booking .header {
+  font-size: 32px;
+}
+.div_Booking .div_BookRooms {
+  display: flex;
+}
+.div_Booking .div_BookRooms .div_Book {
+  display: grid;
+  grid-template-columns: 3;
+  padding-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 8px;
+  margin-right: 42px;
+  width: 363px;
+}
+.div_Booking .div_BookRooms .div_Book .header_Book {
+  grid-column: 1/4;
+  grid-row: 2;
+  font-size: 28px;
+  font-weight: 400;
+  margin-left: 17px;
+}
+.div_Booking .div_BookRooms .div_Book .img_Book {
+  width: 363px;
+  height: 219px;
+  border-radius: 8px 8px 0 0;
+  grid-column: 1/4;
+  grid-row: 1;
+}
+.div_Booking .div_BookRooms .div_Book .stars {
+  grid-template-columns: 1/3;
+  grid-row: 3;
+  margin-left: 17px;
+}
+.div_Booking .div_BookRooms .div_Book .small_Book {
+  grid-column: 3;
+  grid-row: 3;
+}
+.div_Booking .div_BookRooms .div_Book .p_Book {
+  grid-column: 1/4;
+  grid-row: 4;
+  margin-left: 17px;
+}
+.div_Booking .div_BookRooms .div_Book .button_Red {
+  grid-column: 3/4;
+  grid-row: 5;
+  font-size: 16px;
+  color: #FFFFFF;
+  width: 179.28px;
+  height: 44px;
+  border-radius: 8px;
+}
+
+.div_ButtonBooking {
+  display: flex;
+  flex-direction: column;
+}
+.div_ButtonBooking .button_Red {
+  display: none;
+}
+.div_ButtonBooking .button_Blue {
+  order: 1;
+  margin-top: 37px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.div_ButtonBooking .a_LinkOnline {
+  order: 2;
+  margin-top: 37px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div_FullStory {
+  background-color: #011827;
+  color: #FFFFFF;
+}
+.div_FullStory .button_Red {
+  background-color: transparent;
+  color: #8ACFE5;
+  border-color: #8ACFE5;
+  border-style: solid;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 1000px) {
+  .main {
+    background-color: red;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
