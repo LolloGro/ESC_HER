@@ -6,14 +6,17 @@ $color-grey: #B6BDB5;
 $color-white: #FFFFFF;
 
 html {
+
     font-family: "Roboto";
     margin-left: auto;
     margin-right: auto;
 }
 
 body {
-    box-sizing: content-box;
-    width: 100%;
+    box-sizing: border-box;
+    /*google*/
+    max-width: 100%;
+    /*vw*/
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
@@ -32,13 +35,14 @@ body {
 }
 
 .button_Red {
+    width: 308px;
     padding: 0.5rem;
     background-color: $color-red;
     border: none;
     border-radius: 4px;
     font-size: 24px;
     font-weight: 700;
-    color: $color-dark-blue;
+    color: $color-white;
 }
 
 .a_LinkOnline {
@@ -51,7 +55,7 @@ body {
     background-color: #011827;
     display: flex;
 
-    .header_Main {
+    .h_Main {
         font-size: 24px;
         color: $color-white;
         width: 78px;
@@ -136,8 +140,10 @@ body {
 
 .div_Booking {
     margin-top: 105px;
+    overflow-x: hidden;
+    /*Adjust*/
 
-    .header {
+    .h_Booking {
         font-size: 32px;
     }
 
@@ -153,7 +159,7 @@ body {
             margin-right: 42px;
             width: 363px;
 
-            .header_Book {
+            .h_Book {
                 grid-column: 1/4;
                 grid-row: 2;
                 font-size: 28px;
@@ -224,17 +230,103 @@ body {
 }
 
 .div_FullStory {
-    background-color: #011827;
-    color: #FFFFFF;
+    background-color: $color-dark-blue;
+    height: 500px;
+    color: $color-white;
+    text-align: center;
+
+    .p_FullStory {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 
     .button_Red {
+        height: 66px;
         background-color: transparent;
-        color: #8ACFE5;
-        border-color: #8ACFE5;
+        color: $color-light-blue;
+        border-color: $color-light-blue;
         border-style: solid;
+        margin-top: 40px;
         margin-left: auto;
         margin-right: auto;
     }
+}
+
+.div_BookOnSite {
+    display: flex;
+    flex-direction: column;
+
+    .h_BookOnSite {
+        order: 1;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .img_BookOnSite {
+        order: 0;
+    }
+
+    .p_BookOnSite {
+        order: 2;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    .button_Red {
+        order: 3;
+    }
+
+}
+
+.div_SeeAll {
+    display: flex;
+    flex-direction: column;
+
+    .h_SeeAll {
+        order: 1;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .img_SeeAll {
+        order: 0;
+    }
+
+    .p_SeeAll {
+        order: 2;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    .button_Red {
+        order: 3;
+    }
+}
+
+footer {
+    background-color: #011827;
+    color: #FFFFFF;
+    height: 556px;
+    padding-top: 60px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 80px;
+    font-size: 18px;
+    font-weight: 400;
+
+    head {
+        font-weight: 700;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    a{
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
 }
 
 

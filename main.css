@@ -5,8 +5,10 @@ html {
 }
 
 body {
-  box-sizing: content-box;
-  width: 100%;
+  box-sizing: border-box;
+  /*google*/
+  max-width: 100%;
+  /*vw*/
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
@@ -25,13 +27,14 @@ body {
 }
 
 .button_Red {
+  width: 308px;
   padding: 0.5rem;
   background-color: #E3170A;
   border: none;
   border-radius: 4px;
   font-size: 24px;
   font-weight: 700;
-  color: #011827;
+  color: #FFFFFF;
 }
 
 .a_LinkOnline {
@@ -44,7 +47,7 @@ body {
   background-color: #011827;
   display: flex;
 }
-.main .header_Main {
+.main .h_Main {
   font-size: 24px;
   color: #FFFFFF;
   width: 78px;
@@ -119,8 +122,10 @@ body {
 
 .div_Booking {
   margin-top: 105px;
+  overflow-x: hidden;
+  /*Adjust*/
 }
-.div_Booking .header {
+.div_Booking .h_Booking {
   font-size: 32px;
 }
 .div_Booking .div_BookRooms {
@@ -135,7 +140,7 @@ body {
   margin-right: 42px;
   width: 363px;
 }
-.div_Booking .div_BookRooms .div_Book .header_Book {
+.div_Booking .div_BookRooms .div_Book .h_Book {
   grid-column: 1/4;
   grid-row: 2;
   font-size: 28px;
@@ -195,15 +200,88 @@ body {
 
 .div_FullStory {
   background-color: #011827;
+  height: 500px;
   color: #FFFFFF;
+  text-align: center;
+}
+.div_FullStory .p_FullStory {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .div_FullStory .button_Red {
+  height: 66px;
   background-color: transparent;
   color: #8ACFE5;
   border-color: #8ACFE5;
   border-style: solid;
+  margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.div_BookOnSite {
+  display: flex;
+  flex-direction: column;
+}
+.div_BookOnSite .h_BookOnSite {
+  order: 1;
+  font-size: 32px;
+  font-weight: 700;
+}
+.div_BookOnSite .img_BookOnSite {
+  order: 0;
+}
+.div_BookOnSite .p_BookOnSite {
+  order: 2;
+  font-size: 24px;
+  font-weight: 400;
+}
+.div_BookOnSite .button_Red {
+  order: 3;
+}
+
+.div_SeeAll {
+  display: flex;
+  flex-direction: column;
+}
+.div_SeeAll .h_SeeAll {
+  order: 1;
+  font-size: 32px;
+  font-weight: 700;
+}
+.div_SeeAll .img_SeeAll {
+  order: 0;
+}
+.div_SeeAll .p_SeeAll {
+  order: 2;
+  font-size: 24px;
+  font-weight: 400;
+}
+.div_SeeAll .button_Red {
+  order: 3;
+}
+
+footer {
+  background-color: #011827;
+  color: #FFFFFF;
+  height: 556px;
+  padding-top: 60px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 80px;
+  font-size: 18px;
+  font-weight: 400;
+}
+footer head {
+  font-weight: 700;
+}
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+footer a {
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 1000px) {
