@@ -14,7 +14,6 @@ html {
 
 body {
     box-sizing: border-box;
-    /*google*/
     max-width: 100%;
     /*vw*/
     margin-top: 0;
@@ -23,8 +22,8 @@ body {
 }
 
 .button_Blue {
-    /* height: 66px;
-    width: 308px;*/
+    height: 66px;
+    width: 308px;
     padding: 0.5em;
     background-color: $color-light-blue;
     border: none;
@@ -35,6 +34,7 @@ body {
 }
 
 .button_Red {
+    height: 66px;
     width: 308px;
     padding: 0.5rem;
     background-color: $color-red;
@@ -54,6 +54,7 @@ body {
 .main {
     background-color: #011827;
     display: flex;
+    height: 144px;
 
     .h_Main {
         font-size: 24px;
@@ -108,29 +109,28 @@ body {
 
 .div_Quot {
     width: 100%;
-    height: 139px;
-    /*Adjust*/
+    padding-top: 40px;
+    padding-bottom: 50px;
 
     .p_Quot {
         font-size: 24px;
         font-weight: 400;
         font-style: italic;
-        max-width: 409px;
-        margin-left: 116.74px;
-        /*Adjust*/
+        padding-left: 15px;
+        padding-right: 15px;
+        display: table-cell;
     }
 
     .small_Quot {
+        display: block;
         font-size: 18px;
-        display: flex;
-        justify-content: center;
     }
 
     .img_Quot {
-        float: left;
-        margin-left: 21px;
         width: 73.34px;
         height: 72px;
+        float: left;
+        padding-left: 15px;
     }
 
     .div_QuotOne {
@@ -139,7 +139,6 @@ body {
 }
 
 .div_Booking {
-    margin-top: 105px;
     overflow-x: hidden;
     /*Adjust*/
 
@@ -322,7 +321,8 @@ footer {
         list-style-type: none;
         padding: 0;
     }
-    a{
+
+    a {
         color: #FFFFFF;
         text-decoration: none;
     }
