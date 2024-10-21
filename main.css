@@ -2,6 +2,7 @@ html {
   font-family: "Roboto";
   margin-left: auto;
   margin-right: auto;
+  font-size: 16px;
 }
 
 body {
@@ -59,8 +60,7 @@ body {
   margin-top: 26px;
   margin-left: 27px;
 }
-
-.nav_Main {
+.main .nav_Main {
   display: none;
 }
 
@@ -69,7 +69,6 @@ body {
   flex-direction: column;
 }
 .div_Challenges .img_Challenges {
-  width: 100%;
   height: 274px;
   object-fit: cover;
   order: 0;
@@ -144,7 +143,6 @@ body {
   margin-left: 17px;
 }
 .div_Booking .div_BookRooms .div_Book .img_Book {
-  width: 363px;
   height: 219px;
   border-radius: 8px 8px 0 0;
   grid-column: 1/4;
@@ -191,13 +189,11 @@ body {
   display: none;
 }
 .div_ButtonBooking .button_Blue {
-  order: 1;
   margin-top: 47px;
   margin-left: auto;
   margin-right: auto;
 }
 .div_ButtonBooking .a_LinkOnline {
-  order: 2;
   margin-top: 30px;
   margin-bottom: 40px;
   margin-left: auto;
@@ -206,7 +202,7 @@ body {
 
 .div_FullStory {
   background-color: #011827;
-  height: 500px;
+  min-height: 500px;
   color: #FFFFFF;
   text-align: center;
 }
@@ -225,6 +221,7 @@ body {
   border-color: #8ACFE5;
   border-style: solid;
   margin-top: 30px;
+  margin-bottom: 10%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -288,7 +285,7 @@ body {
 footer {
   background-color: #011827;
   color: #FFFFFF;
-  height: 556px;
+  min-height: 556px;
   padding-top: 60px;
   padding-left: 25px;
   padding-right: 25px;
