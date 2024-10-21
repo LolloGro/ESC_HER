@@ -6,7 +6,6 @@ html {
 
 body {
   box-sizing: border-box;
-  max-width: 100%;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: auto;
@@ -19,7 +18,7 @@ body {
   background-color: #8ACFE5;
   border: none;
   border-radius: 4px;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #011827;
 }
@@ -30,14 +29,14 @@ body {
   background-color: #E3170A;
   border: none;
   border-radius: 4px;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #FFFFFF;
 }
 
 .a_LinkOnline {
   color: #36769d;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -47,7 +46,7 @@ body {
   height: 144px;
 }
 .main .h_Main {
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #FFFFFF;
   width: 78px;
   height: 84px;
@@ -91,12 +90,11 @@ body {
 }
 
 .div_Quot {
-  width: 100%;
   padding-top: 60px;
   padding-bottom: 50px;
 }
 .div_Quot .p_Quot {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 400;
   font-style: italic;
   padding-left: 15px;
@@ -105,7 +103,7 @@ body {
 }
 .div_Quot .small_Quot {
   display: block;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .div_Quot .img_Quot {
   width: 73.34px;
@@ -118,7 +116,7 @@ body {
 }
 
 .div_Booking .h_Booking {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 400;
   padding: 15px;
 }
@@ -139,7 +137,7 @@ body {
 .div_Booking .div_BookRooms .div_Book .h_Book {
   grid-column: 1/4;
   grid-row: 2;
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 400;
   margin-top: 12px;
   margin-bottom: 0;
@@ -168,7 +166,7 @@ body {
 .div_Booking .div_BookRooms .div_Book .p_Book {
   grid-column: 1/4;
   grid-row: 4;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   margin-top: 25px;
   margin-bottom: 25px;
@@ -178,7 +176,7 @@ body {
 .div_Booking .div_BookRooms .div_Book .button_Red {
   grid-column: 3;
   grid-row: 5;
-  font-size: 16px;
+  font-size: 1rem;
   color: #FFFFFF;
   width: 179.28px;
   height: 44px;
@@ -213,9 +211,10 @@ body {
   text-align: center;
 }
 .div_FullStory .p_FullStory {
-  font-size: 28px;
+  max-height: 500px;
+  font-size: 1.75rem;
   font-weight: 400;
-  padding-top: 80px;
+  padding-top: 15%;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -236,7 +235,7 @@ body {
 }
 .div_BookOnSite .h_BookOnSite {
   order: 1;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   margin-left: 17px;
 }
@@ -247,7 +246,7 @@ body {
 }
 .div_BookOnSite .p_BookOnSite {
   order: 2;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 400;
   margin-left: 17px;
   margin-right: 17px;
@@ -264,7 +263,7 @@ body {
 }
 .div_SeeAll .h_SeeAll {
   order: 1;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   margin-left: 17px;
 }
@@ -275,7 +274,7 @@ body {
 }
 .div_SeeAll .p_SeeAll {
   order: 2;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 400;
   margin-left: 17px;
   margin-right: 17px;
@@ -309,7 +308,7 @@ footer a {
   text-decoration: none;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 800px) {
   .main {
     background-color: blue;
   }
