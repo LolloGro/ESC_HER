@@ -4,6 +4,13 @@ $color-medium-blue: #36769d;
 $color-red: #E3170A;
 $color-grey: #B6BDB5;
 $color-white: #FFFFFF;
+$screen-medium: 800px;
+
+@mixin breakpoint ($min-size) {
+    @media screen and (min-width: $min-size) {
+        @content;
+    }
+}
 
 html {
 
@@ -16,8 +23,7 @@ html {
 
 body {
     box-sizing: border-box;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-block: 0;
     margin-left: auto;
     margin-right: auto;
 }
@@ -62,6 +68,14 @@ body {
         height: 84px;
         margin-top: 25px;
         margin-left: 13px;
+
+        @include breakpoint($screen-medium) {
+            font-size: 2.5rem;
+            width: fit-content;
+            height: fit-content;
+            margin-top: 61px;
+            margin-bottom: 0;
+        }
     }
 
     .img_Main {
@@ -70,37 +84,81 @@ body {
         margin-top: 26px;
         margin-left: 27px;
     }
+}
 
-    .nav_Main {
-        display: none;
+.nav_Main {
+    display: none;
+
+    @include breakpoint($screen-medium) {
+        display: flex;
+        align-items: center;
+        background-color: #011827;
+        min-height: 72px;
+
+        .ul_MainList {
+            display: flex;
+            list-style-type: none;
+            flex: 100%;
+            justify-content: space-evenly;
+        }
+
+        .a_MainList {
+            color: $color-white;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
     }
 }
 
 .div_Challenges {
     display: flex;
     flex-direction: column;
+    @include breakpoint($screen-medium){
+        display: grid;
+        grid-template-columns: 4;
+        // column-gap: 1rem;
+    }
 
-    .img_Challenges{  
-        height: 274px;
+    .img_Challenges {
+        min-height: 274px;
+        max-height: 468px;
         object-fit: cover;
-        order: 0;
+        @include breakpoint($screen-medium){
+            grid-column: 1/5;
+            width: 100%;
+        }
     }
 
     .button_Red {
         display: none;
+        @include breakpoint($screen-medium){
+            display: block;
+            grid-column: 2;
+            justify-self: end;
+            margin-top: -33px;
+            margin-right: 0.5rem;
+
+        }
     }
 
     .button_Blue {
-        order: 1;
         margin-top: 37px;
         margin-left: auto;
         margin-right: auto;
+        @include breakpoint($screen-medium){
+            margin: 0;
+            margin-top: -33px;
+            grid-column: 3;
+            margin-left: 0.5rem;
+        }
     }
 
     .a_LinkOnline {
-        order: 2;
         margin-top: 37px;
         text-align: center;
+        @include breakpoint($screen-medium){
+            display: none;
+        }
     }
 }
 
@@ -131,6 +189,9 @@ body {
 
     .div_QuotOne {
         display: none;
+        @include breakpoint($screen-medium){
+            display: block;
+        }
     }
 }
 
@@ -354,12 +415,4 @@ footer {
         text-decoration: none;
     }
 
-}
-
-
-@media screen and (min-width: 800px) {
-
-    .main {
-        background-color: blue;
-    }
 }

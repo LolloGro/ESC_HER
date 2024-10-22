@@ -7,8 +7,7 @@ html {
 
 body {
   box-sizing: border-box;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-block: 0;
   margin-left: auto;
   margin-right: auto;
 }
@@ -54,38 +53,99 @@ body {
   margin-top: 25px;
   margin-left: 13px;
 }
+@media screen and (min-width: 800px) {
+  .main .h_Main {
+    font-size: 2.5rem;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 61px;
+    margin-bottom: 0;
+  }
+}
 .main .img_Main {
   width: 128px;
   height: 82px;
   margin-top: 26px;
   margin-left: 27px;
 }
-.main .nav_Main {
+
+.nav_Main {
   display: none;
+}
+@media screen and (min-width: 800px) {
+  .nav_Main {
+    display: flex;
+    align-items: center;
+    background-color: #011827;
+    min-height: 72px;
+  }
+  .nav_Main .ul_MainList {
+    display: flex;
+    list-style-type: none;
+    flex: 100%;
+    justify-content: space-evenly;
+  }
+  .nav_Main .a_MainList {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
 }
 
 .div_Challenges {
   display: flex;
   flex-direction: column;
 }
+@media screen and (min-width: 800px) {
+  .div_Challenges {
+    display: grid;
+    grid-template-columns: 4;
+  }
+}
 .div_Challenges .img_Challenges {
-  height: 274px;
+  min-height: 274px;
+  max-height: 468px;
   object-fit: cover;
-  order: 0;
+}
+@media screen and (min-width: 800px) {
+  .div_Challenges .img_Challenges {
+    grid-column: 1/5;
+    width: 100%;
+  }
 }
 .div_Challenges .button_Red {
   display: none;
 }
+@media screen and (min-width: 800px) {
+  .div_Challenges .button_Red {
+    display: block;
+    grid-column: 2;
+    justify-self: end;
+    margin-top: -33px;
+    margin-right: 0.5rem;
+  }
+}
 .div_Challenges .button_Blue {
-  order: 1;
   margin-top: 37px;
   margin-left: auto;
   margin-right: auto;
 }
+@media screen and (min-width: 800px) {
+  .div_Challenges .button_Blue {
+    margin: 0;
+    margin-top: -33px;
+    grid-column: 3;
+    margin-left: 0.5rem;
+  }
+}
 .div_Challenges .a_LinkOnline {
-  order: 2;
   margin-top: 37px;
   text-align: center;
+}
+@media screen and (min-width: 800px) {
+  .div_Challenges .a_LinkOnline {
+    display: none;
+  }
 }
 
 .div_Quot {
@@ -112,6 +172,11 @@ body {
 }
 .div_Quot .div_QuotOne {
   display: none;
+}
+@media screen and (min-width: 800px) {
+  .div_Quot .div_QuotOne {
+    display: block;
+  }
 }
 
 .div_Booking .h_Booking {
@@ -303,12 +368,6 @@ footer ul {
 footer a {
   color: #FFFFFF;
   text-decoration: none;
-}
-
-@media screen and (min-width: 800px) {
-  .main {
-    background-color: blue;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */
