@@ -152,30 +152,78 @@ body {
   padding-top: 60px;
   padding-bottom: 50px;
 }
-.div_Quot .p_Quot {
+@media screen and (min-width: 800px) {
+  .div_Quot {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.div_Quot .div_QuotOne {
+  display: grid;
+  grid-template-columns: 15px auto auto 15px;
+}
+.div_Quot .div_QuotOne .img_Quot {
+  grid-column: 2;
+  width: 73.34px;
+  height: 72px;
+}
+.div_Quot .div_QuotOne .p_Quot {
+  grid-column: 3;
+  grid-row: 1;
   font-size: 1.5rem;
   font-weight: 400;
   font-style: italic;
+  max-width: 412px;
+  margin: 0;
   padding-left: 15px;
-  padding-right: 15px;
-  display: table-cell;
 }
-.div_Quot .small_Quot {
+.div_Quot .div_QuotOne .small_Quot {
   display: block;
   font-size: 1.125rem;
+  font-weight: 400;
+  margin-top: 1rem;
 }
-.div_Quot .img_Quot {
-  width: 73.34px;
-  height: 72px;
-  float: left;
-  padding-left: 15px;
+@media screen and (min-width: 800px) {
+  .div_Quot .div_QuotOne .small_Quot {
+    max-width: 284.29px;
+  }
 }
-.div_Quot .div_QuotOne {
+.div_Quot .div_QuotTwo {
   display: none;
 }
 @media screen and (min-width: 800px) {
-  .div_Quot .div_QuotOne {
+  .div_Quot .div_QuotTwo {
+    display: grid;
+    grid-template-columns: 15px auto auto 15px;
+  }
+  .div_Quot .div_QuotTwo .img_Quot {
+    grid-column: 2;
+    width: 73.34px;
+    height: 72px;
+  }
+  .div_Quot .div_QuotTwo .p_Quot {
+    grid-column: 3;
+    grid-row: 1;
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+    max-width: 412px;
+    margin: 0;
+    padding-left: 15px;
+  }
+  .div_Quot .div_QuotTwo .small_Quot {
     display: block;
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-top: 1rem;
+  }
+}
+@media screen and (min-width: 800px) and (min-width: 800px) {
+  .div_Quot .div_QuotTwo .small_Quot {
+    max-width: 284.29px;
   }
 }
 
@@ -183,6 +231,7 @@ body {
   font-size: 2rem;
   font-weight: 400;
   padding: 15px;
+  justify-self: center;
 }
 .div_Booking .div_BookRooms {
   display: flex;
