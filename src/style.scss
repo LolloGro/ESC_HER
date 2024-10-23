@@ -2,7 +2,7 @@ $color-dark-blue: #011827;
 $color-light-blue: #8ACFE5;
 $color-medium-blue: #36769d;
 $color-red: #E3170A;
-$color-grey: #eaffe7;
+$color-grey: #B6BDB5;
 $color-white: #FFFFFF;
 $screen-medium: 1280px;
 
@@ -33,7 +33,6 @@ html {
     margin-left: auto;
     margin-right: auto;
     font-size: 16px;
-
 }
 
 body {
@@ -207,7 +206,6 @@ body {
             grid-row: 1;
             // margin-top: 0;
             @include styling-p-quot();
-
         }
 
         .small_Quot {
@@ -284,7 +282,7 @@ body {
             grid-template-columns: 3;
             width: 363px;
             padding-bottom: 10px;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px 0px;
+            box-shadow: $color-grey 0px 5px 15px 0px;
             border-radius: 8px;
             margin-left: 43px;
 
