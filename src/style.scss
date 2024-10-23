@@ -624,11 +624,9 @@ footer {
 
     .nav_Contact {
         margin-top: 40px;
-
-        .h_Contact {
-            margin-bottom: -25px;
+        .h_Contact{
+            margin-bottom: -10px;
         }
-
         @include breakpoint($screen-medium) {
             grid-column: 3;
             grid-row: 1;
