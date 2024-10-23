@@ -548,7 +548,8 @@ footer a {
   footer {
     margin-top: 180px;
     display: grid;
-    grid-template-columns: 6;
+    grid-template-columns: 735px 220px 200px;
+    grid-template-rows: max-content;
   }
 }
 footer .div_About {
@@ -557,8 +558,10 @@ footer .div_About {
 @media screen and (min-width: 1280px) {
   footer .div_About {
     max-width: 416px;
-    grid-column: 2;
+    grid-column: 1;
     grid-row: 1;
+    margin-top: 70px;
+    margin-left: 85px;
   }
 }
 footer .nav_SiteMap {
@@ -569,26 +572,29 @@ footer .nav_SiteMap .h_SiteMap {
 }
 @media screen and (min-width: 1280px) {
   footer .nav_SiteMap {
-    grid-column: 4;
+    grid-column: 2;
     grid-row: 1;
+    margin-top: 70px;
   }
 }
 @media screen and (min-width: 1280px) {
   footer .nav_PlayList {
-    grid-column: 4;
+    grid-column: 2;
     grid-row: 2;
+    margin-top: -50px;
   }
 }
 footer .nav_Contact {
   margin-top: 40px;
 }
 footer .nav_Contact .h_Contact {
-  margin-bottom: -30px;
+  margin-bottom: -25px;
 }
 @media screen and (min-width: 1280px) {
   footer .nav_Contact {
-    grid-column: 6;
+    grid-column: 3;
     grid-row: 1;
+    margin-top: 70px;
   }
 }
 

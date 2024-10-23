@@ -585,7 +585,8 @@ footer {
     @include breakpoint($screen-medium) {
         margin-top: 180px;
         display: grid;
-        grid-template-columns: 6;
+        grid-template-columns: 735px 220px 200px;
+        grid-template-rows: max-content;
     }
 
     .div_About {
@@ -593,8 +594,10 @@ footer {
 
         @include breakpoint($screen-medium) {
             max-width: 416px;
-            grid-column: 2;
+            grid-column: 1;
             grid-row: 1;
+            margin-top: 70px;
+            margin-left: 85px;
         }
     }
 
@@ -606,16 +609,17 @@ footer {
         }
 
         @include breakpoint($screen-medium) {
-            grid-column: 4;
+            grid-column: 2;
             grid-row: 1;
+            margin-top: 70px;
         }
     }
 
     .nav_PlayList {
         @include breakpoint($screen-medium) {
-            grid-column: 4;
+            grid-column: 2;
             grid-row: 2;
-
+            margin-top: -50px;
         }
     }
 
@@ -623,12 +627,13 @@ footer {
         margin-top: 40px;
 
         .h_Contact {
-            margin-bottom: -30px;
+            margin-bottom: -25px;
         }
 
         @include breakpoint($screen-medium) {
-            grid-column: 6;
+            grid-column: 3;
             grid-row: 1;
+            margin-top: 70px;
         }
     }
 }
