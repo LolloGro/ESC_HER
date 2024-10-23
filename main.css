@@ -53,7 +53,7 @@ body {
   margin-top: 25px;
   margin-left: 13px;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1280px) {
   .main .h_Main {
     font-size: 2.5rem;
     width: fit-content;
@@ -72,7 +72,7 @@ body {
 .nav_Main {
   display: none;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1280px) {
   .nav_Main {
     display: flex;
     align-items: center;
@@ -88,6 +88,7 @@ body {
   .nav_Main .a_MainList {
     color: #FFFFFF;
     font-size: 1.5rem;
+    font-weight: 700;
     text-decoration: none;
   }
 }
@@ -96,7 +97,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1280px) {
   .div_Challenges {
     display: grid;
     grid-template-columns: 4;
@@ -107,7 +108,7 @@ body {
   max-height: 468px;
   object-fit: cover;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1280px) {
   .div_Challenges .img_Challenges {
     grid-column: 1/5;
     width: 100%;
@@ -116,7 +117,7 @@ body {
 .div_Challenges .button_Red {
   display: none;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1280px) {
   .div_Challenges .button_Red {
     display: block;
     grid-column: 2;
@@ -130,7 +131,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1280px) {
   .div_Challenges .button_Blue {
     margin: 0;
     margin-top: -33px;
@@ -142,7 +143,7 @@ body {
   margin-top: 37px;
   text-align: center;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1280px) {
   .div_Challenges .a_LinkOnline {
     display: none;
   }
@@ -152,7 +153,7 @@ body {
   padding-top: 60px;
   padding-bottom: 50px;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1280px) {
   .div_Quot {
     display: flex;
     justify-content: center;
@@ -185,7 +186,7 @@ body {
   font-weight: 400;
   margin-top: 1rem;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1280px) {
   .div_Quot .div_QuotOne .small_Quot {
     max-width: 284.29px;
   }
@@ -193,7 +194,7 @@ body {
 .div_Quot .div_QuotTwo {
   display: none;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1280px) {
   .div_Quot .div_QuotTwo {
     display: grid;
     grid-template-columns: 15px auto auto 15px;
@@ -221,7 +222,7 @@ body {
     margin-top: 1rem;
   }
 }
-@media screen and (min-width: 800px) and (min-width: 800px) {
+@media screen and (min-width: 1280px) and (min-width: 1280px) {
   .div_Quot .div_QuotTwo .small_Quot {
     max-width: 284.29px;
   }
@@ -233,10 +234,22 @@ body {
   padding: 15px;
   justify-self: center;
 }
+@media screen and (min-width: 1280px) {
+  .div_Booking .h_Booking {
+    margin-top: 40px;
+    margin-bottom: 75px;
+  }
+}
 .div_Booking .div_BookRooms {
   display: flex;
-  margin-left: 10%;
+  padding-bottom: 20px;
   overflow: auto;
+}
+@media screen and (min-width: 1280px) {
+  .div_Booking .div_BookRooms {
+    justify-content: center;
+    margin-right: 43px;
+  }
 }
 .div_Booking .div_BookRooms .div_Book {
   display: grid;
@@ -245,7 +258,7 @@ body {
   padding-bottom: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px 0px;
   border-radius: 8px;
-  margin-right: 42px;
+  margin-left: 43px;
 }
 .div_Booking .div_BookRooms .div_Book .h_Book {
   grid-column: 1/4;
@@ -258,6 +271,7 @@ body {
 }
 .div_Booking .div_BookRooms .div_Book .img_Book {
   height: 219px;
+  width: 363px;
   border-radius: 8px 8px 0 0;
   grid-column: 1/4;
   grid-row: 1;
@@ -299,19 +313,48 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media screen and (min-width: 1280px) {
+  .div_ButtonBooking {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+}
 .div_ButtonBooking .button_Red {
   display: none;
 }
+@media screen and (min-width: 1280px) {
+  .div_ButtonBooking .button_Red {
+    display: block;
+    grid-column: 2;
+    justify-self: end;
+    margin-top: 65px;
+    margin-bottom: 65px;
+    margin-right: 0.5rem;
+  }
+}
 .div_ButtonBooking .button_Blue {
-  margin-top: 47px;
+  margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
 }
+@media screen and (min-width: 1280px) {
+  .div_ButtonBooking .button_Blue {
+    margin: 0;
+    margin-top: 65px;
+    grid-column: 3;
+    margin-left: 0.5rem;
+  }
+}
 .div_ButtonBooking .a_LinkOnline {
-  margin-top: 30px;
-  margin-bottom: 40px;
+  margin-top: 25px;
+  margin-bottom: 33px;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (min-width: 1280px) {
+  .div_ButtonBooking .a_LinkOnline {
+    display: none;
+  }
 }
 
 .div_FullStory {
@@ -320,13 +363,27 @@ body {
   color: #FFFFFF;
   text-align: center;
 }
+@media screen and (min-width: 1280px) {
+  .div_FullStory {
+    max-height: 500px;
+  }
+}
 .div_FullStory .p_FullStory {
-  max-height: 500px;
+  max-width: 632px;
   font-size: 1.75rem;
   font-weight: 400;
-  padding-top: 15%;
+  padding-top: 90px;
+  padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 1280px) {
+  .div_FullStory .p_FullStory {
+    padding-top: 115px;
+    padding-bottom: 15px;
+  }
 }
 .div_FullStory .button_Red {
   height: 66px;
@@ -334,26 +391,46 @@ body {
   color: #8ACFE5;
   border-color: #8ACFE5;
   border-style: solid;
-  margin-top: 30px;
-  margin-bottom: 10%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 90px;
 }
 
 .div_BookOnSite {
   display: flex;
   flex-direction: column;
 }
+@media screen and (min-width: 1280px) {
+  .div_BookOnSite {
+    display: grid;
+    grid-template-columns: 640px 640px;
+    height: 460px;
+    justify-self: center;
+  }
+}
 .div_BookOnSite .h_BookOnSite {
   order: 1;
   font-size: 2rem;
   font-weight: 700;
   margin-left: 17px;
+  margin-right: 17px;
+}
+@media screen and (min-width: 1280px) {
+  .div_BookOnSite .h_BookOnSite {
+    grid-column: 2;
+    grid-row: 1;
+  }
 }
 .div_BookOnSite .img_BookOnSite {
   order: 0;
   height: 300px;
   object-fit: cover;
+}
+@media screen and (min-width: 1280px) {
+  .div_BookOnSite .img_BookOnSite {
+    max-width: 100%;
+    height: 460px;
+    grid-column: 1;
+    grid-row: span 3;
+  }
 }
 .div_BookOnSite .p_BookOnSite {
   order: 2;
@@ -361,27 +438,64 @@ body {
   font-weight: 400;
   margin-left: 17px;
   margin-right: 17px;
+  margin-top: 0;
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 1280px) {
+  .div_BookOnSite .p_BookOnSite {
+    grid-column: 2;
+    grid-row: 2;
+  }
 }
 .div_BookOnSite .button_Red {
   order: 3;
   margin-left: 17px;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 1280px) {
+  .div_BookOnSite .button_Red {
+    grid-column: 2;
+    grid-row: 3;
+  }
 }
 
 .div_SeeAll {
   display: flex;
   flex-direction: column;
 }
+@media screen and (min-width: 1280px) {
+  .div_SeeAll {
+    display: grid;
+    grid-template-columns: 640px 640px;
+    height: 460px;
+    justify-self: center;
+  }
+}
 .div_SeeAll .h_SeeAll {
   order: 1;
   font-size: 2rem;
   font-weight: 700;
   margin-left: 17px;
+  margin-right: 17px;
+}
+@media screen and (min-width: 1280px) {
+  .div_SeeAll .h_SeeAll {
+    grid-column: 1;
+    grid-row: 1;
+  }
 }
 .div_SeeAll .img_SeeAll {
   order: 0;
   height: 300px;
   object-fit: cover;
+}
+@media screen and (min-width: 1280px) {
+  .div_SeeAll .img_SeeAll {
+    max-width: 100%;
+    height: 460px;
+    grid-column: 2;
+    grid-row: span 3;
+  }
 }
 .div_SeeAll .p_SeeAll {
   order: 2;
@@ -389,11 +503,25 @@ body {
   font-weight: 400;
   margin-left: 17px;
   margin-right: 17px;
+  margin-top: -10px;
+  margin-bottom: 50px;
+}
+@media screen and (min-width: 1280px) {
+  .div_SeeAll .p_SeeAll {
+    grid-column: 1;
+    grid-row: 2;
+  }
 }
 .div_SeeAll .button_Red {
   order: 3;
   margin-left: 17px;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
+}
+@media screen and (min-width: 1280px) {
+  .div_SeeAll .button_Red {
+    grid-column: 1;
+    grid-row: 3;
+  }
 }
 
 footer {
@@ -403,12 +531,10 @@ footer {
   padding-top: 60px;
   padding-left: 25px;
   padding-right: 25px;
-  padding-bottom: 80px;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 1.125rem;
 }
-footer head {
-  font-weight: 700;
+footer h2 {
+  font-size: 1.125rem;
 }
 footer ul {
   list-style-type: none;
@@ -417,6 +543,53 @@ footer ul {
 footer a {
   color: #FFFFFF;
   text-decoration: none;
+}
+@media screen and (min-width: 1280px) {
+  footer {
+    margin-top: 180px;
+    display: grid;
+    grid-template-columns: 6;
+  }
+}
+footer .div_About {
+  max-width: 740px;
+}
+@media screen and (min-width: 1280px) {
+  footer .div_About {
+    max-width: 416px;
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+footer .nav_SiteMap {
+  margin-top: 40px;
+}
+footer .nav_SiteMap .h_SiteMap {
+  margin-bottom: -10px;
+}
+@media screen and (min-width: 1280px) {
+  footer .nav_SiteMap {
+    grid-column: 4;
+    grid-row: 1;
+  }
+}
+@media screen and (min-width: 1280px) {
+  footer .nav_PlayList {
+    grid-column: 4;
+    grid-row: 2;
+  }
+}
+footer .nav_Contact {
+  margin-top: 40px;
+}
+footer .nav_Contact .h_Contact {
+  margin-bottom: -30px;
+}
+@media screen and (min-width: 1280px) {
+  footer .nav_Contact {
+    grid-column: 6;
+    grid-row: 1;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
