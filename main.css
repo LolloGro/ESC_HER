@@ -169,6 +169,7 @@ body {
   grid-column: 2;
   width: 73.34px;
   height: 72px;
+  justify-self: end;
 }
 .div_Quot .div_QuotOne .p_Quot {
   grid-column: 3;
