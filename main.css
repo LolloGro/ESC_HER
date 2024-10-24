@@ -12,7 +12,7 @@ body {
   margin-right: auto;
 }
 
-.a_BlueButton {
+.blue__link {
   height: 66px;
   width: 308px;
   background-color: #8ACFE5;
@@ -25,7 +25,7 @@ body {
   place-content: center;
 }
 
-.a_RedButton {
+.red__link {
   height: 66px;
   width: 308px;
   background-color: #E3170A;
@@ -38,7 +38,7 @@ body {
   place-content: center;
 }
 
-.a_LinkOnline {
+.online__link {
   color: #36769d;
   font-size: 1rem;
   font-weight: 700;
@@ -118,11 +118,11 @@ body {
     width: 100%;
   }
 }
-.main__div .a_RedButton {
+.main__div .red__link {
   display: none;
 }
 @media screen and (min-width: 1280px) {
-  .main__div .a_RedButton {
+  .main__div .red__link {
     display: block;
     grid-column: 2;
     justify-self: end;
@@ -130,25 +130,25 @@ body {
     margin-right: 0.5rem;
   }
 }
-.main__div .a_BlueButton {
+.main__div .blue__link {
   margin-top: 37px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (min-width: 1280px) {
-  .main__div .a_BlueButton {
+  .main__div .blue__link {
     margin: 0;
     margin-top: -33px;
     grid-column: 3;
     margin-left: 0.5rem;
   }
 }
-.main__div .a_LinkOnline {
+.main__div .online__link {
   margin-top: 37px;
   text-align: center;
 }
 @media screen and (min-width: 1280px) {
-  .main__div .a_LinkOnline {
+  .main__div .online__link {
     display: none;
   }
 }
@@ -311,7 +311,7 @@ body {
   margin-left: 17px;
   margin-right: 17px;
 }
-.book .book__div .book__div__room .a_RedButton {
+.book .book__div .book__div__room .red__link {
   grid-column: 3;
   grid-row: 5;
   font-size: 1rem;
@@ -330,11 +330,11 @@ body {
     grid-template-columns: auto auto auto auto;
   }
 }
-.book_nav .a_RedButton {
+.book_nav .red__link {
   display: none;
 }
 @media screen and (min-width: 1280px) {
-  .book_nav .a_RedButton {
+  .book_nav .red__link {
     display: block;
     grid-column: 2;
     justify-self: end;
@@ -343,27 +343,27 @@ body {
     margin-right: 0.5rem;
   }
 }
-.book_nav .a_BlueButton {
+.book_nav .blue__link {
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (min-width: 1280px) {
-  .book_nav .a_BlueButton {
+  .book_nav .blue__link {
     margin: 0;
     margin-top: 65px;
     grid-column: 3;
     margin-left: 0.5rem;
   }
 }
-.book_nav .a_LinkOnline {
+.book_nav .online__link {
   margin-top: 25px;
   margin-bottom: 33px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (min-width: 1280px) {
-  .book_nav .a_LinkOnline {
+  .book_nav .online__link {
     display: none;
   }
 }
@@ -396,7 +396,7 @@ body {
     padding-bottom: 15px;
   }
 }
-.story .a_RedButton {
+.story .red__link {
   background-color: transparent;
   color: #8ACFE5;
   border-color: #8ACFE5;
@@ -461,13 +461,13 @@ body {
     grid-row: 2;
   }
 }
-.booking .a_RedButton {
+.booking .red__link {
   order: 3;
   margin-left: 17px;
   margin-bottom: 60px;
 }
 @media screen and (min-width: 1280px) {
-  .booking .a_RedButton {
+  .booking .red__link {
     grid-column: 2;
     grid-row: 3;
   }
@@ -526,13 +526,13 @@ body {
     grid-row: 2;
   }
 }
-.play .a_RedButton {
+.play .red__link {
   order: 3;
   margin-left: 17px;
   margin-bottom: 100px;
 }
 @media screen and (min-width: 1280px) {
-  .play .a_RedButton {
+  .play .red__link {
     grid-column: 1;
     grid-row: 3;
   }

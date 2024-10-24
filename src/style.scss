@@ -42,7 +42,7 @@ body {
     margin-right: auto;
 }
 
-.a_BlueButton {
+.blue__link {
     height: 66px;
     width: 308px;
     background-color: $color-light-blue;
@@ -55,7 +55,7 @@ body {
     place-content: center;
 }
 
-.a_RedButton {
+.red__link {
     height: 66px;
     width: 308px;
     background-color: $color-red;
@@ -68,7 +68,7 @@ body {
     place-content: center;
 }
 
-.a_LinkOnline {
+.online__link {
     color: $color-medium-blue;
     font-size: 1rem;
     font-weight: 700;
@@ -149,7 +149,7 @@ body {
         }
     }
 
-    .a_RedButton {
+    .red__link {
         display: none;
 
         @include breakpoint($screen-medium) {
@@ -161,7 +161,7 @@ body {
         }
     }
 
-    .a_BlueButton {
+    .blue__link {
         margin-top: 37px;
         margin-left: auto;
         margin-right: auto;
@@ -174,7 +174,7 @@ body {
         }
     }
 
-    .a_LinkOnline {
+    .online__link {
         margin-top: 37px;
         text-align: center;
 
@@ -341,7 +341,7 @@ body {
                 margin-right: 17px;
             }
 
-            .a_RedButton {
+            .red__link {
                 grid-column: 3;
                 grid-row: 5;
                 font-size: 1rem;
@@ -362,7 +362,7 @@ body {
         grid-template-columns: auto auto auto auto;
     }
 
-    .a_RedButton {
+    .red__link {
         display: none;
 
         @include breakpoint($screen-medium) {
@@ -375,7 +375,7 @@ body {
         }
     }
 
-    .a_BlueButton {
+    .blue__link {
         margin-top: 30px;
         margin-left: auto;
         margin-right: auto;
@@ -388,7 +388,7 @@ body {
         }
     }
 
-    .a_LinkOnline {
+    .online__link {
         margin-top: 25px;
         margin-bottom: 33px;
         margin-left: auto;
@@ -427,7 +427,7 @@ body {
         }
     }
 
-    .a_RedButton {
+    .red__link {
         background-color: transparent;
         color: $color-light-blue;
         border-color: $color-light-blue;
@@ -492,7 +492,7 @@ body {
         }
     }
 
-    .a_RedButton {
+    .red__link {
         order: 3;
         margin-left: 17px;
         margin-bottom: 60px;
@@ -556,7 +556,7 @@ body {
         }
     }
 
-    .a_RedButton {
+    .red__link {
         order: 3;
         margin-left: 17px;
         margin-bottom: 100px;
