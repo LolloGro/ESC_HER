@@ -205,7 +205,6 @@ body {
         .p_Quot {
             grid-column: 3;
             grid-row: 1;
-            // margin-top: 0;
             @include styling-p-quot();
         }
 
@@ -274,7 +273,7 @@ body {
 
         @include breakpoint($screen-medium) {
             justify-content: center;
-            margin-right: 43px; //test
+            margin-right: 43px;
         }
 
         .div_Book {
@@ -315,10 +314,15 @@ body {
                 }
             }
 
-            .small_Book {
+            .p_BookParticipant {
                 grid-column: 3;
                 grid-row: 3;
+                margin: 0;
                 margin-left: -20px;
+                @include breakpoint($screen-medium){
+                    margin-right: 10px;
+                    justify-self: end;
+                }
             }
 
             .p_Book {

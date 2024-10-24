@@ -285,10 +285,17 @@ body {
 .div_Booking .div_BookRooms .div_Book .stars .img_BookStarFilled {
   padding-right: 5px;
 }
-.div_Booking .div_BookRooms .div_Book .small_Book {
+.div_Booking .div_BookRooms .div_Book .p_BookParticipant {
   grid-column: 3;
   grid-row: 3;
+  margin: 0;
   margin-left: -20px;
+}
+@media screen and (min-width: 1280px) {
+  .div_Booking .div_BookRooms .div_Book .p_BookParticipant {
+    margin-right: 10px;
+    justify-self: end;
+  }
 }
 .div_Booking .div_BookRooms .div_Book .p_Book {
   grid-column: 1/4;
