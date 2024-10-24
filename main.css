@@ -49,7 +49,7 @@ body {
   display: flex;
   height: 144px;
 }
-.main .h_Main {
+.main .main__titel {
   font-size: 1.5rem;
   color: #FFFFFF;
   width: 78px;
@@ -58,7 +58,7 @@ body {
   margin-left: 13px;
 }
 @media screen and (min-width: 1280px) {
-  .main .h_Main {
+  .main .main__titel {
     font-size: 2.5rem;
     width: fit-content;
     height: fit-content;
@@ -66,30 +66,30 @@ body {
     margin-bottom: 0;
   }
 }
-.main .img_Main {
+.main .main__img {
   width: 128px;
   height: 82px;
   margin-top: 26px;
   margin-left: 27px;
 }
 
-.nav_Main {
+.main__nav {
   display: none;
 }
 @media screen and (min-width: 1280px) {
-  .nav_Main {
+  .main__nav {
     display: flex;
     align-items: center;
     background-color: #011827;
     min-height: 72px;
   }
-  .nav_Main .ul_MainList {
+  .main__nav .main__ul {
     display: flex;
     list-style-type: none;
     flex: 100%;
     justify-content: space-evenly;
   }
-  .nav_Main .a_MainList {
+  .main__nav .main__li__item {
     color: #FFFFFF;
     font-size: 1.5rem;
     font-weight: 700;
@@ -97,32 +97,32 @@ body {
   }
 }
 
-.div_Challenges {
+.main__div {
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 1280px) {
-  .div_Challenges {
+  .main__div {
     display: grid;
     grid-template-columns: 4;
   }
 }
-.div_Challenges .img_Challenges {
+.main__div .main__div__img {
   min-height: 274px;
   max-height: 468px;
   object-fit: cover;
 }
 @media screen and (min-width: 1280px) {
-  .div_Challenges .img_Challenges {
+  .main__div .main__div__img {
     grid-column: 1/5;
     width: 100%;
   }
 }
-.div_Challenges .a_RedButton {
+.main__div .a_RedButton {
   display: none;
 }
 @media screen and (min-width: 1280px) {
-  .div_Challenges .a_RedButton {
+  .main__div .a_RedButton {
     display: block;
     grid-column: 2;
     justify-self: end;
@@ -130,52 +130,52 @@ body {
     margin-right: 0.5rem;
   }
 }
-.div_Challenges .a_BlueButton {
+.main__div .a_BlueButton {
   margin-top: 37px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (min-width: 1280px) {
-  .div_Challenges .a_BlueButton {
+  .main__div .a_BlueButton {
     margin: 0;
     margin-top: -33px;
     grid-column: 3;
     margin-left: 0.5rem;
   }
 }
-.div_Challenges .a_LinkOnline {
+.main__div .a_LinkOnline {
   margin-top: 37px;
   text-align: center;
 }
 @media screen and (min-width: 1280px) {
-  .div_Challenges .a_LinkOnline {
+  .main__div .a_LinkOnline {
     display: none;
   }
 }
 
-.div_Quot {
+.quot {
   padding-top: 60px;
   padding-bottom: 50px;
 }
 @media screen and (min-width: 1280px) {
-  .div_Quot {
+  .quot {
     display: flex;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
   }
 }
-.div_Quot .div_QuotOne {
+.quot .quot__div-first {
   display: grid;
   grid-template-columns: 15px auto auto 15px;
 }
-.div_Quot .div_QuotOne .img_Quot {
+.quot .quot__div-first .quot__div__img {
   grid-column: 2;
   width: 73.34px;
   height: 72px;
   justify-self: end;
 }
-.div_Quot .div_QuotOne .p_Quot {
+.quot .quot__div-first .quot__div__text {
   grid-column: 3;
   grid-row: 1;
   font-size: 1.5rem;
@@ -185,31 +185,31 @@ body {
   margin: 0;
   padding-left: 15px;
 }
-.div_Quot .div_QuotOne .small_Quot {
+.quot .quot__div-first .quot__div__person {
   display: block;
   font-size: 1.125rem;
   font-weight: 400;
   margin-top: 1rem;
 }
 @media screen and (min-width: 1280px) {
-  .div_Quot .div_QuotOne .small_Quot {
+  .quot .quot__div-first .quot__div__person {
     max-width: 284.29px;
   }
 }
-.div_Quot .div_QuotTwo {
+.quot .quot__div-second {
   display: none;
 }
 @media screen and (min-width: 1280px) {
-  .div_Quot .div_QuotTwo {
+  .quot .quot__div-second {
     display: grid;
     grid-template-columns: 15px auto auto 15px;
   }
-  .div_Quot .div_QuotTwo .img_Quot {
+  .quot .quot__div-second .quot__div__img {
     grid-column: 2;
     width: 73.34px;
     height: 72px;
   }
-  .div_Quot .div_QuotTwo .p_Quot {
+  .quot .quot__div-second .quot__div__text {
     grid-column: 3;
     grid-row: 1;
     margin-top: 0;
@@ -220,7 +220,7 @@ body {
     margin: 0;
     padding-left: 15px;
   }
-  .div_Quot .div_QuotTwo .small_Quot {
+  .quot .quot__div-second .quot__div__person {
     display: block;
     font-size: 1.125rem;
     font-weight: 400;
@@ -228,35 +228,35 @@ body {
   }
 }
 @media screen and (min-width: 1280px) and (min-width: 1280px) {
-  .div_Quot .div_QuotTwo .small_Quot {
+  .quot .quot__div-second .quot__div__person {
     max-width: 284.29px;
   }
 }
 
-.div_Booking .h_Booking {
+.book .book__titel {
   font-size: 2rem;
   font-weight: 400;
   padding: 15px;
   justify-self: center;
 }
 @media screen and (min-width: 1280px) {
-  .div_Booking .h_Booking {
+  .book .book__titel {
     margin-top: 40px;
     margin-bottom: 75px;
   }
 }
-.div_Booking .div_BookRooms {
+.book .book__div {
   display: flex;
   padding-bottom: 20px;
   overflow: auto;
 }
 @media screen and (min-width: 1280px) {
-  .div_Booking .div_BookRooms {
+  .book .book__div {
     justify-content: center;
     margin-right: 43px;
   }
 }
-.div_Booking .div_BookRooms .div_Book {
+.book .book__div .book__div__room {
   display: grid;
   grid-template-columns: 3;
   width: 363px;
@@ -265,7 +265,7 @@ body {
   border-radius: 8px;
   margin-left: 43px;
 }
-.div_Booking .div_BookRooms .div_Book .h_Book {
+.book .book__div .book__div__room .book__div__titel {
   grid-column: 1/4;
   grid-row: 2;
   font-size: 1.75rem;
@@ -274,34 +274,34 @@ body {
   margin-bottom: 0;
   margin-left: 17px;
 }
-.div_Booking .div_BookRooms .div_Book .img_Book {
+.book .book__div .book__div__room .book__div__img {
   height: 219px;
   width: 363px;
   border-radius: 8px 8px 0 0;
   grid-column: 1/4;
   grid-row: 1;
 }
-.div_Booking .div_BookRooms .div_Book .stars {
+.book .book__div .book__div__room .book__stars {
   grid-column: 1/3;
   grid-row: 3;
   margin-left: 17px;
 }
-.div_Booking .div_BookRooms .div_Book .stars .img_BookStarFilled {
+.book .book__div .book__div__room .book__stars .book__stars-filled {
   padding-right: 5px;
 }
-.div_Booking .div_BookRooms .div_Book .p_BookParticipant {
+.book .book__div .book__div__room .book__div__participants {
   grid-column: 3;
   grid-row: 3;
   margin: 0;
   margin-left: -20px;
 }
 @media screen and (min-width: 1280px) {
-  .div_Booking .div_BookRooms .div_Book .p_BookParticipant {
+  .book .book__div .book__div__room .book__div__participants {
     margin-right: 10px;
     justify-self: end;
   }
 }
-.div_Booking .div_BookRooms .div_Book .p_Book {
+.book .book__div .book__div__room .book__div__text {
   grid-column: 1/4;
   grid-row: 4;
   font-size: 1.125rem;
@@ -311,7 +311,7 @@ body {
   margin-left: 17px;
   margin-right: 17px;
 }
-.div_Booking .div_BookRooms .div_Book .a_RedButton {
+.book .book__div .book__div__room .a_RedButton {
   grid-column: 3;
   grid-row: 5;
   font-size: 1rem;
@@ -320,21 +320,21 @@ body {
   border-radius: 8px;
 }
 
-.div_ButtonBooking {
+.book_nav {
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 1280px) {
-  .div_ButtonBooking {
+  .book_nav {
     display: grid;
     grid-template-columns: auto auto auto auto;
   }
 }
-.div_ButtonBooking .a_RedButton {
+.book_nav .a_RedButton {
   display: none;
 }
 @media screen and (min-width: 1280px) {
-  .div_ButtonBooking .a_RedButton {
+  .book_nav .a_RedButton {
     display: block;
     grid-column: 2;
     justify-self: end;
@@ -343,43 +343,43 @@ body {
     margin-right: 0.5rem;
   }
 }
-.div_ButtonBooking .a_BlueButton {
+.book_nav .a_BlueButton {
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (min-width: 1280px) {
-  .div_ButtonBooking .a_BlueButton {
+  .book_nav .a_BlueButton {
     margin: 0;
     margin-top: 65px;
     grid-column: 3;
     margin-left: 0.5rem;
   }
 }
-.div_ButtonBooking .a_LinkOnline {
+.book_nav .a_LinkOnline {
   margin-top: 25px;
   margin-bottom: 33px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (min-width: 1280px) {
-  .div_ButtonBooking .a_LinkOnline {
+  .book_nav .a_LinkOnline {
     display: none;
   }
 }
 
-.div_FullStory {
+.story {
   background-color: #011827;
   min-height: 500px;
   color: #FFFFFF;
   text-align: center;
 }
 @media screen and (min-width: 1280px) {
-  .div_FullStory {
+  .story {
     max-height: 500px;
   }
 }
-.div_FullStory .p_FullStory {
+.story .story__text {
   max-width: 632px;
   font-size: 1.75rem;
   font-weight: 400;
@@ -391,12 +391,12 @@ body {
   margin-right: auto;
 }
 @media screen and (min-width: 1280px) {
-  .div_FullStory .p_FullStory {
+  .story .story__text {
     padding-top: 115px;
     padding-bottom: 15px;
   }
 }
-.div_FullStory .a_RedButton {
+.story .a_RedButton {
   background-color: transparent;
   color: #8ACFE5;
   border-color: #8ACFE5;
@@ -408,19 +408,19 @@ body {
   padding-right: 53px;
 }
 
-.div_BookOnSite {
+.booking {
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 1280px) {
-  .div_BookOnSite {
+  .booking {
     display: grid;
     grid-template-columns: 640px 640px;
     height: 460px;
     justify-self: center;
   }
 }
-.div_BookOnSite .h_BookOnSite {
+.booking .booking__titel {
   order: 1;
   font-size: 2rem;
   font-weight: 700;
@@ -428,25 +428,25 @@ body {
   margin-right: 17px;
 }
 @media screen and (min-width: 1280px) {
-  .div_BookOnSite .h_BookOnSite {
+  .booking .booking__titel {
     grid-column: 2;
     grid-row: 1;
   }
 }
-.div_BookOnSite .img_BookOnSite {
+.booking .booking__img {
   order: 0;
   height: 300px;
   object-fit: cover;
 }
 @media screen and (min-width: 1280px) {
-  .div_BookOnSite .img_BookOnSite {
+  .booking .booking__img {
     max-width: 100%;
     height: 460px;
     grid-column: 1;
     grid-row: span 3;
   }
 }
-.div_BookOnSite .p_BookOnSite {
+.booking .booking__text {
   order: 2;
   font-size: 1.5rem;
   font-weight: 400;
@@ -456,36 +456,36 @@ body {
   margin-bottom: 60px;
 }
 @media screen and (min-width: 1280px) {
-  .div_BookOnSite .p_BookOnSite {
+  .booking .booking__text {
     grid-column: 2;
     grid-row: 2;
   }
 }
-.div_BookOnSite .a_RedButton {
+.booking .a_RedButton {
   order: 3;
   margin-left: 17px;
   margin-bottom: 60px;
 }
 @media screen and (min-width: 1280px) {
-  .div_BookOnSite .a_RedButton {
+  .booking .a_RedButton {
     grid-column: 2;
     grid-row: 3;
   }
 }
 
-.div_SeeAll {
+.play {
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 1280px) {
-  .div_SeeAll {
+  .play {
     display: grid;
     grid-template-columns: 640px 640px;
     height: 460px;
     justify-self: center;
   }
 }
-.div_SeeAll .h_SeeAll {
+.play .play__titel {
   order: 1;
   font-size: 2rem;
   font-weight: 700;
@@ -493,25 +493,25 @@ body {
   margin-right: 17px;
 }
 @media screen and (min-width: 1280px) {
-  .div_SeeAll .h_SeeAll {
+  .play .play__titel {
     grid-column: 1;
     grid-row: 1;
   }
 }
-.div_SeeAll .img_SeeAll {
+.play .play_img {
   order: 0;
   height: 300px;
   object-fit: cover;
 }
 @media screen and (min-width: 1280px) {
-  .div_SeeAll .img_SeeAll {
+  .play .play_img {
     max-width: 100%;
     height: 460px;
     grid-column: 2;
     grid-row: span 3;
   }
 }
-.div_SeeAll .p_SeeAll {
+.play .play__text {
   order: 2;
   font-size: 1.5rem;
   font-weight: 400;
@@ -521,18 +521,18 @@ body {
   margin-bottom: 50px;
 }
 @media screen and (min-width: 1280px) {
-  .div_SeeAll .p_SeeAll {
+  .play .play__text {
     grid-column: 1;
     grid-row: 2;
   }
 }
-.div_SeeAll .a_RedButton {
+.play .a_RedButton {
   order: 3;
   margin-left: 17px;
   margin-bottom: 100px;
 }
 @media screen and (min-width: 1280px) {
-  .div_SeeAll .a_RedButton {
+  .play .a_RedButton {
     grid-column: 1;
     grid-row: 3;
   }
@@ -566,11 +566,11 @@ footer a {
     grid-template-rows: max-content;
   }
 }
-footer .div_About {
+footer .about {
   max-width: 740px;
 }
 @media screen and (min-width: 1280px) {
-  footer .div_About {
+  footer .about {
     max-width: 416px;
     grid-column: 1;
     grid-row: 1;
@@ -578,34 +578,34 @@ footer .div_About {
     margin-left: 85px;
   }
 }
-footer .nav_SiteMap {
+footer .sitemap {
   margin-top: 40px;
 }
-footer .nav_SiteMap .h_SiteMap {
+footer .sitemap .sitemap__titel {
   margin-bottom: -10px;
 }
 @media screen and (min-width: 1280px) {
-  footer .nav_SiteMap {
+  footer .sitemap {
     grid-column: 2;
     grid-row: 1;
     margin-top: 70px;
   }
 }
 @media screen and (min-width: 1280px) {
-  footer .nav_PlayList {
+  footer .playlist {
     grid-column: 2;
     grid-row: 2;
     margin-top: -50px;
   }
 }
-footer .nav_Contact {
+footer .contact {
   margin-top: 40px;
 }
-footer .nav_Contact .h_Contact {
+footer .contact .contact__titel {
   margin-bottom: -10px;
 }
 @media screen and (min-width: 1280px) {
-  footer .nav_Contact {
+  footer .contact {
     grid-column: 3;
     grid-row: 1;
     margin-top: 70px;
