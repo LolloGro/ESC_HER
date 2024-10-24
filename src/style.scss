@@ -42,26 +42,30 @@ body {
     margin-right: auto;
 }
 
-.button_Blue {
+.a_BlueButton {
     height: 66px;
     width: 308px;
     background-color: $color-light-blue;
-    border: none;
     border-radius: 4px;
     font-size: 1.5rem;
     font-weight: 700;
+    text-decoration: none;
     color: $color-dark-blue;
+    text-align: center;
+    place-content: center;
 }
 
-.button_Red {
+.a_RedButton {
     height: 66px;
     width: 308px;
     background-color: $color-red;
-    border: none;
     border-radius: 4px;
     font-size: 1.5rem;
     font-weight: 700;
+    text-decoration: none;
     color: $color-white;
+    text-align: center;
+    place-content: center;
 }
 
 .a_LinkOnline {
@@ -145,7 +149,7 @@ body {
         }
     }
 
-    .button_Red {
+    .a_RedButton {
         display: none;
 
         @include breakpoint($screen-medium) {
@@ -157,7 +161,7 @@ body {
         }
     }
 
-    .button_Blue {
+    .a_BlueButton {
         margin-top: 37px;
         margin-left: auto;
         margin-right: auto;
@@ -319,7 +323,8 @@ body {
                 grid-row: 3;
                 margin: 0;
                 margin-left: -20px;
-                @include breakpoint($screen-medium){
+
+                @include breakpoint($screen-medium) {
                     margin-right: 10px;
                     justify-self: end;
                 }
@@ -336,11 +341,10 @@ body {
                 margin-right: 17px;
             }
 
-            .button_Red {
+            .a_RedButton {
                 grid-column: 3;
                 grid-row: 5;
                 font-size: 1rem;
-                color: $color-white;
                 width: 179.28px;
                 height: 44px;
                 border-radius: 8px;
@@ -358,7 +362,7 @@ body {
         grid-template-columns: auto auto auto auto;
     }
 
-    .button_Red {
+    .a_RedButton {
         display: none;
 
         @include breakpoint($screen-medium) {
@@ -371,7 +375,7 @@ body {
         }
     }
 
-    .button_Blue {
+    .a_BlueButton {
         margin-top: 30px;
         margin-left: auto;
         margin-right: auto;
@@ -423,13 +427,16 @@ body {
         }
     }
 
-    .button_Red {
-        height: 66px;
+    .a_RedButton {
         background-color: transparent;
         color: $color-light-blue;
         border-color: $color-light-blue;
         border-style: solid;
         margin-bottom: 90px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 53px;
+        padding-right: 53px;
     }
 }
 
@@ -485,7 +492,7 @@ body {
         }
     }
 
-    .button_Red {
+    .a_RedButton {
         order: 3;
         margin-left: 17px;
         margin-bottom: 60px;
@@ -495,7 +502,6 @@ body {
             grid-row: 3;
         }
     }
-
 }
 
 .div_SeeAll {
@@ -550,7 +556,7 @@ body {
         }
     }
 
-    .button_Red {
+    .a_RedButton {
         order: 3;
         margin-left: 17px;
         margin-bottom: 100px;
@@ -628,9 +634,11 @@ footer {
 
     .nav_Contact {
         margin-top: 40px;
-        .h_Contact{
+
+        .h_Contact {
             margin-bottom: -10px;
         }
+
         @include breakpoint($screen-medium) {
             grid-column: 3;
             grid-row: 1;

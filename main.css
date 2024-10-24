@@ -12,26 +12,30 @@ body {
   margin-right: auto;
 }
 
-.button_Blue {
+.a_BlueButton {
   height: 66px;
   width: 308px;
   background-color: #8ACFE5;
-  border: none;
   border-radius: 4px;
   font-size: 1.5rem;
   font-weight: 700;
+  text-decoration: none;
   color: #011827;
+  text-align: center;
+  place-content: center;
 }
 
-.button_Red {
+.a_RedButton {
   height: 66px;
   width: 308px;
   background-color: #E3170A;
-  border: none;
   border-radius: 4px;
   font-size: 1.5rem;
   font-weight: 700;
+  text-decoration: none;
   color: #FFFFFF;
+  text-align: center;
+  place-content: center;
 }
 
 .a_LinkOnline {
@@ -114,11 +118,11 @@ body {
     width: 100%;
   }
 }
-.div_Challenges .button_Red {
+.div_Challenges .a_RedButton {
   display: none;
 }
 @media screen and (min-width: 1280px) {
-  .div_Challenges .button_Red {
+  .div_Challenges .a_RedButton {
     display: block;
     grid-column: 2;
     justify-self: end;
@@ -126,13 +130,13 @@ body {
     margin-right: 0.5rem;
   }
 }
-.div_Challenges .button_Blue {
+.div_Challenges .a_BlueButton {
   margin-top: 37px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (min-width: 1280px) {
-  .div_Challenges .button_Blue {
+  .div_Challenges .a_BlueButton {
     margin: 0;
     margin-top: -33px;
     grid-column: 3;
@@ -307,11 +311,10 @@ body {
   margin-left: 17px;
   margin-right: 17px;
 }
-.div_Booking .div_BookRooms .div_Book .button_Red {
+.div_Booking .div_BookRooms .div_Book .a_RedButton {
   grid-column: 3;
   grid-row: 5;
   font-size: 1rem;
-  color: #FFFFFF;
   width: 179.28px;
   height: 44px;
   border-radius: 8px;
@@ -327,11 +330,11 @@ body {
     grid-template-columns: auto auto auto auto;
   }
 }
-.div_ButtonBooking .button_Red {
+.div_ButtonBooking .a_RedButton {
   display: none;
 }
 @media screen and (min-width: 1280px) {
-  .div_ButtonBooking .button_Red {
+  .div_ButtonBooking .a_RedButton {
     display: block;
     grid-column: 2;
     justify-self: end;
@@ -340,13 +343,13 @@ body {
     margin-right: 0.5rem;
   }
 }
-.div_ButtonBooking .button_Blue {
+.div_ButtonBooking .a_BlueButton {
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (min-width: 1280px) {
-  .div_ButtonBooking .button_Blue {
+  .div_ButtonBooking .a_BlueButton {
     margin: 0;
     margin-top: 65px;
     grid-column: 3;
@@ -393,13 +396,16 @@ body {
     padding-bottom: 15px;
   }
 }
-.div_FullStory .button_Red {
-  height: 66px;
+.div_FullStory .a_RedButton {
   background-color: transparent;
   color: #8ACFE5;
   border-color: #8ACFE5;
   border-style: solid;
   margin-bottom: 90px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 53px;
+  padding-right: 53px;
 }
 
 .div_BookOnSite {
@@ -455,13 +461,13 @@ body {
     grid-row: 2;
   }
 }
-.div_BookOnSite .button_Red {
+.div_BookOnSite .a_RedButton {
   order: 3;
   margin-left: 17px;
   margin-bottom: 60px;
 }
 @media screen and (min-width: 1280px) {
-  .div_BookOnSite .button_Red {
+  .div_BookOnSite .a_RedButton {
     grid-column: 2;
     grid-row: 3;
   }
@@ -520,13 +526,13 @@ body {
     grid-row: 2;
   }
 }
-.div_SeeAll .button_Red {
+.div_SeeAll .a_RedButton {
   order: 3;
   margin-left: 17px;
   margin-bottom: 100px;
 }
 @media screen and (min-width: 1280px) {
-  .div_SeeAll .button_Red {
+  .div_SeeAll .a_RedButton {
     grid-column: 1;
     grid-row: 3;
   }
