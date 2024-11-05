@@ -46,12 +46,18 @@ body {
 
 .main {
   background-color: #011827;
-  display: flex;
-  height: 144px;
+  display: grid;
+  grid-template-columns: 150px auto auto;
+}
+@media screen and (min-width: 1280px) {
+  .main {
+    display: none;
+  }
 }
 .main .main__titel {
   font-size: 1.5rem;
   color: #FFFFFF;
+  grid-column: 2;
   width: 78px;
   height: 84px;
   margin-top: 25px;
@@ -69,8 +75,21 @@ body {
 .main .main__img {
   width: 128px;
   height: 82px;
+  grid-column: 1;
   margin-top: 26px;
   margin-left: 27px;
+}
+.main .main__open {
+  grid-column: 3;
+  justify-self: end;
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  padding: 20px;
+}
+@media screen and (min-width: 1280px) {
+  .main .main__open {
+    display: none;
+  }
 }
 
 .main__nav {
@@ -95,8 +114,54 @@ body {
     font-weight: 700;
     text-decoration: none;
   }
+  .main__nav .main__close {
+    display: none;
+  }
 }
 
+.main__nav--open {
+  animation-name: show;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  background-clip: padding-box;
+}
+.main__nav--open .main__ul {
+  list-style-type: none;
+  justify-items: center;
+  padding: 0;
+}
+.main__nav--open .main__li {
+  padding: 20px;
+}
+.main__nav--open .main__li__item {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+.main__nav--open .main__close {
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  padding: 20px;
+  display: flex;
+  justify-content: end;
+  text-decoration: none;
+}
+
+@keyframes show {
+  100% {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color: #011827;
+    position: fixed;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.5);
+    border-width: 20px;
+  }
+}
 .main__div {
   display: flex;
   flex-direction: column;
