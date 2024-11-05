@@ -49,11 +49,6 @@ body {
   display: grid;
   grid-template-columns: 150px auto auto;
 }
-@media screen and (min-width: 1280px) {
-  .main {
-    display: none;
-  }
-}
 .main .main__titel {
   font-size: 1.5rem;
   color: #FFFFFF;
