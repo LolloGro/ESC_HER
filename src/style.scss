@@ -150,7 +150,7 @@ body {
 
 .main__nav--open {
     animation-name: show;
-    animation-duration: 500ms;
+    animation-duration: 300ms;
     animation-fill-mode: forwards;
     background-clip: padding-box;
 
@@ -161,7 +161,7 @@ body {
     }
 
     .main__li {
-        padding: 20px;
+        padding: 30px;
     }
 
     .main__li__item {
