@@ -140,17 +140,19 @@ body {
             font-weight: 700;
             text-decoration: none;
         }
+        .main__li__item:hover{
+            color: #8ACFE5;
+        }
 
         .main__close {
             display: none;
         }
     }
-
 }
 
 .main__nav--open {
     animation-name: show;
-    animation-duration: 300ms;
+    animation-duration: 500ms;
     animation-fill-mode: forwards;
     background-clip: padding-box;
 
@@ -193,7 +195,7 @@ body {
         border-style: solid;
         border-color: rgba(255, 255, 255, 0.5);
         border-width: 20px;
-    }
+    } 
 }
 
 .main__div {

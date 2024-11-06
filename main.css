@@ -109,6 +109,9 @@ body {
     font-weight: 700;
     text-decoration: none;
   }
+  .main__nav .main__li__item:hover {
+    color: #8ACFE5;
+  }
   .main__nav .main__close {
     display: none;
   }
@@ -116,7 +119,7 @@ body {
 
 .main__nav--open {
   animation-name: show;
-  animation-duration: 300ms;
+  animation-duration: 500ms;
   animation-fill-mode: forwards;
   background-clip: padding-box;
 }
