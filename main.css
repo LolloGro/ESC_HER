@@ -97,7 +97,7 @@
 .filter .filter__alternative--open .filter__keyword .keyword__input {
   margin-top: 10px;
   margin-bottom: 20px;
-  font-size: 2rem;
+  padding: 5px;
   width: 320px;
   border-color: grey;
   outline-color: transparent;
