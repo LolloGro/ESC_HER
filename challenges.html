@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -9,11 +10,81 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src='main.js'></script>
-
+    <script defer src='filter.js'></script>
 </head>
+
 <body>
+    <header class="main">
+        <img class="main__img" src="/imgs/Logo.webp" alt="logotyp for ESC">
+        <h1 class="main__titel">Hacker Escape Rooms</h1>
+        <a class="main__open" href=""><i class="fa-solid fa-bars main__icon"></i></a>
+    </header>
+    <nav class="main__nav">
+        <a class="main__close" href="#"><i class="fa-solid fa-xmark"></i></a>
+        <ul class="main__ul">
+            <li class="main__li"><a class="main__li__item" href="">Play online</a></li>
+            <li class="main__li"><a class="main__li__item" href="">Play on-site</a></li>
+            <li class="main__li"><a class="main__li__item" href="">The story</a></li>
+            <li class="main__li"><a class="main__li__item" href="">Contact us</a></li>
+        </ul>
+    </nav>
 
-
+    <div class="filter">
+        <div class="filter__menu">
+            <h2 class="filter__header">Our challenges</h2>
+            <button class="filter__button" type="button">Filter challenges</button>
+        </div>
+        <div class="filter__alternative">
+            <p class="alternative__text">Filter challenges</p>
+            <i class="alternative__close fa-solid fa-xmark"></i>
+            <div class="filter__type">
+                <p class="type__text">By type</p>
+                <input class="type__online" type="checkbox" name="online">
+                <label class="type__label" for="online"> Include online challenges</label>
+                <br>
+                <input class="type__onSite" type="checkbox" name="on-site">
+                <label class="type__label" for="on-site"> Include on-site challenges</label>
+            </div>
+            <div class="filter__rating">
+                <p class="rating__text">By rating</p>
+                <div class="filter__stars">
+                    <div class="rating__to">
+                        <i class="rating__star from fa-solid fa-star"></i>
+                        <i class="rating__star from fa-solid fa-star"></i>
+                        <i class="rating__star from fa-solid fa-star"></i>
+                        <i class="rating__star from fa-solid fa-star"></i>
+                        <i class="rating__star from fa-solid fa-star"></i>
+                    </div>
+                    <p class="star__text">to</p>
+                    <div class="rating__from">
+                        <i class="rating__star to fa-solid fa-star"></i>
+                        <i class="rating__star to fa-solid fa-star"></i>
+                        <i class="rating__star to fa-solid fa-star"></i>
+                        <i class="rating__star to fa-solid fa-star"></i>
+                        <i class="rating__star to fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="filter__tags">
+                <p class="tags__text">By tags</p>
+                <span class="tags__label">Web</span>
+                <span class="tags__label">Linux</span>
+                <span class="tags__label">Cryptography</span>
+                <span class="tags__label">Coding</span>
+                <span class="tags__label">Somte other tag</span>
+                <span class="tags__label">A final tag</span>
+            </div>
+            <div class="filter__keyword">
+                <label class="keyword__text" for="keyword"> Or type to search for keyword</label>
+                <br>
+                <input class="keyword__input" placeholder="Start typing to filter" type="text" name="keyword">
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
