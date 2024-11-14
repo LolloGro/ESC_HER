@@ -29,4 +29,148 @@ async function setHomePageCards(){
     data.challenges.forEach(challenge => {
         console.log(challenge.rating);
     });
+    const bookDiv=document.querySelector(".book__div");
+
+    setCardInfo(0, data.challenges, bookDiv);
+    setCardInfo(1, data.challenges, bookDiv);
+    setCardInfo(2, data.challenges, bookDiv);
+    
+}
+
+function setCardInfo(i, list, div){
+    const bookDivRoom = document.createElement("div");
+    div.appendChild(bookDivRoom);
+    bookDivRoom.classList.add("book__div__room");
+
+    console.log(list[i].title);
+    const bookDivImg=document.createElement("img");
+    bookDivRoom.appendChild(bookDivImg);
+    bookDivImg.classList.add("book__div__img");
+    bookDivImg.src=list[i].image;
+
+    const bookDivTitel=document.createElement("h2");
+    bookDivRoom.appendChild(bookDivTitel);
+    bookDivTitel.classList.add("book__div__titel");
+    bookDivTitel.innerHTML=list[i].title +" (" + list[i].type + ")";
+    
+    const bookDivParticipants=document.createElement("p");
+    bookDivRoom.appendChild(bookDivParticipants);
+    bookDivParticipants.classList.add("book__div__participants");
+    bookDivParticipants.innerHTML=list[i].minParticipants + "-" + list[i].maxParticipants + " participants";
+    
+    const bookStars = document.createElement("div");
+    bookDivRoom.appendChild(bookStars);
+    bookStars.classList.add("book__stars");
+
+    const bookStarOne=document.createElement("i");
+    bookStars.appendChild(bookStarOne);
+    bookStarOne.style.color="#E3170A";
+
+    const bookStarTwo=document.createElement("i");
+    bookStars.appendChild(bookStarTwo);
+    bookStarTwo.style.color="#E3170A";
+
+    const bookStarThree=document.createElement("i");
+    bookStars.appendChild(bookStarThree);
+    bookStarThree.style.color="#E3170A";
+
+    const bookStarFour=document.createElement("i");
+    bookStars.appendChild(bookStarFour);
+    bookStarFour.style.color="#E3170A";
+
+    const bookStarFive=document.createElement("i");
+    bookStars.appendChild(bookStarFive);
+    bookStarFive.style.color="#E3170A";
+
+    switch(list[i].rating){
+        case 5:
+            bookStarOne.className="fa fa-star";
+            bookStarTwo.className="fa fa-star";
+            bookStarThree.className="fa fa-star";
+            bookStarFour.className="fa fa-star";
+            bookStarFive.className="fa fa-star";
+        case 4.5:
+            bookStarOne.className="fa fa-star";
+            bookStarTwo.className="fa fa-star";
+            bookStarThree.className="fa fa-star";
+            bookStarFour.className="fa fa-star";
+            bookStarFive.className="fa-solid fa-star-half-stroke";
+            break;
+        case 4:
+            bookStarOne.className="fa fa-star";
+            bookStarTwo.className="fa fa-star";
+            bookStarThree.className="fa fa-star";
+            bookStarFour.className="fa fa-star";
+            bookStarFive.className="fa-regular fa-star";
+            break;
+        case 3.5:
+            bookStarOne.className="fa fa-star";
+            bookStarTwo.className="fa fa-star";
+            bookStarThree.className="fa fa-star";
+            bookStarFour.className="fa fa-star-half";
+            bookStarFive.className="fa-regular fa-star";
+            break;
+        case 3:
+            bookStarOne.className="fa fa-star";
+            bookStarTwo.className="fa fa-star";
+            bookStarThree.className="fa fa-star";
+            bookStarFour.className="fa-regular fa-star";
+            bookStarFive.className="fa-regular fa-star";
+            break;
+        case 2.5:
+            bookStarOne.className="fa fa-star";
+            bookStarTwo.className="fa fa-star";
+            bookStarThree.className="fa fa-star-half";
+            bookStarFour.className="fa-regular fa-star";
+            bookStarFive.className="fa-regular fa-star";
+            break;
+        case 2:
+            bookStarOne.className="fa fa-star";
+            bookStarTwo.className="fa fa-star";
+            bookStarThree.className="fa-regular fa-star";
+            bookStarFour.className="fa-regular fa-star";
+            bookStarFive.className="fa-regular fa-star";
+            break;
+        case 1.5:
+            bookStarOne.className="fa fa-star";
+            bookStarTwo.className="fa fa-star-half";
+            bookStarThree.className="fa-regular fa-star";
+            bookStarFour.className="fa-regular fa-star";
+            bookStarFive.className="fa-regular fa-star";
+            break;
+        case 1:
+            bookStarOne.className="fa fa-star";
+            bookStarTwo.className="fa-regularfa-star";
+            bookStarThree.className="fa-regular fa-star";
+            bookStarFour.className="fa-regular fa-star";
+            bookStarFive.className="fa-regular fa-star";
+            break;
+        case 0.5:
+            bookStarOne.className="fa fa-star-half";
+            bookStarTwo.className="fa-regular fa-star";
+            bookStarThree.className="fa-regular fa-star";
+            bookStarFour.className="fa-regular fa-star";
+            bookStarFive.className="fa-regular fa-star";
+            break;
+        case 0:
+            bookStarOne.className="fa-regular fa-star";
+            bookStarTwo.className="fa-regular fa-star";
+            bookStarThree.className="fa-regular fa-star";
+            bookStarFour.className="fa-regular fa-star";
+            bookStarFive.className="fa-regular fa-star";
+            break;
+    }
+    const bookDivText=document.createElement("p");
+    bookDivRoom.appendChild(bookDivText);
+    bookDivText.classList.add("book__div__text");
+    bookDivText.innerHTML=list[i].description;
+
+    const redLink=document.createElement("a");
+    bookDivRoom.appendChild(redLink);
+    redLink.classList.add("red__link");
+    if(list[i].type =="online"){
+         redLink.innerHTML="Take challenge online";
+    }else{
+        redLink.innerHTML="Book room";
+    }
 }
