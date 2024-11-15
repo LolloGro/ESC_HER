@@ -18,11 +18,9 @@ const starFrom = document.querySelectorAll(".star__from");
 
 starFrom.forEach((star, index) => {
     star.addEventListener("click", () => {
-        console.log("index", index);
         starFrom.forEach((star, secondIndex) => {
             if (index == 0){
                 const log = star.getAttribute("class");
-                console.log(log); 
                 if(log == "rating__star star__from fa-solid fa-star rating__star--filled"){
                     star.classList.remove("rating__star--filled");
                 }else if (index >= secondIndex){
@@ -42,7 +40,6 @@ const starTo = document.querySelectorAll(".star__to");
 
 starTo.forEach((stars, place) => {
     stars.addEventListener("click", () => {
-        console.log(place); 
         starTo.forEach((stars, secondPlace) => {
             if(place == 0){
                 const check = stars.getAttribute("class");
@@ -61,4 +58,37 @@ starTo.forEach((stars, place) => {
         });
     });
 }); 
+
+const taged = document.querySelectorAll(".tags__label"); 
+console.log(taged);
+
+taged.forEach((tags, index) =>{
+    tags.addEventListener("click", () => {
+        console.log(index); 
+        if(index == 0){ 
+            tags.classList.toggle("tags__label--clicked");
+        }
+        if(index == 1){
+            tags.classList.toggle("tags__label--clicked");
+        }
+        if(index == 2){
+            tags.classList.toggle("tags__label--clicked");
+        }
+        if(index == 3){
+            tags.classList.toggle("tags__label--clicked");
+        }
+        if(index == 4){
+            tags.classList.toggle("tags__label--clicked");
+        }
+        if(index == 5){
+            tags.classList.toggle("tags__label--clicked");
+        }
+    });
+});
+
+document.querySelector(".type__online").addEventListener("click", ()=>{console.log("online")}); 
+
+document.querySelector(".type__onSite").addEventListener("click", ()=>{console.log("onsite")}); 
+
+document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key")}); 
 

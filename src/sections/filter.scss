@@ -15,6 +15,7 @@ $color-medium-grey: grey;
 
         .filter__button {
             font-size: 1.125rem;
+            border-radius: 5px;
             padding: 10px;
             background-color: transparent;
             color: $color-lilac;
@@ -98,9 +99,17 @@ $color-medium-grey: grey;
                 color: $color-medium-grey;
                 border-color: $color-light-grey;
                 border-style: solid;
-                border-width: 1px;
-                border-radius: 8px;
+                border-width: 2px;
+                border-radius: 10px;
                 margin: 3px;
+                padding: 4px;
+                font-size: 0.75rem;
+                font-weight: 700;
+            }
+            .tags__label--clicked{
+                color: white;
+                background-color: $color-medium-grey;
+                border-color: $color-medium-grey;
             }
         }
 
@@ -116,10 +125,14 @@ $color-medium-grey: grey;
             .keyword__input {
                 margin-top: 10px;
                 margin-bottom: 20px;
-                padding: 5px;
+                padding: 8px;
                 width: 320px;
-                border-color: $color-medium-grey;
-                outline-color: transparent;
+                border-color: $color-light-grey;
+                border-radius: 5px;
+                font-size: 0.75rem;
+                font-weight: 700;
+                color: $color-light-grey; 
+                font-family: roboto;    
             }
         }
     }
