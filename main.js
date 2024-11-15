@@ -24,17 +24,11 @@ async function getAPI(){
 async function setHomePageCards(){
     const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
     const data = await response.json();
-   
     data.challenges.sort((a,b) =>b.rating - a.rating);
-    data.challenges.forEach(challenge => {
-        console.log(challenge.rating);
-    });
     const bookDiv=document.querySelector(".book__div");
-
     setCardInfo(0, data.challenges, bookDiv);
     setCardInfo(1, data.challenges, bookDiv);
     setCardInfo(2, data.challenges, bookDiv);
-    
 }
 
 function setCardInfo(i, list, div){
@@ -42,7 +36,6 @@ function setCardInfo(i, list, div){
     div.appendChild(bookDivRoom);
     bookDivRoom.classList.add("book__div__room");
 
-    console.log(list[i].title);
     const bookDivImg=document.createElement("img");
     bookDivRoom.appendChild(bookDivImg);
     bookDivImg.classList.add("book__div__img");
@@ -94,7 +87,7 @@ function setCardInfo(i, list, div){
             bookStarTwo.className="fa fa-star";
             bookStarThree.className="fa fa-star";
             bookStarFour.className="fa fa-star";
-            bookStarFive.className="fa-solid fa-star-half-stroke";
+            bookStarFive.className="fa fa-star-half-stroke";
             break;
         case 4:
             bookStarOne.className="fa fa-star";
@@ -107,7 +100,7 @@ function setCardInfo(i, list, div){
             bookStarOne.className="fa fa-star";
             bookStarTwo.className="fa fa-star";
             bookStarThree.className="fa fa-star";
-            bookStarFour.className="fa fa-star-half";
+            bookStarFour.className="fa fa-star-half-stroke"; // FIX THE HALF STARS
             bookStarFive.className="fa-regular fa-star";
             break;
         case 3:
@@ -120,7 +113,7 @@ function setCardInfo(i, list, div){
         case 2.5:
             bookStarOne.className="fa fa-star";
             bookStarTwo.className="fa fa-star";
-            bookStarThree.className="fa fa-star-half";
+            bookStarThree.className="fa fa-star-half-stroke";
             bookStarFour.className="fa-regular fa-star";
             bookStarFive.className="fa-regular fa-star";
             break;
@@ -133,7 +126,7 @@ function setCardInfo(i, list, div){
             break;
         case 1.5:
             bookStarOne.className="fa fa-star";
-            bookStarTwo.className="fa fa-star-half";
+            bookStarTwo.className="fa fa-star-half-stroke";
             bookStarThree.className="fa-regular fa-star";
             bookStarFour.className="fa-regular fa-star";
             bookStarFive.className="fa-regular fa-star";
@@ -146,7 +139,7 @@ function setCardInfo(i, list, div){
             bookStarFive.className="fa-regular fa-star";
             break;
         case 0.5:
-            bookStarOne.className="fa fa-star-half";
+            bookStarOne.className="fa fa-star-half-stroke";
             bookStarTwo.className="fa-regular fa-star";
             bookStarThree.className="fa-regular fa-star";
             bookStarFour.className="fa-regular fa-star";
