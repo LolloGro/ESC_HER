@@ -11,10 +11,10 @@ async function createRooms(){
         roomContainer.appendChild(roomTile);
 
         const roomName = document.createElement("h2");
-        roomName.className = "dook__div__titel";
+        roomName.className = "book__div__titel";
         roomTile.appendChild(roomName);
         roomName.innerHTML = challenge.title + " (" + challenge.type + ")";
-
+        
         const img = document.createElement("img");
         img.className = "book__div__img";
         img.src = challenge.image;
