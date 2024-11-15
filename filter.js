@@ -18,8 +18,18 @@ const starFrom = document.querySelectorAll(".star__from");
 
 starFrom.forEach((star, index) => {
     star.addEventListener("click", () => {
+        console.log("index", index);
         starFrom.forEach((star, secondIndex) => {
-            if (index >= secondIndex) {
+            if (index == 0){
+                const log = star.getAttribute("class");
+                console.log(log); 
+                if(log == "rating__star star__from fa-solid fa-star rating__star--filled"){
+                    star.classList.remove("rating__star--filled");
+                }else if (index >= secondIndex){
+                    star.classList.add("rating__star--filled");
+                }
+            }
+            else if (index >= secondIndex) {
                 star.classList.add("rating__star--filled");
             } else {
                 star.classList.remove("rating__star--filled");
@@ -36,7 +46,6 @@ starTo.forEach((stars, place) => {
         starTo.forEach((stars, secondPlace) => {
             if(place == 0){
                 const check = stars.getAttribute("class");
-                console.log(check);
                 if(check == "rating__star star__to fa-solid fa-star rating__star--filled"){
                     stars.classList.remove("rating__star--filled"); 
                 }
