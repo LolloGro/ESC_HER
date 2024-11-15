@@ -1,61 +1,50 @@
-const mainLink = document.querySelector(".main__open");
-const menu = document.querySelector(".main__nav");
+createRooms();
 
-setHomePageCards();
-
-mainLink.addEventListener("click", (e) => {
-
-    e.preventDefault();
-    menu.setAttribute("class", "main__nav--open");
-    console.log("click");
-}); 
-
-const mainClose = document.querySelector(".main__close");
-
-mainClose.addEventListener("click", () => {
-    menu.setAttribute("class", "main__nav");
-}); 
-
-async function getAPI(){
+async function createRooms(){
     const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
     const data = await response.json();
+    const roomContainer = document.querySelector(".book__div")
 
-    data.challenges.forEach(console.log(data.challenges))
+    data.challenges.forEach((challenge) => {
+        const roomTile = document.createElement("div");
+        roomTile.className = "book__div__room";
+        roomContainer.appendChild(roomTile);
 
-}
+        const roomName = document.createElement("h2");
+        roomName.className = "dook__div__titel";
+        roomTile.appendChild(roomName);
+        roomName.innerHTML = challenge.title + " (" + challenge.type + ")";
 
-async function setHomePageCards(){
-    const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
-    const data = await response.json();
-    data.challenges.sort((a,b) =>b.rating - a.rating);
-    const bookDiv=document.querySelector(".book__div");
-    setCardInfo(0, data.challenges, bookDiv);
-    setCardInfo(1, data.challenges, bookDiv);
-    setCardInfo(2, data.challenges, bookDiv);
-}
+        const img = document.createElement("img");
+        img.className = "book__div__img";
+        img.src = challenge.image;
+        roomTile.appendChild(img);
 
-function setCardInfo(i, list, div){
-    const bookDivRoom = document.createElement("div");
-    div.appendChild(bookDivRoom);
-    bookDivRoom.classList.add("book__div__room");
+        const participants = document.createElement("p");
+        participants.className = "book__div__participants"
+        participants.innerHTML = challenge.minParticipants + "-" + challenge.maxParticipants + " participants"
+        roomTile.appendChild(participants);
 
-    const bookDivImg=document.createElement("img");
-    bookDivRoom.appendChild(bookDivImg);
-    bookDivImg.classList.add("book__div__img");
-    bookDivImg.src=list[i].image;
+        const description = document.createElement("p");
+        description.className = "book__div__text";
+        description.innerHTML = challenge.description;
+        roomTile.appendChild(description);
 
-    const bookDivTitel=document.createElement("h2");
-    bookDivRoom.appendChild(bookDivTitel);
-    bookDivTitel.classList.add("book__div__titel");
-    bookDivTitel.innerHTML=list[i].title +" (" + list[i].type + ")";
-    
-    const bookDivParticipants=document.createElement("p");
-    bookDivRoom.appendChild(bookDivParticipants);
-    bookDivParticipants.classList.add("book__div__participants");
-    bookDivParticipants.innerHTML=list[i].minParticipants + "-" + list[i].maxParticipants + " participants";
-    
+        const bookBtn = document.createElement("a");
+        bookBtn.className = "red__link"
+        roomTile.appendChild(bookBtn);
+        bookBtn.style.marginRight= "10px";
+
+        if (challenge.type == "online"){
+            bookBtn.innerHTML = "Take challenge online"
+        } 
+        else 
+        {
+            bookBtn.innerHTML = "Book this room"
+        }
+        
     const bookStars = document.createElement("div");
-    bookDivRoom.appendChild(bookStars);
+    roomTile.appendChild(bookStars);
     bookStars.classList.add("book__stars");
 
     const bookStarOne=document.createElement("i");
@@ -78,7 +67,7 @@ function setCardInfo(i, list, div){
     bookStars.appendChild(bookStarFive);
     bookStarFive.style.color="#E3170A";
 
-    switch(list[i].rating){
+    switch(challenge.rating){
         case 5:
             bookStarOne.className="fa fa-star";
             bookStarTwo.className="fa fa-star";
@@ -103,7 +92,7 @@ function setCardInfo(i, list, div){
             bookStarOne.className="fa fa-star";
             bookStarTwo.className="fa fa-star";
             bookStarThree.className="fa fa-star";
-            bookStarFour.className="fa fa-star-half-stroke"; // FIX THE HALF STARS
+            bookStarFour.className="fa fa-star-half-stroke";
             bookStarFive.className="fa-regular fa-star";
             break;
         case 3:
@@ -156,17 +145,5 @@ function setCardInfo(i, list, div){
             bookStarFive.className="fa-regular fa-star";
             break;
     }
-    const bookDivText=document.createElement("p");
-    bookDivRoom.appendChild(bookDivText);
-    bookDivText.classList.add("book__div__text");
-    bookDivText.innerHTML=list[i].description;
-
-    const redLink=document.createElement("a");
-    bookDivRoom.appendChild(redLink);
-    redLink.classList.add("red__link");
-    if(list[i].type =="online"){
-         redLink.innerHTML="Take challenge online";
-    }else{
-        redLink.innerHTML="Book room";
-    }
+    });
 }

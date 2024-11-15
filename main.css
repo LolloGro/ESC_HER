@@ -325,6 +325,15 @@ body {
   .book .book__div {
     justify-content: center;
     margin-right: 43px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1280px){
+  .book__div__room{
+   margin-bottom: 15px;
+   margin-top: 15px; 
   }
 }
 .book .book__div .book__div__room {
