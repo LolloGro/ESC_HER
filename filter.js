@@ -15,10 +15,12 @@ openButton.addEventListener("click", () => {
 });
 
 const starFrom = document.querySelectorAll(".star__from");
+let starFromValue = 0;
 
 starFrom.forEach((star, index) => {
     star.addEventListener("click", () => {
         console.log("index", index);
+        starFromValue = index;
         starFrom.forEach((star, secondIndex) => {
             if (index == 0){
                 const log = star.getAttribute("class");
@@ -34,15 +36,17 @@ starFrom.forEach((star, index) => {
             } else {
                 star.classList.remove("rating__star--filled");
             }
-        });
+        });         
     });
 });
 
 const starTo = document.querySelectorAll(".star__to");
+let starToValue = 0;
 
 starTo.forEach((stars, place) => {
     stars.addEventListener("click", () => {
-        console.log(place); 
+        console.log(place);
+        starToValue = place; 
         starTo.forEach((stars, secondPlace) => {
             if(place == 0){
                 const check = stars.getAttribute("class");
