@@ -1,5 +1,6 @@
 const closeButton = document.querySelector(".alternative__close");
 const filterMenu = document.querySelector(".filter__alternative");
+import { createRooms } from "./challenges.js";
 
 closeButton.addEventListener("click", () => {
     filterMenu.setAttribute("class", "close");
@@ -15,7 +16,7 @@ openButton.addEventListener("click", () => {
 });
 
 const starFrom = document.querySelectorAll(".star__from");
-let starFromValue = 0;
+export let starFromValue = 0;
 
 starFrom.forEach((star, index) => {
     star.addEventListener("click", () => {
@@ -35,12 +36,13 @@ starFrom.forEach((star, index) => {
             } else {
                 star.classList.remove("rating__star--filled");
             }
-        });         
+        });
+        createRooms();         
     });
 });
 
 const starTo = document.querySelectorAll(".star__to");
-let starToValue = 0;
+export let starToValue = 0;
 
 starTo.forEach((stars, place) => {
     stars.addEventListener("click", () => {
@@ -62,6 +64,7 @@ starTo.forEach((stars, place) => {
                 stars.classList.remove("rating__star--filled");
             }
         });
+        createRooms();
     });
 }); 
 

@@ -1,4 +1,5 @@
 
+import { starFromValue, starToValue } from "./filter.js";
 createChallengesList();
 createRooms();
 
@@ -14,11 +15,27 @@ async function createChallengesList(){
 
 }
 
-async function createRooms(){
+export async function createRooms(){
     const roomContainer = document.querySelector(".book__div")
     await createChallengesList();
 
-    challengesList.forEach((challenge) => {
+    const filteredChallenges = challengesList
+    .filter((challenge) => {
+        if (starFromValue === 0 && starToValue === 0){
+            return true;
+        }
+        return challenge.rating >= (starFromValue + 1) && challenge.rating <= (starToValue + 1);
+    })
+    .sort((a, b)=> {
+        if (starFromValue !== 0 || starToValue !== 0){
+            return a.rating - b.rating;
+        }
+        return 0;
+    });
+
+    roomContainer.innerHTML = "";
+
+    filteredChallenges.forEach((challenge) => {
         const roomTile = document.createElement("div");
         roomTile.className = "book__div__room";
         roomContainer.appendChild(roomTile);
@@ -87,6 +104,7 @@ async function createRooms(){
             bookStarThree.className="fa fa-star";
             bookStarFour.className="fa fa-star";
             bookStarFive.className="fa fa-star";
+            break;
         case 4.5:
             bookStarOne.className="fa fa-star";
             bookStarTwo.className="fa fa-star";
@@ -160,3 +178,6 @@ async function createRooms(){
     }
     });
 }
+
+//filter by stars using staFromValue and starToValue:
+
