@@ -19,11 +19,11 @@ const starFrom = document.querySelectorAll(".star__from");
 starFrom.forEach((star, index) => {
     star.addEventListener("click", () => {
         starFrom.forEach((star, secondIndex) => {
-            if (index == 0){
+            if (index == 0) {
                 const log = star.getAttribute("class");
-                if(log == "rating__star star__from fa-solid fa-star rating__star--filled"){
+                if (log == "rating__star star__from fa-solid fa-star rating__star--filled") {
                     star.classList.remove("rating__star--filled");
-                }else if (index >= secondIndex){
+                } else if (index >= secondIndex) {
                     star.classList.add("rating__star--filled");
                 }
             }
@@ -41,54 +41,70 @@ const starTo = document.querySelectorAll(".star__to");
 starTo.forEach((stars, place) => {
     stars.addEventListener("click", () => {
         starTo.forEach((stars, secondPlace) => {
-            if(place == 0){
+            if (place == 0) {
                 const check = stars.getAttribute("class");
-                if(check == "rating__star star__to fa-solid fa-star rating__star--filled"){
-                    stars.classList.remove("rating__star--filled"); 
+                if (check == "rating__star star__to fa-solid fa-star rating__star--filled") {
+                    stars.classList.remove("rating__star--filled");
                 }
-                else if(place >= secondPlace){
+                else if (place >= secondPlace) {
                     stars.classList.add("rating__star--filled");
                 }
             }
-            else if(place >= secondPlace){
+            else if (place >= secondPlace) {
                 stars.classList.add("rating__star--filled");
-            }else{
+            } else {
                 stars.classList.remove("rating__star--filled");
             }
         });
     });
-}); 
+});
 
-const taged = document.querySelectorAll(".tags__label"); 
+const taged = document.querySelectorAll(".tags__label");
 console.log(taged);
 
-taged.forEach((tags, index) =>{
+taged.forEach((tags, index) => {
     tags.addEventListener("click", () => {
-        console.log(index); 
-        if(index == 0){ 
+        console.log("index", index);
+        const filterTaged = [];
+        console.log("filterd", filterTaged); 
+        if (index == 0) {
+            tags.classList.toggle("tags__label--clicked");
+            const vad = tags.getAttribute("class");
+            if (vad == "tags__label tags__label--clicked") {
+                filterTaged.push("bash");
+            } else {
+                const i = filterTaged.indexOf("bash");
+                return filterTaged.splice(i, 1);
+            }
+        }
+        else if (index == 1) {
+            tags.classList.toggle("tags__label--clicked");
+            if (tags.getAttribute("class") == "tags__label tags__label--clicked") {
+                filterTaged.push("coding");
+            } else {
+                const i = filterTaged.indexOf("coding");
+                return filterTaged.splice(i, 1);
+            }
+        }
+        else if (index == 2) {
             tags.classList.toggle("tags__label--clicked");
         }
-        if(index == 1){
+        else if (index == 3) {
             tags.classList.toggle("tags__label--clicked");
         }
-        if(index == 2){
+        else if (index == 4) {
             tags.classList.toggle("tags__label--clicked");
         }
-        if(index == 3){
+        else if (index == 5) {
             tags.classList.toggle("tags__label--clicked");
         }
-        if(index == 4){
-            tags.classList.toggle("tags__label--clicked");
-        }
-        if(index == 5){
-            tags.classList.toggle("tags__label--clicked");
-        }
+        return filterTaged;
     });
 });
 
-document.querySelector(".type__online").addEventListener("click", ()=>{console.log("online")}); 
 
-document.querySelector(".type__onSite").addEventListener("click", ()=>{console.log("onsite")}); 
+document.querySelector(".type__online").addEventListener("click", () => { console.log("online") });
 
-document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key")}); 
+document.querySelector(".type__onSite").addEventListener("click", () => { console.log("onsite") });
 
+document.querySelector(".keyword__input").addEventListener("keyup", () => { console.log("key") });
