@@ -1,11 +1,24 @@
+
+createChallengesList();
 createRooms();
 
-async function createRooms(){
+const challengesList = [];
+async function createChallengesList(){
     const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
     const data = await response.json();
-    const roomContainer = document.querySelector(".book__div")
+    challengesList.length = 0;    
 
     data.challenges.forEach((challenge) => {
+        challengesList.push(challenge);
+    });
+
+}
+
+async function createRooms(){
+    const roomContainer = document.querySelector(".book__div")
+    await createChallengesList();
+
+    challengesList.forEach((challenge) => {
         const roomTile = document.createElement("div");
         roomTile.className = "book__div__room";
         roomContainer.appendChild(roomTile);
