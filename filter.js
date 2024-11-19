@@ -1,3 +1,17 @@
+createChallengesList();
+const challengesList = []; 
+
+async function createChallengesList(){
+    const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
+    const data = await response.json();
+    challengesList.length = 0;    
+
+    data.challenges.forEach((challenge) => {
+        challengesList.push(challenge);
+    });
+
+}
+
 const closeButton = document.querySelector(".alternative__close");
 const filterMenu = document.querySelector(".filter__alternative");
 
@@ -65,8 +79,6 @@ const filterTaged = [];
 
 for (let i = 0; i < taged.length; i++) {
     taged[i].addEventListener("click", () => {
-        
-        console.log("array", filterTaged); 
         const checkLabel = taged[i].getAttribute("class");
         const controllLabel = "tags__label";
         const newLabel = "tags__label--clicked";
@@ -163,7 +175,10 @@ for (let i = 0; i < taged.length; i++) {
                 filterTaged.splice(j, 1);
                 }
         }
-    });   
+
+        const OKO = challengesList.filter(n => n.labels.some(m => filterTaged.includes(m)));
+        console.log(OKO); 
+    });  
 }
 
 document.querySelector(".type__online").addEventListener("click", () => { console.log("online") });
@@ -171,4 +186,3 @@ document.querySelector(".type__online").addEventListener("click", () => { consol
 document.querySelector(".type__onSite").addEventListener("click", () => { console.log("onsite") });
 
 document.querySelector(".keyword__input").addEventListener("keyup", () => { console.log("key") });
-
