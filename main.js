@@ -103,7 +103,7 @@ function setCardInfo(i, list, div){
             bookStarOne.className="fa fa-star";
             bookStarTwo.className="fa fa-star";
             bookStarThree.className="fa fa-star";
-            bookStarFour.className="fa fa-star-half-stroke"; // FIX THE HALF STARS
+            bookStarFour.className="fa fa-star-half-stroke";
             bookStarFive.className="fa-regular fa-star";
             break;
         case 3:
@@ -136,7 +136,7 @@ function setCardInfo(i, list, div){
             break;
         case 1:
             bookStarOne.className="fa fa-star";
-            bookStarTwo.className="fa-regularfa-star";
+            bookStarTwo.className="fa-regular fa-star";
             bookStarThree.className="fa-regular fa-star";
             bookStarFour.className="fa-regular fa-star";
             bookStarFive.className="fa-regular fa-star";

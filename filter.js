@@ -90,5 +90,18 @@ document.querySelector(".type__online").addEventListener("click", ()=>{console.l
 
 document.querySelector(".type__onSite").addEventListener("click", ()=>{console.log("onsite")}); 
 
-document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key")}); 
+document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key"); filterText()}); 
 
+async function filterText(){
+    await createChallengesList();
+    const input = document.querySelector(".keyword__input");
+    const text = input.value;
+    console.log(text);
+    const filteredChallenges=[];
+    challengesList.forEach(challenge => {
+        if(challenge.title.includes(text) || challenge.description.includes(text)){
+            filteredChallenges.push(challenge);
+        }
+    });
+    console.log(filteredChallenges);
+}
