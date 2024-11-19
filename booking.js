@@ -1,38 +1,25 @@
-const apiDate = "https://lernia-sjj-assignments.vercel.app//api/booking/available-date=2022-12-12&challenge=3" 
-async function availableDate(){
-    const res = await fetch(apiDate)
-    const data = await res.json();
-    printData(data)
-}
 
-function printData(){
-
-}
------------------------------------
-
-const openModalBtn = document.createElement('button');
-openModalBtn.textContent = 'Check Available Dates';
+const openModalBtn = document.createElement('button');// Change later to the red book btn
 document.body.appendChild(openModalBtn);
 
 const modal = document.createElement('div');
-modal.id = 'modal';
-document.body.appendChild(modal);
+modal.classList = 'bookingModal';
+document.body.appendChild(bookingModal);
 
 const closeModalBtn = document.createElement('span');
 closeModalBtn.textContent = '×';
 closeModalBtn.id = 'closeModalBtn';
-modal.appendChild(closeModalBtn);
+bookingModal.appendChild(closeModalBtn);
 
 const modalTitle = document.createElement('h2');
 modalTitle.textContent = 'Available Dates';
-modal.appendChild(modalTitle);
+bookingModal.appendChild(modalTitle);
 
 const datesContainer = document.createElement('div');
 datesContainer.id = 'datesContainer';
-modal.appendChild(datesContainer);
+bookingModal.appendChild(datesContainer);
 
 openModalBtn.addEventListener('click', async () => {
-  datesContainer.innerHTML = 'Loading...';
 
   try {
     const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=2024-12-12&challenge=3');
