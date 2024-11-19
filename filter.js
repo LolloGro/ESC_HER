@@ -60,51 +60,115 @@ starTo.forEach((stars, place) => {
 });
 
 const taged = document.querySelectorAll(".tags__label");
-console.log(taged);
 
-taged.forEach((tags, index) => {
-    tags.addEventListener("click", () => {
-        console.log("index", index);
-        const filterTaged = [];
-        console.log("filterd", filterTaged); 
-        if (index == 0) {
-            tags.classList.toggle("tags__label--clicked");
-            const vad = tags.getAttribute("class");
-            if (vad == "tags__label tags__label--clicked") {
+const filterTaged = [];
+
+for (let i = 0; i < taged.length; i++) {
+    taged[i].addEventListener("click", () => {
+        
+        console.log("array", filterTaged); 
+        const checkLabel = taged[i].getAttribute("class");
+        const controllLabel = "tags__label";
+        const newLabel = "tags__label--clicked";
+
+        if (taged[i] == taged[0]) {
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
                 filterTaged.push("bash");
             } else {
-                const i = filterTaged.indexOf("bash");
-                return filterTaged.splice(i, 1);
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf("bash");
+                filterTaged.splice(j, 1);
             }
-        }
-        else if (index == 1) {
-            tags.classList.toggle("tags__label--clicked");
-            if (tags.getAttribute("class") == "tags__label tags__label--clicked") {
+        } else if (taged[i] == taged[1]) {
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
                 filterTaged.push("coding");
             } else {
-                const i = filterTaged.indexOf("coding");
-                return filterTaged.splice(i, 1);
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf("coding");
+                filterTaged.splice(j, 1);
             }
-        }
-        else if (index == 2) {
-            tags.classList.toggle("tags__label--clicked");
-        }
-        else if (index == 3) {
-            tags.classList.toggle("tags__label--clicked");
-        }
-        else if (index == 4) {
-            tags.classList.toggle("tags__label--clicked");
-        }
-        else if (index == 5) {
-            tags.classList.toggle("tags__label--clicked");
-        }
-        return filterTaged;
-    });
-});
+        } else if (taged[i] == taged[2]) {
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push("web");
+            } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf("web");
+                filterTaged.splice(j, 1);
+            }
+        }else if(taged[i] == taged[3]){ 
+            if (checkLabel == controllLabel) {
+            taged[i].classList.add(newLabel);
+            filterTaged.push("ssh");
+            } else {
+            taged[i].classList.remove(newLabel);
+            const j = filterTaged.indexOf("ssh");
+            filterTaged.splice(j, 1);
+            }
+        }else if(taged[i] == taged[4]){
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push("ctf");
+                } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf("ctf");
+                filterTaged.splice(j, 1);
+                }
+        }else if(taged[i] == taged[5]){
 
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push("javascript");
+                } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf("javascript");
+                filterTaged.splice(j, 1);
+                }
+        }else if(taged[i] == taged[6]){
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push("phreaking");
+                } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf("phreaking");
+                filterTaged.splice(j, 1);
+                }
+        }else if(taged[i] == taged[7]){
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push("electronics");
+                } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf("electronics");
+                filterTaged.splice(j, 1);
+                }
+        }else if( taged[i]== taged[8]){
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push("hacking");
+                } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf("hacking");
+                filterTaged.splice(j, 1);
+                }
+        }else if(taged[i] == taged[9]){
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push("linux");
+                } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf("linux");
+                filterTaged.splice(j, 1);
+                }
+        }
+    });   
+}
 
 document.querySelector(".type__online").addEventListener("click", () => { console.log("online") });
 
 document.querySelector(".type__onSite").addEventListener("click", () => { console.log("onsite") });
 
 document.querySelector(".keyword__input").addEventListener("keyup", () => { console.log("key") });
+
