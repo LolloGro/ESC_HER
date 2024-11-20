@@ -99,9 +99,9 @@ async function filterText(){
     console.log(text);
     const filteredChallenges=[];
     challengesList.forEach(challenge => {
-        if(challenge.title.includes(text) || challenge.description.includes(text)){
+        if(challenge.title.toLowerCase().includes(text.toLowerCase()) || challenge.description.toLowerCase().includes(text.toLowerCase())){
             filteredChallenges.push(challenge);
+            console.log(challenge.title+" - "+challenge.description);
         }
     });
-    console.log(filteredChallenges);
 }
