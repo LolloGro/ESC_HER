@@ -104,7 +104,23 @@ document.querySelector(".type__online").addEventListener("change", (event) => {
     }
 });
 
-document.querySelector(".type__onSite").addEventListener("click", ()=>{console.log("onsite")});
+document.querySelector(".type__onSite").addEventListener("change", (event) => {
+    const challenges = document.querySelectorAll(".challenge");
+
+    if (event.target.checked) {
+        challenges.forEach((challenge) => {
+            if (challenge.getAttribute("data-type") === "onsite") {
+                challenge.style.display = "grid"; 
+            } else {
+                challenge.style.display = "none"; 
+            }
+        });
+    } else {
+        challenges.forEach((challenge) => {
+            challenge.style.display = "grid"; 
+        });
+    }
+});
 
 
 
