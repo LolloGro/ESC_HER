@@ -86,9 +86,27 @@ taged.forEach((tags, index) =>{
     });
 });
 
-document.querySelector(".type__online").addEventListener("click", ()=>{console.log("online")}); 
+document.querySelector(".type__online").addEventListener("change", (event) => {
+    const challenges = document.querySelectorAll(".challenge"); 
 
-document.querySelector(".type__onSite").addEventListener("click", ()=>{console.log("onsite")}); 
+    if (event.target.checked) {
+        challenges.forEach((challenge) => {
+            if (challenge.getAttribute("data-type") === "online") {
+                challenge.style.display = "block"; 
+            } else {
+                challenge.style.display = "none"; 
+            }
+        });
+    } else {
+        challenges.forEach((challenge) => {
+            challenge.style.display = "block"; 
+        });
+    }
+});
+
+document.querySelector(".type__onSite").addEventListener("click", ()=>{console.log("onsite")});
+
+
 
 document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key")}); 
 
