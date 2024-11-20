@@ -1,6 +1,6 @@
 const closeButton = document.querySelector(".alternative__close");
 const filterMenu = document.querySelector(".filter__alternative");
-import { createRooms } from "./challenges.js";
+import {challengesList} from "./challenges.js";
 
 closeButton.addEventListener("click", () => {
     filterMenu.setAttribute("class", "close");
@@ -38,7 +38,7 @@ starFrom.forEach((star, index) => {
                 star.classList.remove("rating__star--filled");
             }
         });
-        createRooms();         
+        createByRatingArray();             
     });
 });
 
@@ -66,7 +66,7 @@ starTo.forEach((stars, place) => {
                 stars.classList.remove("rating__star--filled");
             }
         });
-        createRooms();
+        createByRatingArray();        
     });
 });
 
@@ -230,3 +230,17 @@ document.querySelector(".type__online").addEventListener("click", () => { consol
 document.querySelector(".type__onSite").addEventListener("click", () => { console.log("onsite") });
 
 document.querySelector(".keyword__input").addEventListener("keyup", () => { console.log("key") });
+
+//filter by stars using staFromValue and starToValue: 
+const filterByRating = []
+
+async function createByRatingArray(){
+    
+    filterByRating.length = 0;
+    challengesList.forEach(challenge => {
+        if (challenge.rating >= starFromValue && challenge.rating <= starToValue){
+            filterByRating.push(challenge);
+            console.log("this works");
+        }});        
+    window.filterByRating = filterByRating;
+};

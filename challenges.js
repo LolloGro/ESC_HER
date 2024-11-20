@@ -1,9 +1,8 @@
 
-import { starFromValue, starToValue } from "./filter.js";
 createChallengesList();
 createRooms();
 
-const challengesList = [];
+export const challengesList = [];
 async function createChallengesList(){
     const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
     const data = await response.json();
@@ -12,30 +11,13 @@ async function createChallengesList(){
     data.challenges.forEach((challenge) => {
         challengesList.push(challenge);
     });
-
 }
 
 export async function createRooms(){
     const roomContainer = document.querySelector(".book__div")
-    await createChallengesList();
-
-    const filteredChallenges = challengesList
-    .filter((challenge) => {
-        if (starFromValue === null && starToValue === null){
-            return true;
-        }
-        return challenge.rating >= starFromValue && challenge.rating <= starToValue;
-    })
-    .sort((a, b)=> {
-        if (starFromValue !== 0 || starToValue !== 0){
-            return a.rating - b.rating;
-        }
-        return 0;
-    });
-
+    await createChallengesList();   
     roomContainer.innerHTML = "";
-
-    filteredChallenges.forEach((challenge) => {
+    challengesList.forEach((challenge) => {
         const roomTile = document.createElement("div");
         roomTile.className = "book__div__room challenge";
         roomTile.setAttribute("data-type", challenge.type);
@@ -178,7 +160,7 @@ export async function createRooms(){
             break;
     }
     });
+    window.challengesList = challengesList;
 }
 
-//filter by stars using staFromValue and starToValue:
 
