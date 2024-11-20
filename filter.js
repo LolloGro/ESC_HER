@@ -16,17 +16,18 @@ openButton.addEventListener("click", () => {
 });
 
 const starFrom = document.querySelectorAll(".star__from");
-export let starFromValue = 0;
+export let starFromValue = null;
 
 starFrom.forEach((star, index) => {
     star.addEventListener("click", () => {
         console.log("index", index);
-        starFromValue = index;
+        starFromValue = index + 1;
         starFrom.forEach((star, secondIndex) => {
             if (index == 0) {
                 const log = star.getAttribute("class");
                 if (log == "rating__star star__from fa-solid fa-star rating__star--filled") {
                     star.classList.remove("rating__star--filled");
+                    starFromValue = null;
                 } else if (index >= secondIndex) {
                     star.classList.add("rating__star--filled");
                 }
@@ -42,17 +43,18 @@ starFrom.forEach((star, index) => {
 });
 
 const starTo = document.querySelectorAll(".star__to");
-export let starToValue = 0;
+export let starToValue = null;
 
 starTo.forEach((stars, place) => {
     stars.addEventListener("click", () => {
         console.log(place);
-        starToValue = place; 
+        starToValue = place + 1; 
         starTo.forEach((stars, secondPlace) => {
             if (place == 0) {
                 const check = stars.getAttribute("class");
                 if (check == "rating__star star__to fa-solid fa-star rating__star--filled") {
                     stars.classList.remove("rating__star--filled");
+                    starToValue = null;
                 }
                 else if (place >= secondPlace) {
                     stars.classList.add("rating__star--filled");
@@ -72,15 +74,16 @@ const taged = document.querySelectorAll(".tags__label");
 
 const filterTaged = [];
 
-
+const onSiteCheckbox = document.querySelector(".type__onsite")
 document.querySelector(".type__online").addEventListener("change", (event) => {
     const challenges = document.querySelectorAll(".challenge");
 
     if (event.target.checked) {
+        document.querySelector(".type__onSite").checked = false;
         challenges.forEach((challenge) => {
             if (challenge.getAttribute("data-type") === "online") {
                 challenge.style.display = "grid"; 
-            } else {
+            }else {
                 challenge.style.display = "none"; 
             }
         });
@@ -93,12 +96,12 @@ document.querySelector(".type__online").addEventListener("change", (event) => {
 
 document.querySelector(".type__onSite").addEventListener("change", (event) => {
     const challenges = document.querySelectorAll(".challenge");
-
     if (event.target.checked) {
+        document.querySelector(".type__online").checked = false;
         challenges.forEach((challenge) => {
             if (challenge.getAttribute("data-type") === "onsite") {
                 challenge.style.display = "grid"; 
-            } else {
+            }else {
                 challenge.style.display = "none"; 
             }
         });

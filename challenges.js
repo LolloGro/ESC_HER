@@ -21,10 +21,10 @@ export async function createRooms(){
 
     const filteredChallenges = challengesList
     .filter((challenge) => {
-        if (starFromValue === 0 && starToValue === 0){
+        if (starFromValue === null && starToValue === null){
             return true;
         }
-        return challenge.rating >= (starFromValue + 1) && challenge.rating <= (starToValue + 1);
+        return challenge.rating >= starFromValue && challenge.rating <= starToValue;
     })
     .sort((a, b)=> {
         if (starFromValue !== 0 || starToValue !== 0){
