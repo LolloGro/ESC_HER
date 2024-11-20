@@ -19,11 +19,11 @@ const starFrom = document.querySelectorAll(".star__from");
 starFrom.forEach((star, index) => {
     star.addEventListener("click", () => {
         starFrom.forEach((star, secondIndex) => {
-            if (index == 0){
+            if (index == 0) {
                 const log = star.getAttribute("class");
-                if(log == "rating__star star__from fa-solid fa-star rating__star--filled"){
+                if (log == "rating__star star__from fa-solid fa-star rating__star--filled") {
                     star.classList.remove("rating__star--filled");
-                }else if (index >= secondIndex){
+                } else if (index >= secondIndex) {
                     star.classList.add("rating__star--filled");
                 }
             }
@@ -41,54 +41,143 @@ const starTo = document.querySelectorAll(".star__to");
 starTo.forEach((stars, place) => {
     stars.addEventListener("click", () => {
         starTo.forEach((stars, secondPlace) => {
-            if(place == 0){
+            if (place == 0) {
                 const check = stars.getAttribute("class");
-                if(check == "rating__star star__to fa-solid fa-star rating__star--filled"){
-                    stars.classList.remove("rating__star--filled"); 
+                if (check == "rating__star star__to fa-solid fa-star rating__star--filled") {
+                    stars.classList.remove("rating__star--filled");
                 }
-                else if(place >= secondPlace){
+                else if (place >= secondPlace) {
                     stars.classList.add("rating__star--filled");
                 }
             }
-            else if(place >= secondPlace){
+            else if (place >= secondPlace) {
                 stars.classList.add("rating__star--filled");
-            }else{
+            } else {
                 stars.classList.remove("rating__star--filled");
             }
         });
     });
-}); 
-
-const taged = document.querySelectorAll(".tags__label"); 
-console.log(taged);
-
-taged.forEach((tags, index) =>{
-    tags.addEventListener("click", () => {
-        console.log(index); 
-        if(index == 0){ 
-            tags.classList.toggle("tags__label--clicked");
-        }
-        if(index == 1){
-            tags.classList.toggle("tags__label--clicked");
-        }
-        if(index == 2){
-            tags.classList.toggle("tags__label--clicked");
-        }
-        if(index == 3){
-            tags.classList.toggle("tags__label--clicked");
-        }
-        if(index == 4){
-            tags.classList.toggle("tags__label--clicked");
-        }
-        if(index == 5){
-            tags.classList.toggle("tags__label--clicked");
-        }
-    });
 });
 
-document.querySelector(".type__online").addEventListener("click", ()=>{console.log("online")}); 
+const taged = document.querySelectorAll(".tags__label");
 
-document.querySelector(".type__onSite").addEventListener("click", ()=>{console.log("onsite")}); 
+const filterTaged = [];
 
-document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key")}); 
+for (let i = 0; i < taged.length; i++) {
+    taged[i].addEventListener("click", () => {
+        const checkLabel = taged[i].getAttribute("class");
+        const controllLabel = "tags__label";
+        const newLabel = "tags__label--clicked";
 
+        if (taged[i] == taged[0]) {
+            const innerTage = taged[i].getHTML();
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                
+                filterTaged.push(innerTage.toLowerCase());
+            } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
+                filterTaged.splice(j, 1);
+            }
+        } else if (taged[i] == taged[1]) {
+            const innerTage = taged[i].getHTML();
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push(innerTage.toLowerCase());
+            } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
+                filterTaged.splice(j, 1);
+            }
+        } else if (taged[i] == taged[2]) {
+            const innerTage = taged[i].getHTML();
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push(innerTage.toLowerCase());
+            } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
+                filterTaged.splice(j, 1);
+            }
+        }else if(taged[i] == taged[3]){ 
+            const innerTage = taged[i].getHTML();
+            if (checkLabel == controllLabel) {
+            taged[i].classList.add(newLabel);
+            filterTaged.push(innerTage.toLowerCase());
+            } else {
+            taged[i].classList.remove(newLabel);
+            const j = filterTaged.indexOf(innerTage.toLowerCase());
+            filterTaged.splice(j, 1);
+            }
+        }else if(taged[i] == taged[4]){
+            const innerTage = taged[i].getHTML();
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push(innerTage.toLowerCase());
+                } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
+                filterTaged.splice(j, 1);
+                }
+        }else if(taged[i] == taged[5]){
+            const innerTage = taged[i].getHTML();
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push(innerTage.toLowerCase());
+                } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
+                filterTaged.splice(j, 1);
+                }
+        }else if(taged[i] == taged[6]){
+            const innerTage = taged[i].getHTML();
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push(innerTage.toLowerCase());
+                } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
+                filterTaged.splice(j, 1);
+                }
+        }else if(taged[i] == taged[7]){
+            const innerTage = taged[i].getHTML();
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push(innerTage.toLowerCase());
+                } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
+                filterTaged.splice(j, 1);
+                }
+        }else if( taged[i]== taged[8]){
+            const innerTage = taged[i].getHTML();
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push(innerTage.toLowerCase());
+                } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
+                filterTaged.splice(j, 1);
+                }
+        }else if(taged[i] == taged[9]){
+            const innerTage = taged[i].getHTML();
+            if (checkLabel == controllLabel) {
+                taged[i].classList.add(newLabel);
+                filterTaged.push(innerTage.toLowerCase());
+                } else {
+                taged[i].classList.remove(newLabel);
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
+                filterTaged.splice(j, 1);
+                }
+        }
+        const tagedFilterd = challengesList.filter(n => n.labels.some(m => filterTaged.includes(m)));
+        console.log(tagedFilterd); 
+    });  
+}
+
+document.querySelector(".type__online").addEventListener("click", () => { console.log("online") });
+
+document.querySelector(".type__onSite").addEventListener("click", () => { console.log("onsite") });
+
+document.querySelector(".keyword__input").addEventListener("keyup", () => { console.log("key") });
