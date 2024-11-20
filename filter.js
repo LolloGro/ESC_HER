@@ -1,17 +1,3 @@
-createChallengesList();
-const challengesList = []; 
-
-async function createChallengesList(){
-    const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
-    const data = await response.json();
-    challengesList.length = 0;    
-
-    data.challenges.forEach((challenge) => {
-        challengesList.push(challenge);
-    });
-
-}
-
 const closeButton = document.querySelector(".alternative__close");
 const filterMenu = document.querySelector(".filter__alternative");
 
@@ -84,100 +70,109 @@ for (let i = 0; i < taged.length; i++) {
         const newLabel = "tags__label--clicked";
 
         if (taged[i] == taged[0]) {
+            const innerTage = taged[i].getHTML();
             if (checkLabel == controllLabel) {
                 taged[i].classList.add(newLabel);
-                filterTaged.push("bash");
+                
+                filterTaged.push(innerTage.toLowerCase());
             } else {
                 taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf("bash");
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
                 filterTaged.splice(j, 1);
             }
         } else if (taged[i] == taged[1]) {
+            const innerTage = taged[i].getHTML();
             if (checkLabel == controllLabel) {
                 taged[i].classList.add(newLabel);
-                filterTaged.push("coding");
+                filterTaged.push(innerTage.toLowerCase());
             } else {
                 taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf("coding");
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
                 filterTaged.splice(j, 1);
             }
         } else if (taged[i] == taged[2]) {
+            const innerTage = taged[i].getHTML();
             if (checkLabel == controllLabel) {
                 taged[i].classList.add(newLabel);
-                filterTaged.push("web");
+                filterTaged.push(innerTage.toLowerCase());
             } else {
                 taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf("web");
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
                 filterTaged.splice(j, 1);
             }
         }else if(taged[i] == taged[3]){ 
+            const innerTage = taged[i].getHTML();
             if (checkLabel == controllLabel) {
             taged[i].classList.add(newLabel);
-            filterTaged.push("ssh");
+            filterTaged.push(innerTage.toLowerCase());
             } else {
             taged[i].classList.remove(newLabel);
-            const j = filterTaged.indexOf("ssh");
+            const j = filterTaged.indexOf(innerTage.toLowerCase());
             filterTaged.splice(j, 1);
             }
         }else if(taged[i] == taged[4]){
+            const innerTage = taged[i].getHTML();
             if (checkLabel == controllLabel) {
                 taged[i].classList.add(newLabel);
-                filterTaged.push("ctf");
+                filterTaged.push(innerTage.toLowerCase());
                 } else {
                 taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf("ctf");
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
                 filterTaged.splice(j, 1);
                 }
         }else if(taged[i] == taged[5]){
-
+            const innerTage = taged[i].getHTML();
             if (checkLabel == controllLabel) {
                 taged[i].classList.add(newLabel);
-                filterTaged.push("javascript");
+                filterTaged.push(innerTage.toLowerCase());
                 } else {
                 taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf("javascript");
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
                 filterTaged.splice(j, 1);
                 }
         }else if(taged[i] == taged[6]){
+            const innerTage = taged[i].getHTML();
             if (checkLabel == controllLabel) {
                 taged[i].classList.add(newLabel);
-                filterTaged.push("phreaking");
+                filterTaged.push(innerTage.toLowerCase());
                 } else {
                 taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf("phreaking");
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
                 filterTaged.splice(j, 1);
                 }
         }else if(taged[i] == taged[7]){
+            const innerTage = taged[i].getHTML();
             if (checkLabel == controllLabel) {
                 taged[i].classList.add(newLabel);
-                filterTaged.push("electronics");
+                filterTaged.push(innerTage.toLowerCase());
                 } else {
                 taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf("electronics");
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
                 filterTaged.splice(j, 1);
                 }
         }else if( taged[i]== taged[8]){
+            const innerTage = taged[i].getHTML();
             if (checkLabel == controllLabel) {
                 taged[i].classList.add(newLabel);
-                filterTaged.push("hacking");
+                filterTaged.push(innerTage.toLowerCase());
                 } else {
                 taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf("hacking");
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
                 filterTaged.splice(j, 1);
                 }
         }else if(taged[i] == taged[9]){
+            const innerTage = taged[i].getHTML();
             if (checkLabel == controllLabel) {
                 taged[i].classList.add(newLabel);
-                filterTaged.push("linux");
+                filterTaged.push(innerTage.toLowerCase());
                 } else {
                 taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf("linux");
+                const j = filterTaged.indexOf(innerTage.toLowerCase());
                 filterTaged.splice(j, 1);
                 }
         }
-
-        const OKO = challengesList.filter(n => n.labels.some(m => filterTaged.includes(m)));
-        console.log(OKO); 
+        const tagedFilterd = challengesList.filter(n => n.labels.some(m => filterTaged.includes(m)));
+        console.log(tagedFilterd); 
     });  
 }
 
