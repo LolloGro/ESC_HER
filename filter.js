@@ -87,7 +87,7 @@ taged.forEach((tags, index) =>{
 });
 
 document.querySelector(".type__online").addEventListener("change", (event) => {
-    const challenges = document.querySelectorAll(".challenge"); 
+    const challenges = document.querySelectorAll(".challenge");
 
     if (event.target.checked) {
         challenges.forEach((challenge) => {
