@@ -37,7 +37,8 @@ export async function createRooms(){
 
     filteredChallenges.forEach((challenge) => {
         const roomTile = document.createElement("div");
-        roomTile.className = "book__div__room";
+        roomTile.className = "book__div__room challenge";
+        roomTile.setAttribute("data-type", challenge.type);
         roomContainer.appendChild(roomTile);
 
         const roomName = document.createElement("h2");
