@@ -92,14 +92,14 @@ document.querySelector(".type__online").addEventListener("change", (event) => {
     if (event.target.checked) {
         challenges.forEach((challenge) => {
             if (challenge.getAttribute("data-type") === "online") {
-                challenge.style.display = "block"; 
+                challenge.style.display = "grid"; 
             } else {
                 challenge.style.display = "none"; 
             }
         });
     } else {
         challenges.forEach((challenge) => {
-            challenge.style.display = "block"; 
+            challenge.style.display = "grid"; 
         });
     }
 });
