@@ -23,7 +23,7 @@ openModalBtn.addEventListener('click', async () => {
     console.log(data);
 
     if (date.length > 0) {
-      console.log("TID?")
+      //Justera för att inte kunna öppna om man inte har valt ett datum
       bookModal.style.display = 'block';
     } else {
       datesContainer.textContent = 'No available dates found.';
@@ -42,8 +42,16 @@ closeModalBtn.addEventListener('click', () => {
 
 //Lägga till funktion för att boka tid och välja deltagare 
 
+const closeBookRoom = document.querySelector(".bookRoom__close");
+closeBookRoom.addEventListener("click", ()=> {
+  bookModal.style.display = "none"; 
+})
+
+const thankYou = document.querySelector(".submitBooking");
+
 const submitBooking = document.querySelector(".bookRoom__submit");
+
 submitBooking.addEventListener("click", () => {
+  thankYou.style.display = 'block'; 
   //kontrollera att alla rutor är ifyllda för att kunna boka 
-  console.log("JA");
 });
