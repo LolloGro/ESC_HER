@@ -13,8 +13,8 @@
   border-radius: 5px;
   padding: 10px;
   background-color: transparent;
-  color: rgb(165, 143, 224);
-  border-color: rgb(165, 143, 224);
+  color: rgb(132, 92, 241);
+  border-color: rgb(132, 92, 241);
 }
 .filter .filter__alternative {
   display: none;
@@ -64,7 +64,7 @@
   color: grey;
 }
 .filter .filter__alternative--open .filter__rating .filter__stars .rating__star--filled {
-  color: rgb(165, 143, 224);
+  color: rgb(132, 92, 241);
 }
 .filter .filter__alternative--open .filter__rating .filter__stars .star__text {
   margin: 0;
@@ -119,6 +119,144 @@
   display: none;
 }
 
+@media screen and (min-width: 1280px) {
+  .book .book__div {
+    justify-content: center;
+    margin-right: 43px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .book__div__room {
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+}
+.bookingModal {
+  display: none;
+}
+.bookingModal .bookingModal__div {
+  background-color: lightblue;
+  display: grid;
+  grid-template-columns: 2;
+  margin-left: 20px;
+}
+.bookingModal .bookingModal__div .bookingModal__titel {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 1.5rem;
+}
+.bookingModal .bookingModal__div .bookingModal__close {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: transparent;
+  border-color: transparent;
+  width: fit-content;
+  justify-self: end;
+}
+.bookingModal .bookingModal__div .bookingModal__text {
+  grid-column: 1;
+  grid-row: 2;
+}
+.bookingModal .bookingModal__div .bookingModal__label {
+  grid-column: 1;
+  grid-row: 3;
+}
+.bookingModal .bookingModal__div .bookingModal__input {
+  grid-column: 1;
+  grid-row: 4;
+  width: 250px;
+}
+.bookingModal .bookingModal__div .bookingModal__open {
+  grid-column: 2;
+  grid-row: 5;
+  justify-self: end;
+  width: fit-content;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  background-color: rgb(132, 92, 241);
+  color: white;
+  border-color: transparent;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.bookRoom {
+  display: none;
+}
+.bookRoom .bookRoom__div {
+  background-color: lightgreen;
+  display: grid;
+  grid-template-columns: 2;
+  margin-left: 20px;
+}
+.bookRoom .bookRoom__titel {
+  grid-column: 1;
+  grid-row: 1;
+}
+.bookRoom .bookRoom__close {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: transparent;
+  border-color: transparent;
+  width: fit-content;
+  justify-self: end;
+}
+.bookRoom .bookRoom__label__name {
+  grid-column: 1;
+  grid-row: 2;
+}
+.bookRoom .bookRoom__input__name {
+  grid-column: 1;
+  grid-row: 3;
+  width: 250px;
+}
+.bookRoom .bookRoom__label__email {
+  grid-column: 1;
+  grid-row: 4;
+}
+.bookRoom .bookRoom__input__email {
+  grid-column: 1;
+  grid-row: 5;
+  width: 250px;
+}
+.bookRoom .bookRoom__label__time {
+  grid-column: 1;
+  grid-row: 6;
+}
+.bookRoom .bookRoom__input__time {
+  grid-column: 1;
+  grid-row: 7;
+  width: 250px;
+}
+.bookRoom .bookRoom__label__part {
+  grid-column: 1;
+  grid-row: 8;
+}
+.bookRoom .bookRoom__input__part {
+  grid-column: 1;
+  grid-row: 9;
+  width: 250px;
+}
+.bookRoom .bookRoom__submit {
+  grid-column: 2;
+  grid-row: 10;
+  width: fit-content;
+  justify-self: end;
+  background-color: rgb(132, 92, 241);
+  margin-right: 15px;
+  margin-bottom: 15px;
+  color: white;
+  border-color: transparent;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.submitBooking .submitBooking__div {
+  justify-items: center;
+}
 html {
   font-family: "Roboto";
   margin-left: auto;
@@ -439,15 +577,6 @@ body {
   .book .book__div {
     justify-content: center;
     margin-right: 43px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-@media screen and (min-width: 1280px){
-  .book__div__room{
-   margin-bottom: 15px;
-   margin-top: 15px; 
   }
 }
 .book .book__div .book__div__room {

@@ -46,6 +46,10 @@ export async function createRooms(){
         const bookBtn = document.createElement("a");
         bookBtn.className = "red__link"
         roomTile.appendChild(bookBtn);
+        bookBtn.addEventListener("click", () => {
+            const showBook = document.querySelector(".bookingModal");
+            showBook.style.display = "block"; 
+           }); 
         bookBtn.style.marginRight= "10px";
 
         if (challenge.type == "online"){
