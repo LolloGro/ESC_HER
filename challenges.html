@@ -13,10 +13,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <script defer src='filter.js' type="module"></script>
+
+    <script defer src='filter.js'></script>
+    <script defer src='challenges.js'></script>
+    <script defer src="booking.js"></script>
+    <script defer src='filter.js' type="module"></script>
     <script defer src='challenges.js' type="module"></script>
+
 </head>
- <body>
+
+<body>
     <header class="main">
         <img class="main__img" src="imgs/Logo.webp" alt="logotyp for ESC">
         <h1 class="main__titel">Hacker Escape Rooms</h1>
@@ -88,40 +94,73 @@
             </div>
         </div>
     </div>
-<div class = "book">
-    <div class = "book__div">
+    <div class="book">
+        <div class="book__div">
 
+        </div>
     </div>
-</div> 
-<footer>
-    <div class="about">
-        <h2 class="about__titel">[Esc] Hacker Escape Rooms</h2>
-        <p class="about__text">Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem haec eo
-            spectant haec quoque
-            vos omnino desit illud quo solo felicitatis libertatisque perficiuntur.</p>
+    <div class="bookingModal">
+        <div class="bookingModal__div">
+            <p class="bookingModal__titel">Book room</p>
+            <p class="bookingModal__text">What date would you like to come?</p>
+            <button class="bookingModal__close" href="#"><i class="fa-solid fa-xmark"></i></button>
+            <input class="bookingModal__input" type="date" name="bookDate">
+            <label class="bookingModal__label" for="bookDate">Date</label>
+            <p class="bookingModal_noTime"></p>
+            <button class="bookingModal__open">Search avalible times</button>
+        </div>
     </div>
-    <nav class="sitemap">
-        <h2 class="sitemap__titel">Site map</h2>
-        <ul class="ul_SiteMap">
-            <li class="sitemap_li"><a class="a_SiteMap" href="">The Story</a></li>
-            <li class="sitemap_li"><a class="a_SiteMap" href="">Contact Us</a></li>
-            <li class="sitemap_li"><a class="a_SiteMap" href="">Legal</a></li>
-        </ul>
-    </nav>
-    <nav class="playlist">
-        <ul class="playlist__ul">
-            <li class="playlist__li"><a class="a_PlayList" href="">Play online</a></li>
-            <li class="playlist__li"><a class="a_PlayList" href="">Play on-site</a></li>
-        </ul>
-    </nav>
-    <nav class="contact">
-        <h2 class="contact__titel">Follow us on</h2>
-        <ul class="contact_ul">
-            <li class="contact__li"><a class="a_Contact" href="">Facebook</a></li>
-            <li class="contact__li"><a class="a_Contact" href="">Instagram</a></li>
-            <li class="contact__li"><a class="a_Contact" href="">Twitter</a></li>
-        </ul>
-    </nav>
-</footer>
+    <div class="bookRoom">
+        <div class="bookRoom__div">
+            <p class="bookRoom__titel">Book room</p>
+            <button class="bookRoom__close" href="#"><i class="fa-solid fa-xmark"></i></button>
+            <input class="bookRoom__input__name" type="text" name="name">
+            <label class="bookRoom__label__name" for="name">Name</label>
+            <input class="bookRoom__input__email" type="email" name="email">
+            <label class="bookRoom__label__email" for="email">E-mail</label>
+            <input class="bookRoom__input__time" type="time" name="time">
+            <label class="bookRoom__label__time" for="">What time?</label>
+            <input class="bookRoom__input__part" type="text">
+            <label class="bookRoom__label__part" for="">How many participants?</label>
+            <button class="bookRoom__submit" type="submit">Submit booking</button>
+        </div>
+    </div>
+    <div class="submitBooking">
+        <div class="submitBooking__div">
+            <p class="submitBooking__text">Thank you!</p>
+            <a class="submitBooking__return" href="challenges.html">Back to challenges</a>
+        </div>
+    </div>
+    <footer>
+        <div class="about">
+            <h2 class="about__titel">[Esc] Hacker Escape Rooms</h2>
+            <p class="about__text">Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem haec eo
+                spectant haec quoque
+                vos omnino desit illud quo solo felicitatis libertatisque perficiuntur.</p>
+        </div>
+        <nav class="sitemap">
+            <h2 class="sitemap__titel">Site map</h2>
+            <ul class="ul_SiteMap">
+                <li class="sitemap_li"><a class="a_SiteMap" href="">The Story</a></li>
+                <li class="sitemap_li"><a class="a_SiteMap" href="">Contact Us</a></li>
+                <li class="sitemap_li"><a class="a_SiteMap" href="">Legal</a></li>
+            </ul>
+        </nav>
+        <nav class="playlist">
+            <ul class="playlist__ul">
+                <li class="playlist__li"><a class="a_PlayList" href="">Play online</a></li>
+                <li class="playlist__li"><a class="a_PlayList" href="">Play on-site</a></li>
+            </ul>
+        </nav>
+        <nav class="contact">
+            <h2 class="contact__titel">Follow us on</h2>
+            <ul class="contact_ul">
+                <li class="contact__li"><a class="a_Contact" href="">Facebook</a></li>
+                <li class="contact__li"><a class="a_Contact" href="">Instagram</a></li>
+                <li class="contact__li"><a class="a_Contact" href="">Twitter</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
+
 </html>
