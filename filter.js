@@ -63,6 +63,43 @@ const taged = document.querySelectorAll(".tags__label");
 
 const filterTaged = [];
 
+
+document.querySelector(".type__online").addEventListener("change", (event) => {
+    const challenges = document.querySelectorAll(".challenge");
+
+    if (event.target.checked) {
+        challenges.forEach((challenge) => {
+            if (challenge.getAttribute("data-type") === "online") {
+                challenge.style.display = "grid"; 
+            } else {
+                challenge.style.display = "none"; 
+            }
+        });
+    } else {
+        challenges.forEach((challenge) => {
+            challenge.style.display = "grid"; 
+        });
+    }
+});
+
+document.querySelector(".type__onSite").addEventListener("change", (event) => {
+    const challenges = document.querySelectorAll(".challenge");
+
+    if (event.target.checked) {
+        challenges.forEach((challenge) => {
+            if (challenge.getAttribute("data-type") === "onsite") {
+                challenge.style.display = "grid"; 
+            } else {
+                challenge.style.display = "none"; 
+            }
+        });
+    } else {
+        challenges.forEach((challenge) => {
+            challenge.style.display = "grid"; 
+        });
+    }
+});
+
 for (let i = 0; i < taged.length; i++) {
     taged[i].addEventListener("click", () => {
         const checkLabel = taged[i].getAttribute("class");
