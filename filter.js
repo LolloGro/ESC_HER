@@ -1,6 +1,6 @@
 const closeButton = document.querySelector(".alternative__close");
 const filterMenu = document.querySelector(".filter__alternative");
-import {challengesList} from "./challenges.js";
+import {challengesList, createRooms} from "./challenges.js";
 
 closeButton.addEventListener("click", () => {
     filterMenu.setAttribute("class", "close");
@@ -229,25 +229,23 @@ document.querySelector(".type__online").addEventListener("click", () => { consol
 
 
 document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key"); filterText()}); 
-
+let filteredByText=[];
 async function filterText(){
-    await createChallengesList();
+    //await createChallengesList();
     const input = document.querySelector(".keyword__input");
     const text = input.value;
     console.log(text);
-    const filteredChallenges=[];
+    filteredByText=[];
     challengesList.forEach(challenge => {
         if(challenge.title.toLowerCase().includes(text.toLowerCase()) || challenge.description.toLowerCase().includes(text.toLowerCase())){
-            filteredChallenges.push(challenge);
-            console.log(challenge.title+" - "+challenge.description);
+            filteredByText.push(challenge);
         }
     });
+    filterChallenges();
 }
 
 document.querySelector(".type__onSite").addEventListener("click", () => { console.log("onsite") });
 
-
-document.querySelector(".keyword__input").addEventListener("keyup", () => { console.log("key") });
 
 //filter by stars using staFromValue and starToValue: 
 const filterByRating = []
@@ -261,6 +259,21 @@ async function createByRatingArray(){
             console.log("this works");
         }});        
     window.filterByRating = filterByRating;
+    filterChallenges();
 };
-
+let filteredByAll = [];
+function filterChallenges(){
+    filteredByAll = [];
+    challengesList.forEach(challenge =>{
+       if(!filteredByText.includes(challenge) && challengesList.includes(challenge) && filteredByText.length != 0){
+        const x = challengesList.indexOf(challenge);
+        console.log("index "+x);
+        challengesList.splice(x, 1);
+       }
+      
+    })
+     createRooms();
+    console.log("array length: "+challengesList.length);
+    challengesList.forEach(challenge => {console.log(challenge.title+" "+challenge.rating);})
+}
 

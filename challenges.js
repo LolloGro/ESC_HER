@@ -1,6 +1,6 @@
 
 createChallengesList();
-createRooms();
+//createRooms();
 
 export const challengesList = [];
 async function createChallengesList(){
@@ -11,11 +11,13 @@ async function createChallengesList(){
     data.challenges.forEach((challenge) => {
         challengesList.push(challenge);
     });
+    createRooms();
 }
 
 export async function createRooms(){
+    console.log("in create rooms");
     const roomContainer = document.querySelector(".book__div")
-    await createChallengesList();   
+    //await createChallengesList();   
     roomContainer.innerHTML = "";
     challengesList.forEach((challenge) => {
         const roomTile = document.createElement("div");
