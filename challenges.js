@@ -2,7 +2,7 @@
 createChallengesList();
 createRooms();
 
-export const challengesList = [];
+/*export*/ const challengesList = [];
 async function createChallengesList(){
     const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
     const data = await response.json();
@@ -13,7 +13,7 @@ async function createChallengesList(){
     });
 }
 
-export async function createRooms(){
+/*export*/ async function createRooms(){
     const roomContainer = document.querySelector(".book__div")
     await createChallengesList();   
     roomContainer.innerHTML = "";
@@ -21,6 +21,7 @@ export async function createRooms(){
         const roomTile = document.createElement("div");
         roomTile.className = "book__div__room challenge";
         roomTile.setAttribute("data-type", challenge.type);
+        roomTile.setAttribute("id", challenge.id);
         roomContainer.appendChild(roomTile);
 
         const roomName = document.createElement("h2");
@@ -45,19 +46,20 @@ export async function createRooms(){
 
         const bookBtn = document.createElement("a");
         bookBtn.className = "red__link"
-        roomTile.appendChild(bookBtn);
-        bookBtn.addEventListener("click", () => {
-            const showBook = document.querySelector(".bookingModal");
-            showBook.style.display = "block"; 
-           }); 
+        roomTile.appendChild(bookBtn);        
         bookBtn.style.marginRight= "10px";
+        bookBtn.setAttribute("id", challenge.id)
 
         if (challenge.type == "online"){
             bookBtn.innerHTML = "Take challenge online"
         } 
         else 
         {
-            bookBtn.innerHTML = "Book this room"
+            bookBtn.innerHTML = "Book this room"            
+            bookBtn.addEventListener("click", () => {
+                const showBook = document.querySelector(".bookingModal");
+                showBook.style.display = "block"; 
+               }); 
         }
         
     const bookStars = document.createElement("div");
