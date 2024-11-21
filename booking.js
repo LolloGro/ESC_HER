@@ -22,7 +22,7 @@ bookingModal.appendChild(datesContainer);
 openModalBtn.addEventListener('click', async () => {
 
   try {
-    const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=2024-12-12&challenge=3');
+    const response = await fetch('');
     const data = await response.json();
 
     datesContainer.innerHTML = '';
