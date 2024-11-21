@@ -15,6 +15,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
      <script defer src='filter.js'></script>
     <script defer src='challenges.js'></script>
+    <script defer src="booking.js"></script>
 </head>
  <body>
     <header class="main">
@@ -93,6 +94,31 @@
 
     </div>
 </div> 
+<div class="bookingModal">
+<p class="bookingModal__titel">Book room</p>
+<p class="bookingModal__text">What date would you like to come?</p>
+<button class="bookingModal__close" href="#"><i class="fa-solid fa-xmark"></i></button>
+<input class="bookingModal__input" type="date" name="bookDate">
+<label class="bookingModal__label" for="bookDate">Date</label>
+<p class="bookingModal_noTime"></p>
+<button class="bookingModal__open" >Search avalible times</button>
+</div>
+<div class="bookRoom">
+    <p class="bookRoom__titel">Book room</p>
+    <input class="bookRoom__input__name" type="text" name="name">
+    <label class="bookRoom__label__name" for="name">Name</label>
+    <input class="bookRoom__input__email" type="email" name="email">
+    <label class="bookRoom__label__email" for="email">E-mail</label>
+    <input class="bookRoom__input__time" type="time" name="time">
+    <label class="bookRoom__label__time" for="">What time?</label>
+    <input class="bookRoom__input__part" type="text">
+    <label class="bookRoom__label__part" for="">How many participants?</label>
+    <button class="bookRoom__submit" type="submit">Submit booking</button>
+</div>
+<div class="submitBooking">
+    <p class="submitBooking__text">Thank you!</p>
+    <a class="submitBooking__return" href="challenges.html">Back to challenges</a>
+</div>
 <footer>
     <div class="about">
         <h2 class="about__titel">[Esc] Hacker Escape Rooms</h2>
