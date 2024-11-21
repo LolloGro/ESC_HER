@@ -215,6 +215,23 @@ for (let i = 0; i < taged.length; i++) {
 
 document.querySelector(".type__online").addEventListener("click", () => { console.log("online") });
 
+
+document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key"); filterText()}); 
+
+async function filterText(){
+    await createChallengesList();
+    const input = document.querySelector(".keyword__input");
+    const text = input.value;
+    console.log(text);
+    const filteredChallenges=[];
+    challengesList.forEach(challenge => {
+        if(challenge.title.toLowerCase().includes(text.toLowerCase()) || challenge.description.toLowerCase().includes(text.toLowerCase())){
+            filteredChallenges.push(challenge);
+            console.log(challenge.title+" - "+challenge.description);
+        }
+    });
+}
+
 document.querySelector(".type__onSite").addEventListener("click", () => { console.log("onsite") });
 
-document.querySelector(".keyword__input").addEventListener("keyup", () => { console.log("key") });
+
