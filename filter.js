@@ -1,6 +1,7 @@
 const closeButton = document.querySelector(".alternative__close");
 const filterMenu = document.querySelector(".filter__alternative");
-import {challengesList, createRooms} from "./challenges.js";
+const filteredByAll = [];
+import {challengesList, createRooms, createChallengesList} from "./challenges.js";
 
 closeButton.addEventListener("click", () => {
     filterMenu.setAttribute("class", "close");
@@ -223,24 +224,31 @@ for (let i = 0; i < taged.length; i++) {
         const tagedFilterd = challengesList.filter(n => n.labels.some(m => filterTaged.includes(m)));
         console.log(tagedFilterd); 
     });  
+    filterChallenges();
 }
 
 document.querySelector(".type__online").addEventListener("click", () => { console.log("online") });
 
 
 document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key"); filterText()}); 
-let filteredByText=[];
+const filteredByText=[];
+
 async function filterText(){
-    //await createChallengesList();
+    await createChallengesList();
     const input = document.querySelector(".keyword__input");
     const text = input.value;
     console.log(text);
-    filteredByText=[];
+    filteredByText.length=0;
     challengesList.forEach(challenge => {
         if(challenge.title.toLowerCase().includes(text.toLowerCase()) || challenge.description.toLowerCase().includes(text.toLowerCase())){
             filteredByText.push(challenge);
+            
         }
     });
+    console.log("text filter array ");
+    filteredByText.forEach(challenge => {
+        console.log(challenge.title);
+    })
     filterChallenges();
 }
 
@@ -256,24 +264,39 @@ async function createByRatingArray(){
     challengesList.forEach(challenge => {
         if (challenge.rating >= starFromValue && challenge.rating <= starToValue){
             filterByRating.push(challenge);
+            //console.log(challenge.title + " " + challenge.rating);
             console.log("this works");
-        }});        
+        }else{
+            console.log("in else");
+        }
+    });        
     window.filterByRating = filterByRating;
     filterChallenges();
 };
-let filteredByAll = [];
-function filterChallenges(){
-    filteredByAll = [];
-    challengesList.forEach(challenge =>{
-       if(!filteredByText.includes(challenge) && challengesList.includes(challenge) && filteredByText.length != 0){
-        const x = challengesList.indexOf(challenge);
-        console.log("index "+x);
-        challengesList.splice(x, 1);
-       }
-      
-    })
-     createRooms();
-    console.log("array length: "+challengesList.length);
-    challengesList.forEach(challenge => {console.log(challenge.title+" "+challenge.rating);})
-}
 
+
+async function filterChallenges(){
+    //await createChallengesList();
+    filteredByAll.length = 0;
+    challengesList.forEach(challenge =>{
+       if(!filteredByText.includes(challenge) && filteredByText.length != 0){
+        filteredByAll.push(challenge);
+        console.log("hiding challenge");
+       }else{
+        console.log("challenge should show");
+       }
+       if(!filterByRating.includes(challenge) && filterByRating.length != 0){
+        filteredByAll.push(challenge);
+        console.log("hiding challenge");
+       }else{
+        console.log("challenge should show");
+       }
+    })
+    filteredByAll.forEach(challenge => {
+        const x = challengesList.indexOf(challenge);
+        challengesList.splice(x, 1);
+    })
+    createRooms();
+    console.log("challenges array length: "+challengesList.length);
+    console.log("filtered array length: "+filteredByAll.length);
+}

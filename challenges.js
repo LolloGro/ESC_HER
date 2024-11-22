@@ -3,7 +3,8 @@ createChallengesList();
 //createRooms();
 
 export const challengesList = [];
-async function createChallengesList(){
+export async function createChallengesList(){
+    console.log("in create challenges list");
     const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
     const data = await response.json();
     challengesList.length = 0;    
