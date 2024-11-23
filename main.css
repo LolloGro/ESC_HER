@@ -138,6 +138,10 @@ input {
   height: 30px;
 }
 
+select {
+  height: 30px;
+}
+
 label {
   align-content: end;
 }
