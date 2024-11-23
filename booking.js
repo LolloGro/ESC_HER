@@ -65,8 +65,13 @@ bookTime.addEventListener("input", ()=> {
  console.log("time to book", timeToBook); 
 });
 
-//ersätt antal deltare med min och max värde från hämtad array till klickat kort
-const deltagare = [2,3,4,5]; 
+const minPart = 4; //ersätt med min värde frånhämtad array till klickat kort
+const maxPart = 11; //ersätt med max värde från hämtade array till klickat kort
+const interval = 1; 
+const length = (maxPart - minPart)  / interval +1;
+const participants = Array.from({length}, (_,i) =>  minPart + i *interval);
+console.log("delP", participants); 
+ 
 const inputParticipants = document.getElementById("participants"); 
 const partList = document.getElementById("selPart");
 
@@ -79,7 +84,7 @@ function creatPartList (part) {
   });
 }
 
-creatPartList(deltagare); 
+creatPartList(participants); 
 
 const thankYou = document.querySelector(".submitBooking");
 
