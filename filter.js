@@ -70,10 +70,6 @@ starTo.forEach((stars, place) => {
     });
 });
 
-const taged = document.querySelectorAll(".tags__label");
-
-const filterTaged = [];
-
 const onSiteCheckbox = document.querySelector(".type__onsite")
 document.querySelector(".type__online").addEventListener("change", (event) => {
     const challenges = document.querySelectorAll(".challenge");
@@ -112,6 +108,10 @@ document.querySelector(".type__onSite").addEventListener("change", (event) => {
     }
 });
 
+const taged = document.querySelectorAll(".tags__label");
+
+const filterTaged = [];
+
 for (let i = 0; i < taged.length; i++) {
     taged[i].addEventListener("click", () => {
         const checkLabel = taged[i].getAttribute("class");
@@ -122,7 +122,6 @@ for (let i = 0; i < taged.length; i++) {
             const innerTage = taged[i].getHTML();
             if (checkLabel == controllLabel) {
                 taged[i].classList.add(newLabel);
-                
                 filterTaged.push(innerTage.toLowerCase());
             } else {
                 taged[i].classList.remove(newLabel);
@@ -222,8 +221,16 @@ for (let i = 0; i < taged.length; i++) {
         }
         const tagedFilterd = challengesList.filter(n => n.labels.some(m => filterTaged.includes(m)));
         console.log(tagedFilterd); 
+        filterByTaged(tagedFilterd); 
     });  
 }
+
+filterByTaged();
+
+function filterByTaged(f){
+    console.log("Funktion filterByTaged", f); 
+}
+
 
 document.querySelector(".type__online").addEventListener("click", () => { console.log("online") });
 
