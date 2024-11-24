@@ -30,7 +30,7 @@ openModalBtn.addEventListener('click', async () => {
     console.log(data.slots)
 
     if (date.length > 0) {
-      console.log("TID?")
+      //Justera för att inte kunna öppna om man inte har valt ett datum
       bookModal.style.display = 'block';
     } else {
       datesContainer.textContent = 'No available dates found.';
@@ -47,10 +47,57 @@ closeModalBtn.addEventListener('click', () => {
   bookingModal.style.display = 'none';
 });
 
-//Lägga till funktion för att boka tid och välja deltagare 
+const closeBookRoom = document.querySelector(".bookRoom__close");
+closeBookRoom.addEventListener("click", ()=> {
+  bookModal.style.display = "none"; 
+}); 
+
+//ersätter tider med tider från hämtad array till klickat kort 
+const timesToBook = ["11:00","12:30","14:00","20:00"];
+const bookTime = document.querySelector(".bookRoom__input__time"); 
+const selTime = document.getElementById("selTime");
+
+function creatTimeList(time){
+  time.forEach(t =>{
+    const times = document.createElement("option");
+    times.innerHTML = t;
+    selTime.appendChild(times);
+  }); 
+}
+
+creatTimeList(timesToBook); 
+
+bookTime.addEventListener("input", ()=> {
+ const timeToBook = inputTime.value;
+ console.log("time to book", timeToBook); 
+});
+
+const minPart = 4; //ersätt med min värde frånhämtad array till klickat kort
+const maxPart = 11; //ersätt med max värde från hämtade array till klickat kort
+const interval = 1; 
+const length = (maxPart - minPart)  / interval +1;
+const participants = Array.from({length}, (_,i) =>  minPart + i *interval);
+console.log("delP", participants); 
+ 
+const inputParticipants = document.getElementById("participants"); 
+const partList = document.getElementById("selPart");
+
+function creatPartList (part) {
+  part.forEach(delt => {
+    const option = document.createElement("option");
+    option.innerHTML = delt;
+    partList.appendChild(option); 
+    
+  });
+}
+
+creatPartList(participants); 
+
+const thankYou = document.querySelector(".submitBooking");
 
 const submitBooking = document.querySelector(".bookRoom__submit");
+
 submitBooking.addEventListener("click", () => {
+  thankYou.style.display = 'block'; 
   //kontrollera att alla rutor är ifyllda för att kunna boka 
-  console.log("JA");
 });
