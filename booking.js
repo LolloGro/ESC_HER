@@ -9,6 +9,7 @@ let maxPart = 0; //ersätt med max värde från hämtade array till klickat kort
 const bookDate = document.querySelector(".bookingModal__input");
 const timesToBook = [];
 
+
 bookDate.addEventListener("change", () => {
   const dateToBook = bookDate.value;
   console.log(dateToBook);
@@ -36,9 +37,13 @@ openModalBtn.addEventListener('click', async () => {
     data.slots.forEach(time => {
       timesToBook.push(time);      
       console.log(timesToBook);
-    });
+    });    
+    const interval = 1; 
+    const length = (maxPart - minPart)  / interval +1;
+    const participants = Array.from({length}, (_,i) =>  minPart + i *interval);
+    creatPartList(participants); //moved here so it creates PartList after it has participants 
     creatTimeList(timesToBook); //moved here so it creates time list after array has times
-    creatPartList(participants); //moved here so it creates PartList after it has participants
+    
 
     if (date.length > 0) {
       //Justera för att inte kunna öppna om man inte har valt ett datum
@@ -88,9 +93,9 @@ const interval = 1;
 const length = (maxPart - minPart)  / interval +1;
 const participants = Array.from({length}, (_,i) =>  minPart + i *interval);
 console.log("delP", participants); 
- 
 const inputParticipants = document.getElementById("participants"); 
 const partList = document.getElementById("selPart");
+
 
 function creatPartList (part) {
   part.forEach(delt => {
