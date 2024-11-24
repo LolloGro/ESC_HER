@@ -18,12 +18,19 @@ $color-lilac: rgb(132, 92, 241);
         margin-top: 15px;
     }
 }
-input{
+
+input {
     height: 30px;
 }
-label{
+
+select {
+    height: 30px;
+}
+
+label {
     align-content: end;
 }
+
 .bookingModal {
     display: none;
 
@@ -99,7 +106,7 @@ label{
         position: fixed;
         display: grid;
         grid-template-columns: auto 350px 250px auto;
-        grid-auto-rows: max-content; 
+        grid-auto-rows: max-content;
     }
 
     .bookRoom__titel {
@@ -183,6 +190,7 @@ label{
 
 .submitBooking {
     display: none;
+
     .submitBooking__div {
         top: 0;
         bottom: 0;
@@ -200,6 +208,6 @@ label{
     }
 
     .submitBooking__return {
-        color: $color-lilac; 
+        color: $color-lilac;
     }
 }
