@@ -70,7 +70,15 @@ starTo.forEach((stars, place) => {
     });
 });
 
+
 const onSiteCheckbox = document.querySelector(".type__onsite")
+
+const taged = document.querySelectorAll(".tags__label");
+
+const filterTaged = [];
+
+/*const onSiteCheckbox = document.querySelector(".type__onsite")
+
 document.querySelector(".type__online").addEventListener("change", (event) => {
     const challenges = document.querySelectorAll(".challenge");
 
@@ -106,7 +114,7 @@ document.querySelector(".type__onSite").addEventListener("change", (event) => {
             challenge.style.display = "grid";
         });
     }
-});
+});*/
 
 const taged = document.querySelectorAll(".tags__label");
 
@@ -139,10 +147,15 @@ function filterByTaged(f) {
 }
 
 
+
 document.querySelector(".type__online").addEventListener("click", () => { console.log("online") });
 
 
 document.querySelector(".keyword__input").addEventListener("keyup", () => { console.log("key"); filterText() });
+
+//By-text filter
+document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key"); filterText()}); 
+
 
 async function filterText() {
     await createChallengesList();
@@ -157,11 +170,6 @@ async function filterText() {
         }
     });
 }
-
-document.querySelector(".type__onSite").addEventListener("click", () => { console.log("onsite") });
-
-
-document.querySelector(".keyword__input").addEventListener("keyup", () => { console.log("key") });
 
 //filter by stars using staFromValue and starToValue: 
 const filterByRating = []
@@ -178,4 +186,27 @@ async function createByRatingArray() {
     window.filterByRating = filterByRating;
 };
 
+document.querySelector(".type__online").addEventListener("change", () => {bytypeFilter();});
+
+document.querySelector(".type__onSite").addEventListener("change", () => {bytypeFilter();});
+
+const bytypeArray = [];
+
+async function bytypeFilter() {
+    bytypeArray.length = 0; 
+
+    const onlineChecked = document.querySelector(".type__online").checked;
+    const onsiteChecked = document.querySelector(".type__onSite").checked;
+
+    console.log("Online Checked:", onlineChecked, "Onsite Checked:", onsiteChecked); 
+
+    challengesList.forEach(challenge => {
+        if ((onlineChecked && challenge.type === "online") || 
+            (onsiteChecked && challenge.type === "onSite")) {
+            bytypeArray.push(challenge); 
+        }
+    });
+
+    console.log("Filtered Array:", bytypeArray);
+}
 
