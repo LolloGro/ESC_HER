@@ -1,6 +1,6 @@
 const closeButton = document.querySelector(".alternative__close");
 const filterMenu = document.querySelector(".filter__alternative");
-import { challengesList } from "./challenges.js";
+//import { challengesList } from "./challenges.js";
 
 closeButton.addEventListener("click", () => {
     filterMenu.setAttribute("class", "close");
@@ -16,7 +16,7 @@ openButton.addEventListener("click", () => {
 });
 
 const starFrom = document.querySelectorAll(".star__from");
-export let starFromValue = null;
+let starFromValue = null;
 
 starFrom.forEach((star, index) => {
     star.addEventListener("click", () => {
@@ -43,7 +43,7 @@ starFrom.forEach((star, index) => {
 });
 
 const starTo = document.querySelectorAll(".star__to");
-export let starToValue = null;
+let starToValue = null;
 
 starTo.forEach((stars, place) => {
     stars.addEventListener("click", () => {
@@ -70,12 +70,7 @@ starTo.forEach((stars, place) => {
     });
 });
 
-
 const onSiteCheckbox = document.querySelector(".type__onsite")
-
-const taged = document.querySelectorAll(".tags__label");
-
-const filterTaged = [];
 
 /*const onSiteCheckbox = document.querySelector(".type__onsite")
 

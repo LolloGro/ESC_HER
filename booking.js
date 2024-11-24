@@ -1,11 +1,18 @@
 const openModalBtn = document.querySelector(".bookingModal__open");
 const datesContainer = document.querySelector(".bookingModal_noTime");
 const bookModal = document.querySelector(".bookRoom");
-
+let dateValue = ""
+let bookingId = ""
+let test = ""
+let minPart = 0; //ersätt med min värde frånhämtad array till klickat kort
+let maxPart = 0; //ersätt med max värde från hämtade array till klickat kort
 const bookDate = document.querySelector(".bookingModal__input");
+const timesToBook = [];
+
 bookDate.addEventListener("change", () => {
   const dateToBook = bookDate.value;
   console.log(dateToBook);
+  dateValue = dateToBook;
 });
 
 //När man klickar på att boka måste man skicka med array från kort
@@ -17,10 +24,21 @@ bookDate.addEventListener("change", () => {
 openModalBtn.addEventListener('click', async () => {
 
   try {
-    const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=2024-12-12&challenge=3');
+    const url = "https://lernia-sjj-assignments.vercel.app/api/booking/available-times?";
+    const urlWithParam = url + "date=" + dateValue + "&challenge=" + bookingId;
+    test = urlWithParam;
+    const response = await fetch(urlWithParam);
     const data = await response.json();
     const date = data.slots;
     console.log(data);
+    console.log(data.slots)
+    timesToBook.length = 0;
+    data.slots.forEach(time => {
+      timesToBook.push(time);      
+      console.log(timesToBook);
+    });
+    creatTimeList(timesToBook); //moved here so it creates time list after array has times
+    creatPartList(participants); //moved here so it creates PartList after it has participants
 
     if (date.length > 0) {
       //Justera för att inte kunna öppna om man inte har valt ett datum
@@ -46,7 +64,7 @@ closeBookRoom.addEventListener("click", ()=> {
 }); 
 
 //ersätter tider med tider från hämtad array till klickat kort 
-const timesToBook = ["11:00","12:30","14:00","20:00"];
+
 const bookTime = document.querySelector(".bookRoom__input__time"); 
 const selTime = document.getElementById("selTime");
 
@@ -58,15 +76,14 @@ function creatTimeList(time){
   }); 
 }
 
-creatTimeList(timesToBook); 
+ 
 
 bookTime.addEventListener("input", ()=> {
  const timeToBook = inputTime.value;
  console.log("time to book", timeToBook); 
 });
 
-const minPart = 4; //ersätt med min värde frånhämtad array till klickat kort
-const maxPart = 11; //ersätt med max värde från hämtade array till klickat kort
+
 const interval = 1; 
 const length = (maxPart - minPart)  / interval +1;
 const participants = Array.from({length}, (_,i) =>  minPart + i *interval);
@@ -84,7 +101,7 @@ function creatPartList (part) {
   });
 }
 
-creatPartList(participants); 
+ 
 
 const thankYou = document.querySelector(".submitBooking");
 
