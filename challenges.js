@@ -59,10 +59,10 @@ async function createChallengesList(){
                 const showBook = document.querySelector(".bookingModal");
                 showBook.style.display = "block";
                 bookingId = challenge.id;
-                minPart = challenge.minParticipants; //added min and maxPart here
-                maxPart = challenge.maxParticipants;
-                console.log(challenge.id);
-                 
+                minPart = challenge.minParticipants;
+                maxPart = challenge.maxParticipants;                               
+                console.log(challenge.id);                
+                console.log("delP", participants); 
                }); 
         }
         
