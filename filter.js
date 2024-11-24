@@ -117,7 +117,7 @@ taged.forEach(tag => {
         const checkLabel = tag.getAttribute("class");
         const controllLabel = "tags__label"
         const newLabel = "tags__label--clicked";
-        const innerTage = tag.textContent.toLocaleLowerCase();
+        const innerTage = tag.textContent.toLowerCase();
 
         if (checkLabel === controllLabel) {
             tag.classList.add(newLabel);
@@ -129,7 +129,6 @@ taged.forEach(tag => {
         }
 
         const tagedFilterd = challengesList.filter(challenge => challenge.labels.some(label => filterTaged.includes(label)));
-        console.log("filter Challenges", tagedFilterd);
         filterByTaged(tagedFilterd);
     });
 });
@@ -137,7 +136,6 @@ taged.forEach(tag => {
 filterByTaged();
 
 function filterByTaged(f) {
-    console.log("Funktion filterByTaged", f);
 }
 
 
