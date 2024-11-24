@@ -1,11 +1,14 @@
 const openModalBtn = document.querySelector(".bookingModal__open");
 const datesContainer = document.querySelector(".bookingModal_noTime");
 const bookModal = document.querySelector(".bookRoom");
-
+let dateValue = ""
+let bookingId = ""
+let test = ""
 const bookDate = document.querySelector(".bookingModal__input");
 bookDate.addEventListener("change", () => {
   const dateToBook = bookDate.value;
   console.log(dateToBook);
+  dateValue = dateToBook;
 });
 
 //När man klickar på att boka måste man skicka med array från kort
@@ -17,10 +20,14 @@ bookDate.addEventListener("change", () => {
 openModalBtn.addEventListener('click', async () => {
 
   try {
-    const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=2024-12-12&challenge=3');
+    const url = "https://lernia-sjj-assignments.vercel.app/api/booking/available-times?";
+    const urlWithParam = url + "date=" + dateValue + "&challenge=" + bookingId;
+    test = urlWithParam;
+    const response = await fetch(urlWithParam);
     const data = await response.json();
     const date = data.slots;
     console.log(data);
+    console.log(data.slots)
 
     if (date.length > 0) {
       console.log("TID?")

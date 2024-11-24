@@ -47,8 +47,7 @@ async function createChallengesList(){
         const bookBtn = document.createElement("a");
         bookBtn.className = "red__link"
         roomTile.appendChild(bookBtn);        
-        bookBtn.style.marginRight= "10px";
-        bookBtn.setAttribute("id", challenge.id)
+        bookBtn.style.marginRight= "10px";   
 
         if (challenge.type == "online"){
             bookBtn.innerHTML = "Take challenge online"
@@ -58,7 +57,9 @@ async function createChallengesList(){
             bookBtn.innerHTML = "Book this room"            
             bookBtn.addEventListener("click", () => {
                 const showBook = document.querySelector(".bookingModal");
-                showBook.style.display = "block"; 
+                showBook.style.display = "block";
+                bookingId = challenge.id;
+                console.log(challenge.id); 
                }); 
         }
         
