@@ -168,5 +168,14 @@ function setCardInfo(i, list, div){
          redLink.innerHTML="Take challenge online";
     }else{
         redLink.innerHTML="Book room";
+        redLink.addEventListener("click", () => {
+            const showBook = document.querySelector(".bookingModal");
+            showBook.style.display = "block";
+            bookingId = list[i].id;
+            minPart = list[i].minParticipants;
+            maxPart = list[i].maxParticipants;                               
+            console.log(list[i].id);                
+            console.log("delP", participants); 
+           });
     }
 }
