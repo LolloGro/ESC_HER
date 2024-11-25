@@ -65,7 +65,8 @@ closeModalBtn.addEventListener('click', () => {
 
 const closeBookRoom = document.querySelector(".bookRoom__close");
 closeBookRoom.addEventListener("click", ()=> {
-  bookModal.style.display = "none"; 
+  bookModal.style.display = "none";
+  participants.lenght = 0;  
 }); 
 
 //ersätter tider med tider från hämtad array till klickat kort 
@@ -77,7 +78,7 @@ function creatTimeList(time){
   time.forEach(t =>{
     const times = document.createElement("option");
     times.innerHTML = t;
-    selTime.appendChild(times);
+    selTime.appendChild(times);    
   }); 
 }
 
@@ -98,11 +99,11 @@ const partList = document.getElementById("selPart");
 
 
 function creatPartList (part) {
+  partList.innerHTML = ""
   part.forEach(delt => {
-    const option = document.createElement("option");
+    const option = document.createElement("option");    
     option.innerHTML = delt;
-    partList.appendChild(option); 
-    
+    partList.appendChild(option);    
   });
 }
 
