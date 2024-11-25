@@ -1,13 +1,6 @@
+@use 'sections/lib.scss' as *;
 @use 'sections/filter.scss';
 @use 'sections/booking.scss';
-
-$color-dark-blue: #011827;
-$color-light-blue: #8ACFE5;
-$color-medium-blue: #36769d;
-$color-red: #E3170A;
-$color-grey: #B6BDB5;
-$color-white: #FFFFFF;
-$screen-medium: 1280px;
 
 @mixin styling-p-quot {
     font-size: 1.5rem;
@@ -144,7 +137,8 @@ body {
             font-weight: 700;
             text-decoration: none;
         }
-        .main__li__item:hover{
+
+        .main__li__item:hover {
             color: #8ACFE5;
         }
 
@@ -195,11 +189,11 @@ body {
         right: 0;
         display: block;
         background-color: $color-dark-blue;
-        position: fixed; //fixed when scrol
+        position: fixed; 
         border-style: solid;
         border-color: rgba(255, 255, 255, 0.5);
         border-width: 20px;
-    } 
+    }
 }
 
 .main__div {
@@ -351,6 +345,9 @@ body {
         @include breakpoint($screen-medium) {
             justify-content: center;
             margin-right: 43px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
         }
 
         .book__div__room {
@@ -362,6 +359,8 @@ body {
             box-shadow: $color-grey 0px 5px 15px 0px;
             border-radius: 8px;
             margin-left: 43px;
+            margin-bottom: 15px;
+            margin-top: 15px;
 
             .book__div__titel {
                 grid-column: 1/4;
