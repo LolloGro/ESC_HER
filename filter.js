@@ -112,7 +112,7 @@ document.querySelector(".type__onSite").addEventListener("change", (event) => {
         });
     }
 });
-
+let tagedFilterd = [];
 for (let i = 0; i < taged.length; i++) {
     taged[i].addEventListener("click", () => {
         const checkLabel = taged[i].getAttribute("class");
@@ -221,10 +221,11 @@ for (let i = 0; i < taged.length; i++) {
                 filterTaged.splice(j, 1);
                 }
         }
-        const tagedFilterd = challengesList.filter(n => n.labels.some(m => filterTaged.includes(m)));
+        tagedFilterd = challengesList.filter(n => n.labels.some(m => filterTaged.includes(m)));
         console.log(tagedFilterd); 
+        filterChallenges();
     });  
-    filterChallenges();
+    
 }
 
 document.querySelector(".type__online").addEventListener("click", () => { console.log("online") });
@@ -242,7 +243,6 @@ async function filterText(){
     challengesList.forEach(challenge => {
         if(challenge.title.toLowerCase().includes(text.toLowerCase()) || challenge.description.toLowerCase().includes(text.toLowerCase())){
             filteredByText.push(challenge);
-            
         }
     });
     console.log("text filter array ");
@@ -264,7 +264,6 @@ async function createByRatingArray(){
     challengesList.forEach(challenge => {
         if (challenge.rating >= starFromValue && challenge.rating <= starToValue){
             filterByRating.push(challenge);
-            //console.log(challenge.title + " " + challenge.rating);
             console.log("this works");
         }else{
             console.log("in else");
@@ -276,6 +275,8 @@ async function createByRatingArray(){
 
 
 async function filterChallenges(){
+    console.log("in filter all");
+    tagedFilterd.forEach(challenge => {console.log(challenge.title);});
     //await createChallengesList();
     filteredByAll.length = 0;
     challengesList.forEach(challenge =>{
@@ -291,6 +292,13 @@ async function filterChallenges(){
        }else{
         console.log("challenge should show");
        }
+       if(!tagedFilterd.includes(challenge) && filterTaged.length != 0){
+        filteredByAll.push(challenge);
+        console.log("hiding because of tag");
+       }else{
+        console.log("showing because tag");
+       }
+     
     })
     filteredByAll.forEach(challenge => {
         const x = challengesList.indexOf(challenge);
