@@ -115,7 +115,7 @@ document.querySelector(".type__onSite").addEventListener("change", (event) => {
 const taged = document.querySelectorAll(".tags__label");
 
 const filterTaged = [];
-
+let tagedFilterd = [];
 taged.forEach(tag => {
     tag.addEventListener("click", () => {
         const checkLabel = tag.getAttribute("class");
@@ -132,8 +132,9 @@ taged.forEach(tag => {
             filterTaged.splice(index, 1);
         }
 
-        const tagedFilterd = challengesList.filter(challenge => challenge.labels.some(label => filterTaged.includes(label)));
+        tagedFilterd = challengesList.filter(challenge => challenge.labels.some(label => filterTaged.includes(label)));
         filterByTaged(tagedFilterd);
+        filterChallenges();
     });
 });
 
@@ -144,10 +145,8 @@ function filterByTaged(f) {
 
 
 
-document.querySelector(".type__online").addEventListener("click", () => { console.log("online") });
 
 
-document.querySelector(".keyword__input").addEventListener("keyup", () => { console.log("key"); filterText() });
 
 //By-text filter
 document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key"); filterText()}); 
@@ -155,7 +154,6 @@ const filteredByText=[];
 
 
 async function filterText() {
-    
     await createChallengesList();
     const input = document.querySelector(".keyword__input");
     const text = input.value;
@@ -191,6 +189,9 @@ async function createByRatingArray() {
 
 const bytypeArray = [];
 
+document.querySelector(".type__online").addEventListener("click",  () => { console.log("online");  bytypeFilter(); });
+document.querySelector(".type__onSite").addEventListener("click",  () => { console.log("onsite");  bytypeFilter(); });
+
 async function bytypeFilter() {
     bytypeArray.length = 0; 
 
@@ -201,12 +202,13 @@ async function bytypeFilter() {
 
     challengesList.forEach(challenge => {
         if ((onlineChecked && challenge.type === "online") || 
-            (onsiteChecked && challenge.type === "onSite")) {
+            (onsiteChecked && challenge.type === "onsite")) {
             bytypeArray.push(challenge); 
         }
     });
-
+    
     console.log("Filtered Array:", bytypeArray);
+    filterChallenges();
 }
 async function filterChallenges(){
     console.log("in filter all");
@@ -216,21 +218,16 @@ async function filterChallenges(){
     challengesList.forEach(challenge =>{
        if(!filteredByText.includes(challenge) && filteredByText.length != 0){
         filteredByAll.push(challenge);
-        console.log("hiding challenge");
-       }else{
-        console.log("challenge should show");
        }
        if(!filterByRating.includes(challenge) && filterByRating.length != 0){
         filteredByAll.push(challenge);
-        console.log("hiding challenge");
-       }else{
-        console.log("challenge should show");
        }
        if(!tagedFilterd.includes(challenge) && filterTaged.length != 0){
         filteredByAll.push(challenge);
-        console.log("hiding because of tag");
-       }else{
-        console.log("showing because tag");
+       }
+       if(!bytypeArray.includes(challenge) && bytypeArray.length != 0){
+        filteredByAll.push(challenge);
+        console.log("hiding by type");
        }
      
     })
@@ -238,6 +235,13 @@ async function filterChallenges(){
         const x = challengesList.indexOf(challenge);
         challengesList.splice(x, 1);
     })
+    if(challengesList.length == 0){
+        const container = document.querySelector(".book__div");
+        const noMatchesText = document.createElement("h2");
+        noMatchesText.innerHTML = "No matching challenges";
+        container.appendChild(noMatchesText);
+
+    }
     createRooms();
     console.log("challenges array length: "+challengesList.length);
     console.log("filtered array length: "+filteredByAll.length);
