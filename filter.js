@@ -117,7 +117,8 @@ const taged = document.querySelectorAll(".tags__label");
 const filterTaged = [];
 let tagedFilterd = [];
 taged.forEach(tag => {
-    tag.addEventListener("click", () => {
+    tag.addEventListener("click", async () => {
+        await createChallengesList();
         const checkLabel = tag.getAttribute("class");
         const controllLabel = "tags__label"
         const newLabel = "tags__label--clicked";
@@ -152,7 +153,6 @@ function filterByTaged(f) {
 document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key"); filterText()}); 
 const filteredByText=[]; 
 
-
 async function filterText() {
     await createChallengesList();
     const input = document.querySelector(".keyword__input");
@@ -175,7 +175,7 @@ async function filterText() {
 const filterByRating = []
 
 async function createByRatingArray() {
-
+    await createChallengesList();
     filterByRating.length = 0;
     challengesList.forEach(challenge => {
         if (challenge.rating >= starFromValue && challenge.rating <= starToValue) {
@@ -193,8 +193,9 @@ document.querySelector(".type__online").addEventListener("click",  () => { conso
 document.querySelector(".type__onSite").addEventListener("click",  () => { console.log("onsite");  bytypeFilter(); });
 
 async function bytypeFilter() {
+    await createChallengesList();
     bytypeArray.length = 0; 
-
+  // console.log("type array length: "+bytypeArray.length)
     const onlineChecked = document.querySelector(".type__online").checked;
     const onsiteChecked = document.querySelector(".type__onSite").checked;
 
@@ -211,9 +212,11 @@ async function bytypeFilter() {
     filterChallenges();
 }
 async function filterChallenges(){
+   // await createChallengesList();
     console.log("in filter all");
-    tagedFilterd.forEach(challenge => {console.log(challenge.title);});
-    //await createChallengesList();
+    console.log("type array length in filterChallenges "+bytypeArray.length);
+    //tagedFilterd.forEach(challenge => {console.log(challenge.title);});
+    
     filteredByAll.length = 0;
     challengesList.forEach(challenge =>{
        if(!filteredByText.includes(challenge) && filteredByText.length != 0){
