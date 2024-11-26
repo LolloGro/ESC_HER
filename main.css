@@ -13,8 +13,8 @@
   border-radius: 5px;
   padding: 10px;
   background-color: transparent;
-  color: rgb(165, 143, 224);
-  border-color: rgb(165, 143, 224);
+  color: rgb(132, 92, 241);
+  border-color: rgb(132, 92, 241);
 }
 .filter .filter__alternative {
   display: none;
@@ -64,7 +64,7 @@
   color: grey;
 }
 .filter .filter__alternative--open .filter__rating .filter__stars .rating__star--filled {
-  color: rgb(165, 143, 224);
+  color: rgb(132, 92, 241);
 }
 .filter .filter__alternative--open .filter__rating .filter__stars .star__text {
   margin: 0;
@@ -117,6 +117,191 @@
 }
 .filter .close {
   display: none;
+}
+
+@media screen and (min-width: 1280px) {
+  .book .book__div {
+    justify-content: center;
+    margin-right: 43px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .book__div__room {
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+}
+input {
+  height: 30px;
+}
+
+select {
+  height: 30px;
+}
+
+label {
+  align-content: end;
+}
+
+.bookingModal {
+  display: none;
+}
+.bookingModal .bookingModal__div {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  position: fixed;
+  display: grid;
+  grid-template-columns: auto 350px 250px auto;
+  grid-auto-rows: max-content;
+}
+.bookingModal .bookingModal__div .bookingModal__titel {
+  margin-top: 100px;
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1.5rem;
+}
+.bookingModal .bookingModal__div .bookingModal__close {
+  grid-column: 3;
+  grid-row: 1;
+  background-color: transparent;
+  border-color: transparent;
+  width: 40px;
+  justify-self: end;
+}
+.bookingModal .bookingModal__div .bookingModal__text {
+  grid-column: 2;
+  grid-row: 2;
+}
+.bookingModal .bookingModal__div .bookingModal__label {
+  grid-column: 2;
+  grid-row: 3;
+  align-content: end;
+}
+.bookingModal .bookingModal__div .bookingModal__input {
+  grid-column: 2;
+  grid-row: 4;
+  width: 250px;
+  font-size: 18px;
+}
+.bookingModal .bookingModal__div .bookingModal__open {
+  grid-column: 3;
+  grid-row: 5;
+  justify-self: end;
+  width: fit-content;
+  margin-top: 100px;
+  background-color: rgb(132, 92, 241);
+  color: white;
+  border-color: transparent;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.bookRoom {
+  display: none;
+}
+.bookRoom .bookRoom__div {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  position: fixed;
+  display: grid;
+  grid-template-columns: auto 350px 250px auto;
+  grid-auto-rows: max-content;
+}
+.bookRoom .bookRoom__titel {
+  margin-top: 100px;
+  grid-column: 2;
+  grid-row: 1;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+.bookRoom .bookRoom__close {
+  grid-column: 3;
+  grid-row: 1;
+  background-color: transparent;
+  border-color: transparent;
+  width: fit-content;
+  justify-self: end;
+  width: 40px;
+}
+.bookRoom .bookRoom__label__name {
+  grid-column: 2;
+  grid-row: 2;
+}
+.bookRoom .bookRoom__input__name {
+  grid-column: 2;
+  grid-row: 3;
+  width: 250px;
+  margin-bottom: 25px;
+}
+.bookRoom .bookRoom__label__email {
+  grid-column: 2;
+  grid-row: 4;
+}
+.bookRoom .bookRoom__input__email {
+  grid-column: 2;
+  grid-row: 5;
+  width: 250px;
+  margin-bottom: 25px;
+}
+.bookRoom .bookRoom__label__time {
+  grid-column: 2;
+  grid-row: 6;
+}
+.bookRoom .bookRoom__input__time {
+  grid-column: 2;
+  grid-row: 7;
+  width: 150px;
+  margin-bottom: 25px;
+}
+.bookRoom .bookRoom__label__part {
+  grid-column: 2;
+  grid-row: 8;
+}
+.bookRoom .bookRoom__input__part {
+  grid-column: 2;
+  grid-row: 9;
+  width: 150px;
+}
+.bookRoom .bookRoom__submit {
+  grid-column: 3;
+  grid-row: 10;
+  width: fit-content;
+  justify-self: end;
+  margin-top: 100px;
+  background-color: rgb(132, 92, 241);
+  color: white;
+  border-color: transparent;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.submitBooking {
+  display: none;
+}
+.submitBooking .submitBooking__div {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  position: fixed;
+  justify-items: center;
+}
+.submitBooking .submitBooking__text {
+  margin-top: 15%;
+  font-size: 40px;
+}
+.submitBooking .submitBooking__return {
+  color: rgb(132, 92, 241);
 }
 
 html {
@@ -439,15 +624,6 @@ body {
   .book .book__div {
     justify-content: center;
     margin-right: 43px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-@media screen and (min-width: 1280px){
-  .book__div__room{
-   margin-bottom: 15px;
-   margin-top: 15px; 
   }
 }
 .book .book__div .book__div__room {

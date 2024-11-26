@@ -17,7 +17,7 @@ openButton.addEventListener("click", () => {
 });
 
 const starFrom = document.querySelectorAll(".star__from");
-export let starFromValue = null;
+let starFromValue = null;
 
 starFrom.forEach((star, index) => {
     star.addEventListener("click", () => {
@@ -39,17 +39,17 @@ starFrom.forEach((star, index) => {
                 star.classList.remove("rating__star--filled");
             }
         });
-        createByRatingArray();             
+        createByRatingArray();
     });
 });
 
 const starTo = document.querySelectorAll(".star__to");
-export let starToValue = null;
+let starToValue = null;
 
 starTo.forEach((stars, place) => {
     stars.addEventListener("click", () => {
         console.log(place);
-        starToValue = place + 1; 
+        starToValue = place + 1;
         starTo.forEach((stars, secondPlace) => {
             if (place == 0) {
                 const check = stars.getAttribute("class");
@@ -67,15 +67,14 @@ starTo.forEach((stars, place) => {
                 stars.classList.remove("rating__star--filled");
             }
         });
-        createByRatingArray();        
+        createByRatingArray();
     });
 });
 
-const taged = document.querySelectorAll(".tags__label");
-
-const filterTaged = [];
-
 const onSiteCheckbox = document.querySelector(".type__onsite")
+
+/*const onSiteCheckbox = document.querySelector(".type__onsite")
+
 document.querySelector(".type__online").addEventListener("change", (event) => {
     const challenges = document.querySelectorAll(".challenge");
 
@@ -83,14 +82,14 @@ document.querySelector(".type__online").addEventListener("change", (event) => {
         document.querySelector(".type__onSite").checked = false;
         challenges.forEach((challenge) => {
             if (challenge.getAttribute("data-type") === "online") {
-                challenge.style.display = "grid"; 
-            }else {
-                challenge.style.display = "none"; 
+                challenge.style.display = "grid";
+            } else {
+                challenge.style.display = "none";
             }
         });
     } else {
         challenges.forEach((challenge) => {
-            challenge.style.display = "grid"; 
+            challenge.style.display = "grid";
         });
     }
 });
@@ -101,140 +100,62 @@ document.querySelector(".type__onSite").addEventListener("change", (event) => {
         document.querySelector(".type__online").checked = false;
         challenges.forEach((challenge) => {
             if (challenge.getAttribute("data-type") === "onsite") {
-                challenge.style.display = "grid"; 
-            }else {
-                challenge.style.display = "none"; 
+                challenge.style.display = "grid";
+            } else {
+                challenge.style.display = "none";
             }
         });
     } else {
         challenges.forEach((challenge) => {
-            challenge.style.display = "grid"; 
+            challenge.style.display = "grid";
         });
     }
-});
-let tagedFilterd = [];
-for (let i = 0; i < taged.length; i++) {
-    taged[i].addEventListener("click", () => {
-        const checkLabel = taged[i].getAttribute("class");
-        const controllLabel = "tags__label";
-        const newLabel = "tags__label--clicked";
+});*/
 
-        if (taged[i] == taged[0]) {
-            const innerTage = taged[i].getHTML();
-            if (checkLabel == controllLabel) {
-                taged[i].classList.add(newLabel);
-                
-                filterTaged.push(innerTage.toLowerCase());
-            } else {
-                taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf(innerTage.toLowerCase());
-                filterTaged.splice(j, 1);
-            }
-        } else if (taged[i] == taged[1]) {
-            const innerTage = taged[i].getHTML();
-            if (checkLabel == controllLabel) {
-                taged[i].classList.add(newLabel);
-                filterTaged.push(innerTage.toLowerCase());
-            } else {
-                taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf(innerTage.toLowerCase());
-                filterTaged.splice(j, 1);
-            }
-        } else if (taged[i] == taged[2]) {
-            const innerTage = taged[i].getHTML();
-            if (checkLabel == controllLabel) {
-                taged[i].classList.add(newLabel);
-                filterTaged.push(innerTage.toLowerCase());
-            } else {
-                taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf(innerTage.toLowerCase());
-                filterTaged.splice(j, 1);
-            }
-        }else if(taged[i] == taged[3]){ 
-            const innerTage = taged[i].getHTML();
-            if (checkLabel == controllLabel) {
-            taged[i].classList.add(newLabel);
-            filterTaged.push(innerTage.toLowerCase());
-            } else {
-            taged[i].classList.remove(newLabel);
-            const j = filterTaged.indexOf(innerTage.toLowerCase());
-            filterTaged.splice(j, 1);
-            }
-        }else if(taged[i] == taged[4]){
-            const innerTage = taged[i].getHTML();
-            if (checkLabel == controllLabel) {
-                taged[i].classList.add(newLabel);
-                filterTaged.push(innerTage.toLowerCase());
-                } else {
-                taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf(innerTage.toLowerCase());
-                filterTaged.splice(j, 1);
-                }
-        }else if(taged[i] == taged[5]){
-            const innerTage = taged[i].getHTML();
-            if (checkLabel == controllLabel) {
-                taged[i].classList.add(newLabel);
-                filterTaged.push(innerTage.toLowerCase());
-                } else {
-                taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf(innerTage.toLowerCase());
-                filterTaged.splice(j, 1);
-                }
-        }else if(taged[i] == taged[6]){
-            const innerTage = taged[i].getHTML();
-            if (checkLabel == controllLabel) {
-                taged[i].classList.add(newLabel);
-                filterTaged.push(innerTage.toLowerCase());
-                } else {
-                taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf(innerTage.toLowerCase());
-                filterTaged.splice(j, 1);
-                }
-        }else if(taged[i] == taged[7]){
-            const innerTage = taged[i].getHTML();
-            if (checkLabel == controllLabel) {
-                taged[i].classList.add(newLabel);
-                filterTaged.push(innerTage.toLowerCase());
-                } else {
-                taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf(innerTage.toLowerCase());
-                filterTaged.splice(j, 1);
-                }
-        }else if( taged[i]== taged[8]){
-            const innerTage = taged[i].getHTML();
-            if (checkLabel == controllLabel) {
-                taged[i].classList.add(newLabel);
-                filterTaged.push(innerTage.toLowerCase());
-                } else {
-                taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf(innerTage.toLowerCase());
-                filterTaged.splice(j, 1);
-                }
-        }else if(taged[i] == taged[9]){
-            const innerTage = taged[i].getHTML();
-            if (checkLabel == controllLabel) {
-                taged[i].classList.add(newLabel);
-                filterTaged.push(innerTage.toLowerCase());
-                } else {
-                taged[i].classList.remove(newLabel);
-                const j = filterTaged.indexOf(innerTage.toLowerCase());
-                filterTaged.splice(j, 1);
-                }
+const taged = document.querySelectorAll(".tags__label");
+
+const filterTaged = [];
+
+taged.forEach(tag => {
+    tag.addEventListener("click", () => {
+        const checkLabel = tag.getAttribute("class");
+        const controllLabel = "tags__label"
+        const newLabel = "tags__label--clicked";
+        const innerTage = tag.textContent.toLowerCase();
+
+        if (checkLabel === controllLabel) {
+            tag.classList.add(newLabel);
+            filterTaged.push(innerTage);
+        } else {
+            tag.classList.remove(newLabel);
+            const index = filterTaged.indexOf(innerTage);
+            filterTaged.splice(index, 1);
         }
-        tagedFilterd = challengesList.filter(n => n.labels.some(m => filterTaged.includes(m)));
-        console.log(tagedFilterd); 
-        filterChallenges();
-    });  
-    
+
+        const tagedFilterd = challengesList.filter(challenge => challenge.labels.some(label => filterTaged.includes(label)));
+        filterByTaged(tagedFilterd);
+    });
+});
+
+filterByTaged();
+
+function filterByTaged(f) {
 }
+
+
 
 document.querySelector(".type__online").addEventListener("click", () => { console.log("online") });
 
 
-document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key"); filterText()}); 
-const filteredByText=[];
+document.querySelector(".keyword__input").addEventListener("keyup", () => { console.log("key"); filterText() });
 
-async function filterText(){
+//By-text filter
+document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key"); filterText()}); 
+const filteredByText=[]; 
+
+
+async function filterText() {
+    
     await createChallengesList();
     const input = document.querySelector(".keyword__input");
     const text = input.value;
@@ -252,28 +173,41 @@ async function filterText(){
     filterChallenges();
 }
 
-document.querySelector(".type__onSite").addEventListener("click", () => { console.log("onsite") });
-
-
 //filter by stars using staFromValue and starToValue: 
 const filterByRating = []
 
-async function createByRatingArray(){
-    
+async function createByRatingArray() {
+
     filterByRating.length = 0;
     challengesList.forEach(challenge => {
-        if (challenge.rating >= starFromValue && challenge.rating <= starToValue){
+        if (challenge.rating >= starFromValue && challenge.rating <= starToValue) {
             filterByRating.push(challenge);
             console.log("this works");
-        }else{
-            console.log("in else");
         }
-    });        
+    });
     window.filterByRating = filterByRating;
     filterChallenges();
 };
 
+const bytypeArray = [];
 
+async function bytypeFilter() {
+    bytypeArray.length = 0; 
+
+    const onlineChecked = document.querySelector(".type__online").checked;
+    const onsiteChecked = document.querySelector(".type__onSite").checked;
+
+    console.log("Online Checked:", onlineChecked, "Onsite Checked:", onsiteChecked); 
+
+    challengesList.forEach(challenge => {
+        if ((onlineChecked && challenge.type === "online") || 
+            (onsiteChecked && challenge.type === "onSite")) {
+            bytypeArray.push(challenge); 
+        }
+    });
+
+    console.log("Filtered Array:", bytypeArray);
+}
 async function filterChallenges(){
     console.log("in filter all");
     tagedFilterd.forEach(challenge => {console.log(challenge.title);});
