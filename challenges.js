@@ -12,15 +12,14 @@ export async function createChallengesList(){
     data.challenges.forEach((challenge) => {
         challengesList.push(challenge);
     });
-    createRooms();
+    createRooms(challengesList);
 }
 
-export async function createRooms(){
+export async function createRooms(list){
     console.log("in create rooms");
-    const roomContainer = document.querySelector(".book__div")
-    //await createChallengesList();   
+    const roomContainer = document.querySelector(".book__div")   
     roomContainer.innerHTML = "";
-    challengesList.forEach((challenge) => {
+    list.forEach((challenge) => {
         const roomTile = document.createElement("div");
         roomTile.className = "book__div__room challenge";
         roomTile.setAttribute("data-type", challenge.type);
