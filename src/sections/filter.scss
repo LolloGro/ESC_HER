@@ -1,6 +1,4 @@
-$color-lilac:rgb(132, 92, 241);
-$color-light-grey: lightgray; 
-$color-medium-grey: grey; 
+@use './lib.scss' as *; 
 
 .filter {
     justify-self: center;
@@ -18,8 +16,8 @@ $color-medium-grey: grey;
             border-radius: 5px;
             padding: 10px;
             background-color: transparent;
-            color: $color-lilac;
-            border-color: $color-lilac;
+            color: $color-medium-blue;
+            border-color: $color-medium-blue;
         }
     }
 
@@ -76,7 +74,7 @@ $color-medium-grey: grey;
                     color: $color-medium-grey;
                 }
                 .rating__star--filled{
-                   color: $color-lilac; 
+                   color: $color-red; 
                 }
 
                 .star__text {
@@ -125,14 +123,12 @@ $color-medium-grey: grey;
             .keyword__input {
                 margin-top: 10px;
                 margin-bottom: 20px;
-                padding: 8px;
+                padding: 6px;
                 width: 320px;
                 border-color: $color-light-grey;
                 border-radius: 5px;
-                font-size: 0.75rem;
-                font-weight: 700;
-                color: $color-light-grey; 
-                font-family: roboto;    
+                font-size: 1.125rem;
+                font-family: roboto;   
             }
         }
     }
