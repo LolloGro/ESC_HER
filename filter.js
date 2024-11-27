@@ -223,12 +223,8 @@ async function bytypeFilter() {
     filterChallenges();
 }
 async function filterChallenges(){
-   // await createChallengesList();
-    //const noMatchesText = document.querySelector(".book__filtered");
     noMatchesText.style.display ="none";
     console.log("in filter all");
-    //console.log("type array length in filterChallenges "+bytypeArray.length);
-    //tagedFilterd.forEach(challenge => {console.log(challenge.title);});
     filteredByText.forEach(challenge => {console.log(challenge.title)});
     console.log(filteredByText.length+" "+filterByRating.length+" "+tagedFilterd.length+" "+bytypeArray.length);
     filteredByAll.length = 0;
@@ -237,22 +233,16 @@ async function filterChallenges(){
             filteredByAll.push(challenge);
             console.log("remove all bc text");
         }else if(!filteredByText.includes(challenge) && filteredByText.length != 0 && !filteredByAll.includes(challenge)){
-        filteredByAll.push(challenge);
-        console.log("filter by text is fucked");
-        }else{
-            console.log("in else");
+            filteredByAll.push(challenge);
         }
         if(!filterByRating.includes(challenge) && filterByRating.length != 0 && !filteredByAll.includes(challenge)){
-        filteredByAll.push(challenge);
-        console.log("filter by rating");
+            filteredByAll.push(challenge);
         }
         if(!tagedFilterd.includes(challenge) && filterTaged.length != 0 && !filteredByAll.includes(challenge)){
-        filteredByAll.push(challenge);
-        console.log("filter by tag");
+            filteredByAll.push(challenge);
         }
         if(!bytypeArray.includes(challenge) && bytypeArray.length != 0 && !filteredByAll.includes(challenge)){
-        filteredByAll.push(challenge);
-        console.log("filter by type");
+            filteredByAll.push(challenge);
        }
      
     })
