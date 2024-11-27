@@ -1,6 +1,10 @@
 const closeButton = document.querySelector(".alternative__close");
 const filterMenu = document.querySelector(".filter__alternative");
-//import { challengesList } from "./challenges.js";
+const filteredByAll = [];
+import {challengesList, createRooms, createChallengesList} from "./challenges.js";
+
+const noMatchesText = document.querySelector(".book__filtered");
+noMatchesText.style.display ="none";
 
 closeButton.addEventListener("click", () => {
     filterMenu.setAttribute("class", "close");
@@ -114,9 +118,10 @@ document.querySelector(".type__onSite").addEventListener("change", (event) => {
 const taged = document.querySelectorAll(".tags__label");
 
 const filterTaged = [];
-
+let tagedFilterd = [];
 taged.forEach(tag => {
-    tag.addEventListener("click", () => {
+    tag.addEventListener("click", async () => {
+       // await createChallengesList();
         const checkLabel = tag.getAttribute("class");
         const controllLabel = "tags__label"
         const newLabel = "tags__label--clicked";
@@ -131,8 +136,9 @@ taged.forEach(tag => {
             filterTaged.splice(index, 1);
         }
 
-        const tagedFilterd = challengesList.filter(challenge => challenge.labels.some(label => filterTaged.includes(label)));
+        tagedFilterd = challengesList.filter(challenge => challenge.labels.some(label => filterTaged.includes(label)));
         filterByTaged(tagedFilterd);
+        filterChallenges();
     });
 });
 
@@ -143,34 +149,44 @@ function filterByTaged(f) {
 
 
 
-document.querySelector(".type__online").addEventListener("click", () => { console.log("online") });
 
 
-document.querySelector(".keyword__input").addEventListener("keyup", () => { console.log("key"); filterText() });
 
 //By-text filter
 document.querySelector(".keyword__input").addEventListener("keyup", () => {console.log("key"); filterText()}); 
-
+const filteredByText=[]; 
 
 async function filterText() {
-    await createChallengesList();
+    //await createChallengesList();
     const input = document.querySelector(".keyword__input");
     const text = input.value;
     console.log(text);
-    const filteredChallenges = [];
+   
+    filteredByText.length = 0;
+    console.log(filteredByText[0]);
     challengesList.forEach(challenge => {
-        if (challenge.title.toLowerCase().includes(text.toLowerCase()) || challenge.description.toLowerCase().includes(text.toLowerCase())) {
-            filteredChallenges.push(challenge);
-            console.log(challenge.title + " - " + challenge.description);
+        if(challenge.title.toLowerCase().includes(text.toLowerCase()) || challenge.description.toLowerCase().includes(text.toLowerCase())){
+            filteredByText.push(challenge);
         }
     });
+    if(filteredByText.length == 0){
+        filteredByText.push("1");
+        console.log("everything is filtered away");
+    }
+    console.log(filteredByText[0]);
+    console.log("text filter array ");
+    filteredByText.forEach(challenge => {
+        console.log(challenge.title);
+    })
+   // console.log(filteredByText[0]);
+    filterChallenges();
 }
 
 //filter by stars using staFromValue and starToValue: 
 const filterByRating = []
 
 async function createByRatingArray() {
-
+    //await createChallengesList();
     filterByRating.length = 0;
     challengesList.forEach(challenge => {
         if (challenge.rating >= starFromValue && challenge.rating <= starToValue) {
@@ -179,17 +195,18 @@ async function createByRatingArray() {
         }
     });
     window.filterByRating = filterByRating;
+    filterChallenges();
 };
-
-document.querySelector(".type__online").addEventListener("change", () => {bytypeFilter();});
-
-document.querySelector(".type__onSite").addEventListener("change", () => {bytypeFilter();});
 
 const bytypeArray = [];
 
-async function bytypeFilter() {
-    bytypeArray.length = 0; 
+document.querySelector(".type__online").addEventListener("click",  () => { console.log("online");  bytypeFilter(); });
+document.querySelector(".type__onSite").addEventListener("click",  () => { console.log("onsite");  bytypeFilter(); });
 
+async function bytypeFilter() {
+   // await createChallengesList();
+    bytypeArray.length = 0; 
+  // console.log("type array length: "+bytypeArray.length)
     const onlineChecked = document.querySelector(".type__online").checked;
     const onsiteChecked = document.querySelector(".type__onSite").checked;
 
@@ -197,11 +214,58 @@ async function bytypeFilter() {
 
     challengesList.forEach(challenge => {
         if ((onlineChecked && challenge.type === "online") || 
-            (onsiteChecked && challenge.type === "onSite")) {
+            (onsiteChecked && challenge.type === "onsite")) {
             bytypeArray.push(challenge); 
         }
     });
-
+    
     console.log("Filtered Array:", bytypeArray);
+    filterChallenges();
 }
-
+async function filterChallenges(){
+   // await createChallengesList();
+    //const noMatchesText = document.querySelector(".book__filtered");
+    noMatchesText.style.display ="none";
+    console.log("in filter all");
+    //console.log("type array length in filterChallenges "+bytypeArray.length);
+    //tagedFilterd.forEach(challenge => {console.log(challenge.title);});
+    filteredByText.forEach(challenge => {console.log(challenge.title)});
+    console.log(filteredByText.length+" "+filterByRating.length+" "+tagedFilterd.length+" "+bytypeArray.length);
+    filteredByAll.length = 0;
+    challengesList.forEach(challenge =>{
+        if(filteredByText[0]=="1"){
+            filteredByAll.push(challenge);
+            console.log("remove all bc text");
+        }else if(!filteredByText.includes(challenge) && filteredByText.length != 0 && !filteredByAll.includes(challenge)){
+        filteredByAll.push(challenge);
+        console.log("filter by text is fucked");
+        }else{
+            console.log("in else");
+        }
+        if(!filterByRating.includes(challenge) && filterByRating.length != 0 && !filteredByAll.includes(challenge)){
+        filteredByAll.push(challenge);
+        console.log("filter by rating");
+        }
+        if(!tagedFilterd.includes(challenge) && filterTaged.length != 0 && !filteredByAll.includes(challenge)){
+        filteredByAll.push(challenge);
+        console.log("filter by tag");
+        }
+        if(!bytypeArray.includes(challenge) && bytypeArray.length != 0 && !filteredByAll.includes(challenge)){
+        filteredByAll.push(challenge);
+        console.log("filter by type");
+       }
+     
+    })
+    const shownChallenges = [];
+    challengesList.forEach(challenge=>{
+        shownChallenges.push(challenge);
+    })
+    filteredByAll.forEach(challenge => {
+        const x = shownChallenges.indexOf(challenge);
+        shownChallenges.splice(x, 1);
+    })
+    if(shownChallenges.length == 0){
+        noMatchesText.style.display="grid";
+    }
+    createRooms(shownChallenges);
+}

@@ -1,9 +1,10 @@
 
 createChallengesList();
-createRooms();
+//createRooms();
 
-/*export*/ const challengesList = [];
-async function createChallengesList(){
+export const challengesList = [];
+export async function createChallengesList(){
+    console.log("in create challenges list");
     const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
     const data = await response.json();
     challengesList.length = 0;    
@@ -11,13 +12,14 @@ async function createChallengesList(){
     data.challenges.forEach((challenge) => {
         challengesList.push(challenge);
     });
+    createRooms(challengesList);
 }
 
-/*export*/ async function createRooms(){
-    const roomContainer = document.querySelector(".book__div")
-    await createChallengesList();   
+export async function createRooms(list){
+    console.log("in create rooms");
+    const roomContainer = document.querySelector(".book__div")   
     roomContainer.innerHTML = "";
-    challengesList.forEach((challenge) => {
+    list.forEach((challenge) => {
         const roomTile = document.createElement("div");
         roomTile.className = "book__div__room challenge";
         roomTile.setAttribute("data-type", challenge.type);
