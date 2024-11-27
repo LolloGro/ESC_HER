@@ -139,7 +139,7 @@ async function createByRatingArray() {
     starToValue = 5 - starToValue;  
        
     challengesList.forEach(challenge => {
-        if (challenge.rating >= starFromValue && challenge.rating <= starToValue) {            
+        if (challenge.rating > starFromValue && challenge.rating <= starToValue) {            
             filterByRating.push(challenge);
             console.log("this works");
         }
@@ -150,7 +150,19 @@ async function createByRatingArray() {
     if (starFromValue === 0 && starToValue === 0){
         filterByRating.length = 0;
     };
-    filterChallenges();    
+    if(starFromValue >= starToValue){
+        filterByRating.length = 0;
+        createRooms(filterByRating);
+        noMatchesText.style.display="grid";
+        return;
+    };
+    if(filterByRating.length == 0 && starToValue == 5 && starFromValue == 5){
+        createRooms(filterByRating);
+        noMatchesText.style.display="grid";
+    } else {
+        filterChallenges();
+    };
+        
 };
 
 const bytypeArray = [];
