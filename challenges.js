@@ -1,14 +1,11 @@
 
 createChallengesList();
-//createRooms();
 
 export const challengesList = [];
 export async function createChallengesList(){
-    console.log("in create challenges list");
     const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
     const data = await response.json();
     challengesList.length = 0;    
-
     data.challenges.forEach((challenge) => {
         challengesList.push(challenge);
     });
@@ -16,7 +13,6 @@ export async function createChallengesList(){
 }
 
 export async function createRooms(list){
-    console.log("in create rooms");
     const roomContainer = document.querySelector(".book__div")   
     roomContainer.innerHTML = "";
     list.forEach((challenge) => {
@@ -63,8 +59,6 @@ export async function createRooms(list){
                 bookingId = challenge.id;
                 minPart = challenge.minParticipants;
                 maxPart = challenge.maxParticipants;                               
-                console.log(challenge.id);                
-                console.log("delP", participants); 
                }); 
         }
         
@@ -151,7 +145,7 @@ export async function createRooms(list){
             break;
         case 1:
             bookStarOne.className="fa fa-star";
-            bookStarTwo.className="fa-regularfa-star";
+            bookStarTwo.className="fa-regular fa-star";
             bookStarThree.className="fa-regular fa-star";
             bookStarFour.className="fa-regular fa-star";
             bookStarFive.className="fa-regular fa-star";
