@@ -67,6 +67,7 @@ const bookTime = document.querySelector(".bookRoom__input__time");
 const selTime = document.getElementById("selTime");
 
 function creatTimeList(time) {
+  selTime.innerHTML=""; 
   time.forEach(t => {
     const times = document.createElement("option");
     times.innerHTML = t;
