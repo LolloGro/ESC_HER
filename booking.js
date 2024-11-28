@@ -54,6 +54,11 @@ closeModalBtn.addEventListener('click', () => {
 
 const closeBookRoom = document.querySelector(".bookRoom__close");
 
+closeBookRoom.addEventListener("click", ()=> {
+  bookModal.style.display = "none";
+  participants.lenght = 0;  
+}); 
+
 closeBookRoom.addEventListener("click", () => {
   bookModal.style.display = "none";
 });
@@ -65,8 +70,8 @@ function creatTimeList(time) {
   time.forEach(t => {
     const times = document.createElement("option");
     times.innerHTML = t;
-    selTime.appendChild(times);
-  });
+    selTime.appendChild(times);    
+  }); 
 }
 
 bookTime.addEventListener("input", () => {
@@ -76,11 +81,12 @@ bookTime.addEventListener("input", () => {
 const inputParticipants = document.getElementById("participants");
 const partList = document.getElementById("selPart");
 
-function creatPartList(part) {
+function creatPartList (part) {
+  partList.innerHTML = "";
   part.forEach(delt => {
-    const option = document.createElement("option");
+    const option = document.createElement("option");    
     option.innerHTML = delt;
-    partList.appendChild(option);
+    partList.appendChild(option);    
   });
 }
 

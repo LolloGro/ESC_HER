@@ -18,6 +18,7 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src='main.js' type = "module"></script>
+    <script defer src="booking.js"></script>
 </head>
 
 <body>
@@ -100,6 +101,38 @@
             nocere
             tibi erit, et non inimicos, et</p>
         <a class="red__link" href="">See all challenges</a>
+    </div>
+    <div class="bookingModal">
+        <div class="bookingModal__div">
+            <p class="bookingModal__titel">Book room</p>
+            <p class="bookingModal__text">What date would you like to come?</p>
+            <button class="bookingModal__close" href="#"><i class="fa-solid fa-xmark"></i></button>
+            <input class="bookingModal__input" type="date" name="bookDate">
+            <label class="bookingModal__label" for="bookDate">Date</label>
+            <p class="bookingModal_noTime"></p>
+            <button class="bookingModal__open">Search avalible times</button>
+        </div>
+    </div>
+    <div class="bookRoom">
+        <div class="bookRoom__div">
+            <p class="bookRoom__titel">Book room</p>
+            <button class="bookRoom__close" href="#"><i class="fa-solid fa-xmark"></i></button>
+            <input class="bookRoom__input__name" type="text" name="name">
+            <label class="bookRoom__label__name" for="name">Name</label>
+            <input class="bookRoom__input__email" type="email" name="email">
+            <label class="bookRoom__label__email" for="email">E-mail</label>
+            <select class="bookRoom__input__time" name="time" id="selTime"></select>  
+            <label class="bookRoom__label__time" id="bookTime" for="">What time?</label>
+            <select class="bookRoom__input__part" name="participants" id="selPart"></select>
+            <label class="bookRoom__label__part" for="participants">How many participants?</label>
+            <button class="bookRoom__submit" type="submit">Submit booking</button>
+        </div>
+    </div>
+    <div class="submitBooking">
+        <div class="submitBooking__div">
+            <p class="submitBooking__text">Thank you!</p>
+            <a class="submitBooking__return" href="challenges.html">Back to challenges</a>
+        </div>
     </div>
 
     <footer>

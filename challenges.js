@@ -1,23 +1,21 @@
 
 createChallengesList();
-createRooms();
 
-/*export*/ const challengesList = [];
-async function createChallengesList(){
+export const challengesList = [];
+export async function createChallengesList(){
     const response = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
     const data = await response.json();
     challengesList.length = 0;    
-
     data.challenges.forEach((challenge) => {
         challengesList.push(challenge);
     });
+    createRooms(challengesList);
 }
 
-/*export*/ async function createRooms(){
-    const roomContainer = document.querySelector(".book__div")
-    await createChallengesList();   
+export async function createRooms(list){
+    const roomContainer = document.querySelector(".book__div")   
     roomContainer.innerHTML = "";
-    challengesList.forEach((challenge) => {
+    list.forEach((challenge) => {
         const roomTile = document.createElement("div");
         roomTile.className = "book__div__room challenge";
         roomTile.setAttribute("data-type", challenge.type);
@@ -61,8 +59,6 @@ async function createChallengesList(){
                 bookingId = challenge.id;
                 minPart = challenge.minParticipants;
                 maxPart = challenge.maxParticipants;                               
-                console.log(challenge.id);                
-                console.log("delP", participants); 
                }); 
         }
         
@@ -149,7 +145,7 @@ async function createChallengesList(){
             break;
         case 1:
             bookStarOne.className="fa fa-star";
-            bookStarTwo.className="fa-regularfa-star";
+            bookStarTwo.className="fa-regular fa-star";
             bookStarThree.className="fa-regular fa-star";
             bookStarFour.className="fa-regular fa-star";
             bookStarFive.className="fa-regular fa-star";
