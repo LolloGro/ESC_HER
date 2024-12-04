@@ -135,33 +135,43 @@ label {
         width: 250px;
         margin-bottom: 25px;
     }
+    .bookRoom__label__phone{
+        grid-column: 2;
+        grid-row: 6;
+    }
+    .bookRoom__input__phone{
+        grid-column: 2;
+        grid-row: 7;
+        width: 250px;
+        margin-bottom: 25px;
+    }
 
     .bookRoom__label__time {
         grid-column: 2;
-        grid-row: 6;
+        grid-row: 8;
     }
 
     .bookRoom__input__time {
         grid-column: 2;
-        grid-row: 7;
+        grid-row: 9;
         width: 150px;
         margin-bottom: 25px;
     }
 
     .bookRoom__label__part {
         grid-column: 2;
-        grid-row: 8;
+        grid-row: 10;
     }
 
     .bookRoom__input__part {
         grid-column: 2;
-        grid-row: 9;
+        grid-row: 11;
         width: 150px;
     }
 
     .bookRoom__submit {
         grid-column: 3;
-        grid-row: 10;
+        grid-row: 12;
         width: fit-content;
         justify-self: end;
         margin-top: 100px;
