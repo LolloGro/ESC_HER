@@ -1,6 +1,7 @@
 @use 'sections/lib.scss' as *;
 @use 'sections/filter.scss';
 @use 'sections/booking.scss';
+@use 'sections/about.scss'; 
 
 @mixin styling-p-quot {
     font-size: 1.5rem;

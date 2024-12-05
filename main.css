@@ -291,6 +291,108 @@ label {
   color: #36769d;
 }
 
+@media screen and (min-width: 1280px) {
+  .aboutUs {
+    display: grid;
+    grid-template-columns: 2;
+  }
+}
+.aboutUs .aboutUs__titel {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  padding: 25px;
+}
+@media screen and (min-width: 1280px) {
+  .aboutUs .aboutUs__titel {
+    grid-column: 1/3;
+    padding: 35px;
+  }
+}
+.aboutUs .aboutUs__img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+@media screen and (min-width: 1280px) {
+  .aboutUs .aboutUs__img {
+    grid-column: 2;
+    grid-row: 2;
+    height: auto;
+  }
+}
+.aboutUs .aboutUs__text {
+  margin: auto;
+  padding-top: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 600px;
+  font-size: 1.125rem;
+}
+@media screen and (min-width: 1280px) {
+  .aboutUs .aboutUs__text {
+    grid-column: 1;
+    grid-row: 2;
+    padding-top: 0;
+  }
+}
+
+.team {
+  padding-bottom: 35px;
+}
+.team .team__titel {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 400;
+  padding: 25px;
+}
+@media screen and (min-width: 1280px) {
+  .team .team__titel {
+    padding: 35px;
+  }
+}
+.team .team__text {
+  margin: auto;
+  padding-bottom: 35px;
+  max-width: 400px;
+  font-size: 1.125rem;
+}
+@media screen and (min-width: 1280px) {
+  .team .team__text {
+    max-width: 535px;
+  }
+}
+.team .team__members {
+  text-align: center;
+}
+@media screen and (min-width: 1280px) {
+  .team .team__members {
+    display: grid;
+    grid-template-columns: auto;
+    column-gap: 150px;
+    grid-template-rows: 2;
+    justify-content: center;
+    padding-top: 50px;
+  }
+}
+.team .team__members .members__photo {
+  width: 147px;
+  height: 147px;
+}
+@media screen and (min-width: 1280px) {
+  .team .team__members .members__photo {
+    grid-row: 1;
+  }
+}
+.team .team__members .members__name {
+  font-size: 1.25rem;
+}
+@media screen and (min-width: 1280px) {
+  .team .team__members .members__name {
+    grid-row: 2;
+  }
+}
+
 html {
   font-family: "Roboto";
   margin-left: auto;
@@ -973,10 +1075,5 @@ footer .contact .contact__titel {
     margin-top: 70px;
   }
 }
-.book__filtered{
-  font-weight: 400;
-  font-size: 38px;
-  margin-top: 5rem;
-  text-align: center;
-}
+
 /*# sourceMappingURL=main.css.map */
