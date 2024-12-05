@@ -1,5 +1,7 @@
 const closeButton = document.querySelector('.alternative__close');
 const filterMenu = document.querySelector('.filter__alternative');
+let starFromValue = 0;
+let starToValue = 0; 
 const filteredByAll = [];
 import {
   challengesList,
@@ -25,7 +27,9 @@ const starFrom = document.querySelectorAll('.star__from');
 
 starFrom.forEach((star, index) => {
   star.addEventListener('click', () => {
-    starFrom.forEach((star, secondIndex) => {
+    updateStarValues();
+    if (starFromValue <= starToValue) {
+    starFrom.forEach((star, secondIndex) => {      
       if (index == 0) {
         const log = star.getAttribute('class');
         if (
@@ -33,23 +37,28 @@ starFrom.forEach((star, index) => {
         ) {
           star.classList.remove('rating__star--filled');
         } else if (index >= secondIndex) {
-          star.classList.add('rating__star--filled');
+          star.classList.add('rating__star--filled');          
         }
       } else if (index >= secondIndex) {
-        star.classList.add('rating__star--filled');
+        star.classList.add('rating__star--filled');        
       } else {
         star.classList.remove('rating__star--filled');
       }
     });
+    updateStarValues();    
     createByRatingArray();
+};
   });
+
+
 });
 
 const starTo = document.querySelectorAll('.star__to');
 
 starTo.forEach((stars, place) => {
   stars.addEventListener('click', () => {
-    starTo.forEach((stars, secondPlace) => {
+    updateStarValues();        
+    starTo.forEach((stars, secondPlace) => {       
       if (place == 0) {
         const check = stars.getAttribute('class');
         if (
@@ -65,7 +74,9 @@ starTo.forEach((stars, place) => {
         stars.classList.remove('rating__star--filled');
       }
     });
+    updateStarValues();    
     createByRatingArray();
+
   });
 });
 
@@ -80,7 +91,6 @@ taged.forEach((tag) => {
     const controllLabel = 'tags__label';
     const newLabel = 'tags__label--clicked';
     const innerTage = tag.textContent.toLowerCase();
-
     if (checkLabel === controllLabel) {
       tag.classList.add(newLabel);
       filterTaged.push(innerTage);
@@ -121,28 +131,8 @@ async function filterText() {
 }
 const filterByRating = [];
 window.filterByRating = filterByRating;
-async function createByRatingArray() {
+function createByRatingArray() {
   filterByRating.length = 0;
-  let starFromValue = 0;
-  let starToValue = 0;
-  window.starFromValue = starFromValue;
-  window.starToValue = starToValue;
-  const ratingFromElement = document.querySelectorAll('.rating__to > *');
-  const ratingToElement = document.querySelectorAll('.rating__from > *');
-
-  ratingFromElement.forEach((element) => {
-    if (element.classList.length === 4) {
-      starFromValue++;
-    }
-  });
-  ratingToElement.forEach((element) => {
-    if (element.classList.length === 4) {
-      starToValue++;
-    }
-  });
-  starFromValue = 5 - starFromValue;
-  starToValue = 5 - starToValue;
-
   challengesList.forEach((challenge) => {
     if (challenge.rating >= starFromValue && challenge.rating <= starToValue) {
       filterByRating.push(challenge);
@@ -155,6 +145,7 @@ async function createByRatingArray() {
   if (starFromValue > starToValue) {
     filterByRating.length = 0;
     createRooms(filterByRating);
+    noMatchesText.innerHTML = "No matching challenges. Second rating must be higher or equal than first"
     noMatchesText.style.display = 'grid';
     return;
   }
@@ -162,9 +153,30 @@ async function createByRatingArray() {
     createRooms(filterByRating);
     noMatchesText.style.display = 'grid';
   } else {
+    noMatchesText.innerHTML = "No matching challenges."
     filterChallenges();
   }
 }
+function updateStarValues() {     
+    const ratingFromElement = document.querySelectorAll('.rating__to > *');
+    const ratingToElement = document.querySelectorAll('.rating__from > *');
+    starFromValue = 0;
+    starToValue = 0;     
+    ratingFromElement.forEach((element) => {
+      if (element.classList.length === 4) {
+        starFromValue++;      
+      }
+    });
+    ratingToElement.forEach((element) => {
+      if (element.classList.length === 4) {
+        starToValue++;      
+      }
+    });
+    starFromValue = 5 - starFromValue;
+    starToValue = 5 - starToValue;
+    console.log("starFromValue" + starFromValue);
+    console.log("starToValue" + starToValue);    
+};
 
 const bytypeArray = [];
 
