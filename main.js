@@ -159,7 +159,10 @@ function setCardInfo(i, list, div){
     const bookDivText=document.createElement("p");
     bookDivRoom.appendChild(bookDivText);
     bookDivText.classList.add("book__div__text");
-    bookDivText.innerHTML=list[i].description;
+   if(list[i].description.length <= 50){
+        bookDivText.innerHTML=list[i].description;
+    }
+    
 
     const redLink=document.createElement("a");
     bookDivRoom.appendChild(redLink);

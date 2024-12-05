@@ -39,7 +39,10 @@ export async function createRooms(list){
 
         const description = document.createElement("p");
         description.className = "book__div__text";
-        description.innerHTML = challenge.description;
+        if(challenge.description.length <= 50){
+            description.innerHTML = challenge.description;
+        }
+        
         roomTile.appendChild(description);
 
         const bookBtn = document.createElement("a");
