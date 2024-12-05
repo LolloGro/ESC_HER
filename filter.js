@@ -26,9 +26,7 @@ openButton.addEventListener('click', () => {
 const starFrom = document.querySelectorAll('.star__from');
 
 starFrom.forEach((star, index) => {
-  star.addEventListener('click', () => {
-    updateStarValues();
-    if (starFromValue <= starToValue) {
+  star.addEventListener('click', () => {    
     starFrom.forEach((star, secondIndex) => {      
       if (index == 0) {
         const log = star.getAttribute('class');
@@ -47,7 +45,6 @@ starFrom.forEach((star, index) => {
     });
     updateStarValues();    
     createByRatingArray();
-};
   });
 
 
@@ -56,8 +53,7 @@ starFrom.forEach((star, index) => {
 const starTo = document.querySelectorAll('.star__to');
 
 starTo.forEach((stars, place) => {
-  stars.addEventListener('click', () => {
-    updateStarValues();        
+  stars.addEventListener('click', () => {           
     starTo.forEach((stars, secondPlace) => {       
       if (place == 0) {
         const check = stars.getAttribute('class');
