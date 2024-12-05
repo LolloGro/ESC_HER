@@ -54,10 +54,10 @@ closeModalBtn.addEventListener('click', () => {
 
 const closeBookRoom = document.querySelector(".bookRoom__close");
 
-closeBookRoom.addEventListener("click", ()=> {
+closeBookRoom.addEventListener("click", () => {
   bookModal.style.display = "none";
-  participants.lenght = 0;  
-}); 
+  participants.lenght = 0;
+});
 
 closeBookRoom.addEventListener("click", () => {
   bookModal.style.display = "none";
@@ -67,27 +67,27 @@ const bookTime = document.querySelector(".bookRoom__input__time");
 const selTime = document.getElementById("selTime");
 
 function creatTimeList(time) {
-  selTime.innerHTML=""; 
+  selTime.innerHTML = "";
   time.forEach(t => {
     const times = document.createElement("option");
     times.innerHTML = t;
-    selTime.appendChild(times);    
-  }); 
+    selTime.appendChild(times);
+  });
 }
 
 bookTime.addEventListener("input", () => {
-  const timeToBook = inputTime.value;
+  const timeToBook = bookTime.value;
 });
 
 const inputParticipants = document.getElementById("participants");
 const partList = document.getElementById("selPart");
 
-function creatPartList (part) {
+function creatPartList(part) {
   partList.innerHTML = "";
   part.forEach(delt => {
-    const option = document.createElement("option");    
+    const option = document.createElement("option");
     option.innerHTML = delt;
-    partList.appendChild(option);    
+    partList.appendChild(option);
   });
 }
 
@@ -107,6 +107,19 @@ function checkEmail() {
   return emailToBook;
 };
 
+const inputPhone = document.querySelector(".bookRoom__input__phone");
+inputPhone.addEventListener("input", checkPhone);
+
+function checkPhone() {
+  const phoneToBook = inputPhone.value;
+  const check = /^[0-9]{10}$/
+  if (check.test(phoneToBook)) {
+    return phoneToBook;
+  } else {
+    return false;
+  }
+}
+
 const thankYou = document.querySelector(".submitBooking");
 const submitBooking = document.querySelector(".bookRoom__submit");
 
@@ -115,15 +128,19 @@ submitBooking.addEventListener("click", checkinput);
 function checkinput() {
   const name = checkName();
   const email = checkEmail();
+  const phone = checkPhone();
 
-  if (name.trim().length > 0 && email.trim().length > 0) {
+  if (name.trim().length > 0 && email.trim().length > 0 && phone !== false) {
     thankYou.style.display = 'block';
   } else {
     if (name.trim().length == 0) {
-      alert("Enter name!");
+      alert("Enter correct name!");
     }
     if (email.trim().length == 0)
-      alert("Enter email!");
+      alert("Enter correct email!");
+  }
+  if (phone == false) {
+    alert("Enter correct mobilenumber");
   }
 }
 
