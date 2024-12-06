@@ -39,7 +39,24 @@ export async function createRooms(list){
 
         const description = document.createElement("p");
         description.className = "book__div__text";
-        description.innerHTML = challenge.description;
+        let text = " ";
+        if(challenge.description.length <= 50){
+            description.innerHTML = challenge.description;
+        }else{
+            console.log(challenge.description[49]);
+            if(challenge.description[49]!=" "){
+                for(let i = 48; i > 0; i--){
+                    if(challenge.description[i]==" "){
+                        text = challenge.description.slice(0,i) + "...";
+                        break;
+                    }
+                }
+            }else if(challenge.description[49]==" "){
+                text = challenge.description.slice(0,49);
+            }
+            description.innerHTML = text;
+        }
+        
         roomTile.appendChild(description);
 
         const bookBtn = document.createElement("a");
