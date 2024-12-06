@@ -169,4 +169,26 @@ export async function createRooms(list){
     window.challengesList = challengesList;
 }
 
+// Sorting functionality
+document.addEventListener("DOMContentLoaded", () => {
+    const sortSelect = document.getElementById("sort-select");
 
+    createChallengesList().then(() => {
+        sortSelect.value = "rating"; 
+        applySorting("rating");
+    });
+
+    function applySorting(criterion) {
+        if (criterion === "rating") {
+            challengesList.sort((a, b) => b.rating - a.rating); 
+        } else if (criterion === "name") {
+            challengesList.sort((a, b) => a.title.localeCompare(b.title)); 
+        }
+        createRooms(challengesList);
+    }
+
+    sortSelect.addEventListener("change", (event) => {
+        const selectedOption = event.target.value;
+        applySorting(selectedOption);
+    });
+});
