@@ -36,7 +36,7 @@ openModalBtn.addEventListener('click', async () => {
     creatTimeList(timesToBook);
 
     if (date.length > 0) {
-      bookModal.style.display = 'block';
+      bookModal.style.display = 'flex';
     } else {
       datesContainer.textContent = 'No available dates found.';
     }
@@ -131,7 +131,7 @@ function checkinput() {
   const phone = checkPhone();
 
   if (name.trim().length > 0 && email.trim().length > 0 && phone !== false) {
-    thankYou.style.display = 'block';
+    thankYou.style.display = 'flex';
   } else {
     if (name.trim().length == 0) {
       alert("Enter correct name!");

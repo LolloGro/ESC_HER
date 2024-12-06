@@ -72,7 +72,7 @@ export async function createRooms(list){
             bookBtn.innerHTML = "Book this room"            
             bookBtn.addEventListener("click", () => {
                 const showBook = document.querySelector(".bookingModal");
-                showBook.style.display = "block";
+                showBook.style.display = "flex";
                 bookingId = challenge.id;
                 minPart = challenge.minParticipants;
                 maxPart = challenge.maxParticipants;                               
