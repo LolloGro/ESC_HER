@@ -187,7 +187,7 @@ function setCardInfo(i, list, div){
         redLink.innerHTML="Book room";
         redLink.addEventListener("click", () => {
             const showBook = document.querySelector(".bookingModal");
-            showBook.style.display = "block";
+            showBook.style.display = "flex";
             bookingId = list[i].id;
             minPart = list[i].minParticipants;
             maxPart = list[i].maxParticipants;                               
