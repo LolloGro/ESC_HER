@@ -39,7 +39,24 @@ export async function createRooms(list){
 
         const description = document.createElement("p");
         description.className = "book__div__text";
-        description.innerHTML = challenge.description;
+        let text = " ";
+        if(challenge.description.length <= 50){
+            description.innerHTML = challenge.description;
+        }else{
+            console.log(challenge.description[49]);
+            if(challenge.description[49]!=" "){
+                for(let i = 48; i > 0; i--){
+                    if(challenge.description[i]==" "){
+                        text = challenge.description.slice(0,i) + "...";
+                        break;
+                    }
+                }
+            }else if(challenge.description[49]==" "){
+                text = challenge.description.slice(0,49);
+            }
+            description.innerHTML = text;
+        }
+        
         roomTile.appendChild(description);
 
         const bookBtn = document.createElement("a");
@@ -55,7 +72,7 @@ export async function createRooms(list){
             bookBtn.innerHTML = "Book this room"            
             bookBtn.addEventListener("click", () => {
                 const showBook = document.querySelector(".bookingModal");
-                showBook.style.display = "block";
+                showBook.style.display = "flex";
                 bookingId = challenge.id;
                 minPart = challenge.minParticipants;
                 maxPart = challenge.maxParticipants;                               
@@ -169,4 +186,26 @@ export async function createRooms(list){
     window.challengesList = challengesList;
 }
 
+// Sorting functionality
+document.addEventListener("DOMContentLoaded", () => {
+    const sortSelect = document.getElementById("sort-select");
 
+    createChallengesList().then(() => {
+        sortSelect.value = "rating"; 
+        applySorting("rating");
+    });
+
+    function applySorting(criterion) {
+        if (criterion === "rating") {
+            challengesList.sort((a, b) => b.rating - a.rating); 
+        } else if (criterion === "name") {
+            challengesList.sort((a, b) => a.title.localeCompare(b.title)); 
+        }
+        createRooms(challengesList);
+    }
+
+    sortSelect.addEventListener("change", (event) => {
+        const selectedOption = event.target.value;
+        applySorting(selectedOption);
+    });
+});

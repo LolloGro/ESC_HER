@@ -14,27 +14,32 @@ label {
 
 .bookingModal {
     display: none;
+    justify-content: center;
 
     .bookingModal__div {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        animation-name: open;
+        animation-duration: 500ms;
+        animation-fill-mode: forwards;
+
         background-color: white;
         position: fixed;
         display: grid;
-        grid-template-columns: auto 350px 250px auto;
+        grid-template-columns: 350px 250px;
         grid-auto-rows: max-content;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        border-color: $color-light-grey;
+        border-style: solid;
 
         .bookingModal__titel {
-            margin-top: 100px;
-            grid-column: 2;
+            grid-column: 1;
             grid-row: 1;
             font-size: 1.5rem;
         }
 
         .bookingModal__close {
-            grid-column: 3;
+            grid-column: 2;
             grid-row: 1;
             background-color: transparent;
             border-color: transparent;
@@ -43,29 +48,29 @@ label {
         }
 
         .bookingModal__text {
-            grid-column: 2;
+            grid-column: 1;
             grid-row: 2;
         }
 
         .bookingModal__label {
-            grid-column: 2;
+            grid-column: 1;
             grid-row: 3;
             align-content: end;
         }
 
         .bookingModal__input {
-            grid-column: 2;
+            grid-column: 1;
             grid-row: 4;
             width: 250px;
             font-size: 18px;
         }
         .bookingModal_noTime{
-            grid-column: 2;
+            grid-column: 1;
             grid-row: 5;    
         }
 
         .bookingModal__open {
-            grid-column: 3;
+            grid-column: 2;
             grid-row: 6;
             justify-self: end;
             width: fit-content;
@@ -79,31 +84,34 @@ label {
     }
 }
 
+
 .bookRoom {
     display: none;
+    justify-content: center;
 
     .bookRoom__div {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        top: 50px;
         background-color: $color-white;
         position: fixed;
         display: grid;
-        grid-template-columns: auto 350px 250px auto;
+        grid-template-columns: 350px 250px;
         grid-auto-rows: max-content;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        border-color: $color-light-grey;
+        border-style: solid;
     }
 
     .bookRoom__titel {
-        margin-top: 100px;
-        grid-column: 2;
+        grid-column: 1;
         grid-row: 1;
         margin-bottom: 25px;
         font-size: 1.5rem;
     }
 
     .bookRoom__close {
-        grid-column: 3;
+        grid-column: 2;
         grid-row: 1;
         background-color: transparent;
         border-color: transparent;
@@ -113,55 +121,65 @@ label {
     }
 
     .bookRoom__label__name {
-        grid-column: 2;
+        grid-column: 1;
         grid-row: 2;
     }
 
     .bookRoom__input__name {
-        grid-column: 2;
+        grid-column: 1;
         grid-row: 3;
         width: 250px;
         margin-bottom: 25px;
     }
 
     .bookRoom__label__email {
-        grid-column: 2;
+        grid-column: 1;
         grid-row: 4;
     }
 
     .bookRoom__input__email {
-        grid-column: 2;
+        grid-column: 1;
         grid-row: 5;
+        width: 250px;
+        margin-bottom: 25px;
+    }
+    .bookRoom__label__phone{
+        grid-column: 1;
+        grid-row: 6;
+    }
+    .bookRoom__input__phone{
+        grid-column: 1;
+        grid-row: 7;
         width: 250px;
         margin-bottom: 25px;
     }
 
     .bookRoom__label__time {
-        grid-column: 2;
-        grid-row: 6;
+        grid-column: 1;
+        grid-row: 8;
     }
 
     .bookRoom__input__time {
-        grid-column: 2;
-        grid-row: 7;
+        grid-column: 1;
+        grid-row: 9;
         width: 150px;
         margin-bottom: 25px;
     }
 
     .bookRoom__label__part {
-        grid-column: 2;
-        grid-row: 8;
+        grid-column: 1;
+        grid-row: 10;
     }
 
     .bookRoom__input__part {
-        grid-column: 2;
-        grid-row: 9;
+        grid-column: 1;
+        grid-row: 11;
         width: 150px;
     }
 
     .bookRoom__submit {
-        grid-column: 3;
-        grid-row: 10;
+        grid-column: 2;
+        grid-row: 12;
         width: fit-content;
         justify-self: end;
         margin-top: 100px;
@@ -175,13 +193,15 @@ label {
 
 .submitBooking {
     display: none;
+    justify-content: center;
 
     .submitBooking__div {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        top: 50px; 
+        width: 700px;
+        height: 700px;
         background-color: $color-white;
+        border-color: $color-light-grey;
+        border-style: solid;
         position: fixed;
         justify-items: center;
     }
@@ -194,5 +214,14 @@ label {
 
     .submitBooking__return {
         color: $color-medium-blue;
+    }
+}
+@keyframes open {
+    25%{
+        opacity: 0.5;
+        top: -300px;
+    }
+    100% {
+        top: 50px;
     }
 }

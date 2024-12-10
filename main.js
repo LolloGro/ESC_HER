@@ -159,7 +159,24 @@ function setCardInfo(i, list, div){
     const bookDivText=document.createElement("p");
     bookDivRoom.appendChild(bookDivText);
     bookDivText.classList.add("book__div__text");
-    bookDivText.innerHTML=list[i].description;
+    const text = list[i].description;
+    let shortenedText = "";
+    if(text.length < 50){
+        bookDivText.innerHTML=text;
+    }else{
+        if(text[49]!=" "){
+            for(let i = 48; i > 0; i--){
+                if(text[i]==" "){
+                    shortenedTextext = text.slice(0,i) + "...";
+                    break;
+                }
+            }
+        }else if(text[49]==" "){
+            shortenedText = challenge.description.slice(0,49);
+        }
+        bookDivText.innerHTML=shortenedText;
+    }
+    
 
     const redLink=document.createElement("a");
     bookDivRoom.appendChild(redLink);
@@ -170,7 +187,7 @@ function setCardInfo(i, list, div){
         redLink.innerHTML="Book room";
         redLink.addEventListener("click", () => {
             const showBook = document.querySelector(".bookingModal");
-            showBook.style.display = "block";
+            showBook.style.display = "flex";
             bookingId = list[i].id;
             minPart = list[i].minParticipants;
             maxPart = list[i].maxParticipants;                               
