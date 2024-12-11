@@ -309,6 +309,15 @@ label {
   color: #36769d;
 }
 
+@keyframes open {
+  25% {
+    opacity: 0.5;
+    top: -300px;
+  }
+  100% {
+    top: 50px;
+  }
+}
 @media screen and (min-width: 1280px) {
   .aboutUs {
     display: grid;
@@ -408,17 +417,6 @@ label {
 @media screen and (min-width: 1280px) {
   .team .team__members .members__name {
     grid-row: 2;
-  }
-}
-
-=======
-@keyframes open {
-  25% {
-    opacity: 0.5;
-    top: -300px;
-  }
-  100% {
-    top: 50px;
   }
 }
 
@@ -757,6 +755,9 @@ body {
   margin-left: 43px;
   margin-bottom: 15px;
   margin-top: 15px;
+}
+.book .book__div .book__div__room:hover {
+  box-shadow: #B6BDB5 0px 10px 30px 0px;
 }
 .book .book__div .book__div__room .book__div__titel {
   grid-column: 1/4;
