@@ -443,7 +443,7 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
-  color: #011827;
+  color: #021928;
   text-align: center;
   place-content: center;
 }
@@ -468,7 +468,7 @@ body {
 }
 
 .main {
-  background-color: #011827;
+  background-color: #021928;
   display: grid;
   grid-template-columns: 150px auto auto;
 }
@@ -517,7 +517,7 @@ body {
   .main__nav {
     display: flex;
     align-items: center;
-    background-color: #011827;
+    background-color: #021928;
     min-height: 72px;
   }
   .main__nav .main__ul {
@@ -576,7 +576,7 @@ body {
     left: 0;
     right: 0;
     display: block;
-    background-color: #011827;
+    background-color: #021928;
     position: fixed;
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.5);
@@ -863,7 +863,7 @@ body {
 }
 
 .story {
-  background-color: #011827;
+  background-color: #021928;
   min-height: 500px;
   color: #FFFFFF;
   text-align: center;
@@ -1033,7 +1033,7 @@ body {
 }
 
 footer {
-  background-color: #011827;
+  background-color: #021928;
   color: #FFFFFF;
   min-height: 556px;
   padding-top: 60px;
